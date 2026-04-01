@@ -248,7 +248,8 @@ def plain_string_to_md(s: str) -> str:
 
 # ── Main cell dispatcher ─────────────────────────────────────────────────────
 
-def cell_to_md(cell: list, image_counter: list[int], images_dir: str) -> str | None:
+def cell_to_md(cell: list, image_counter: list[int], images_dir: str,
+               show_input: bool = False) -> str | None:
     """
     Convert a parsed Cell[...] node to a Markdown string.
     Returns None if the cell should be skipped.
@@ -261,8 +262,22 @@ def cell_to_md(cell: list, image_counter: list[int], images_dir: str) -> str | N
     content   = cell[1]
     cell_type = cell[2] if len(cell) > 2 else ""
 
-    # ── Skip code, navigation, and metadata cells ───────────────────────────
-    if cell_type in ("Input", "Code", "Print", "Message"):
+    # ── Input cells ─────────────────────────────────────────────────────────
+    if cell_type in ("Input", "Code"):
+        if not show_input:
+            return None
+        # Extract code as readable Mathematica syntax
+        from boxes_to_latex import box_to_code
+        if isinstance(content, list) and content and content[0] == "BoxData":
+            code = box_to_code(content[1] if len(content) > 1 else content)
+        else:
+            code = extract_text(content)
+        code = code.strip()
+        if not code:
+            return None
+        return f"```mathematica\n{code}\n```"
+
+    if cell_type in ("Print", "Message"):
         return None
     # Skip button/hyperlink cells (navigation widgets at notebook bottom)
     if isinstance(content, list) and content and content[0] in ("ButtonBox", "TemplateBox"):
@@ -282,7 +297,13 @@ def cell_to_md(cell: list, image_counter: list[int], images_dir: str) -> str | N
             n = image_counter[0]
             img_path = f"{images_dir}/output_{n:03d}.png"
             return f'![Figure {n}]({img_path})'
-        # Non-graphics output (e.g. a computed number) — skip
+        # Non-graphics output (e.g. a computed number)
+        if show_input:
+            from boxes_to_latex import box_to_code
+            code = box_to_code(content[1] if isinstance(content, list) and content and content[0] == "BoxData" and len(content) > 1 else content)
+            code = code.strip()
+            if code:
+                return f"```\n(* Out: *) {code}\n```"
         return None
 
     # ── Headings ────────────────────────────────────────────────────────────
@@ -402,7 +423,8 @@ def extract_display_math(content) -> str:
 
 # ── Top-level notebook walker ────────────────────────────────────────────────
 
-def walk_cells(cell_list: list, blocks: list, image_counter: list, images_dir: str):
+def walk_cells(cell_list: list, blocks: list, image_counter: list,
+               images_dir: str, show_input: bool = False):
     """Recursively walk a list of Cell nodes, appending Markdown blocks."""
     for node in cell_list:
         if not isinstance(node, list) or not node:
@@ -417,16 +439,16 @@ def walk_cells(cell_list: list, blocks: list, image_counter: list, images_dir: s
         if isinstance(content, list) and content and content[0] == "CellGroupData":
             inner = content[1]
             if isinstance(inner, list):
-                walk_cells(inner, blocks, image_counter, images_dir)
+                walk_cells(inner, blocks, image_counter, images_dir, show_input)
             continue
 
         # Leaf cell — convert to Markdown
-        md = cell_to_md(node, image_counter, images_dir)
+        md = cell_to_md(node, image_counter, images_dir, show_input=show_input)
         if md and md.strip():
             blocks.append(md)
 
 
-def walk_notebook(nb: list, images_dir: str) -> list[str]:
+def walk_notebook(nb: list, images_dir: str, show_input: bool = False) -> list[str]:
     """Walk a parsed Notebook[{...}] expression and return Markdown blocks."""
     if not isinstance(nb, list) or nb[0] != "Notebook":
         raise ValueError("Not a Notebook expression")
@@ -437,7 +459,7 @@ def walk_notebook(nb: list, images_dir: str) -> list[str]:
 
     blocks: list[str] = []
     image_counter = [0]
-    walk_cells(cells_list, blocks, image_counter, images_dir)
+    walk_cells(cells_list, blocks, image_counter, images_dir, show_input)
     return blocks
 
 
@@ -476,6 +498,8 @@ def main():
     ap.add_argument("--images-dir", default="", help="Relative image path prefix for this page")
     ap.add_argument("--weight", type=int, default=10, help="Hugo page weight (ordering)")
     ap.add_argument("--title", default=None, help="Override extracted title")
+    ap.add_argument("--show-input", action="store_true",
+                    help="Include Input cells as Mathematica code blocks")
     args = ap.parse_args()
 
     print(f"Parsing {args.input} …", file=sys.stderr)
@@ -493,7 +517,7 @@ def main():
         sys.exit(1)
 
     images_dir = args.images_dir or f"images/{args.input.stem}"
-    blocks = walk_notebook(nb, images_dir)
+    blocks = walk_notebook(nb, images_dir, show_input=args.show_input)
 
     # Extract title: prefer the first ## Section heading (specific to this page)
     # over the generic # MAM2046W course title that appears in every notebook

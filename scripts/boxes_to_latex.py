@@ -279,6 +279,43 @@ def merge_text_runs(latex: str) -> str:
     return latex
 
 
+def box_to_code(node) -> str:
+    """Convert a parsed box node to readable Mathematica code."""
+    if isinstance(node, str):
+        s = replace_wolfram_chars(node, math=False)
+        return s
+
+    if not isinstance(node, list) or not node:
+        return ""
+
+    head = node[0]
+    args = node[1:]
+
+    match head:
+        case "RowBox":
+            children = args[0] if args and isinstance(args[0], list) else args
+            return "".join(box_to_code(c) for c in children)
+        case "SuperscriptBox":
+            base = box_to_code(args[0]) if args else ""
+            exp = box_to_code(args[1]) if len(args) > 1 else ""
+            return f"{base}^{exp}"
+        case "SubscriptBox":
+            base = box_to_code(args[0]) if args else ""
+            sub = box_to_code(args[1]) if len(args) > 1 else ""
+            return f"{base}[{sub}]" if len(sub) == 1 else f"Subscript[{base},{sub}]"
+        case "FractionBox":
+            num = box_to_code(args[0]) if args else ""
+            den = box_to_code(args[1]) if len(args) > 1 else ""
+            return f"({num})/({den})"
+        case "SqrtBox":
+            return f"Sqrt[{box_to_code(args[0])}]" if args else ""
+        case ("StyleBox" | "FormBox" | "TagBox" | "BoxData" |
+              "InterpretationBox" | "AdjustmentBox" | "TemplateBox"):
+            return box_to_code(args[0]) if args else ""
+        case _:
+            return "".join(box_to_code(a) for a in args)
+
+
 def box_to_latex(node) -> str:
     """
     Recursively convert a parsed box node to a LaTeX string.
