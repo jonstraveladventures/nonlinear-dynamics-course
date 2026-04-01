@@ -3,8 +3,6 @@ title: "Section 2.2: Ruling out closed orbits"
 weight: 22
 math: true
 ---
-# MAM2046W - Second year nonlinear dynamics
-
 ## Section 2.2: Ruling out closed orbits
 
 Strap in, things are about to get mathsy! We’re going to get into some slightly more complicated mathematical notation than we have before. You should have seen all of it, but I’ll try and explain it as well as possible as we go along.

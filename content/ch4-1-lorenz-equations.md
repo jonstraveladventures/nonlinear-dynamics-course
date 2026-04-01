@@ -3,8 +3,6 @@ title: "Section 4.1: The Lorenz equations"
 weight: 41
 math: true
 ---
-# MAM2046W - Second year nonlinear dynamics
-
 ## Section 4.1: The Lorenz equations
 
 The moment is here...chaos has arrived...finally. Actually, in Greek mythology, chaos was all there was before the creation of the Cosmos, when order came to mess with the natural way of all things...but we ’re getting lost already.

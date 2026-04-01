@@ -3,8 +3,6 @@ title: "Section 1.2: Existence and Uniqueness"
 weight: 12
 math: true
 ---
-# MAM2046W - Second year nonlinear dynamics
-
 ## Section 1.2: Existence and Uniqueness
 
 We had a look at existence and uniqueness back in MAM1043H. If you don ’t remember this in detail (or at all), take a look here.

@@ -3,8 +3,6 @@ title: "Section 4.2: The Lorenz equations - detecting chaos"
 weight: 43
 math: true
 ---
-# MAM2046W - Second year nonlinear dynamics
-
 ## Section 4.2: The Lorenz equations - detecting chaos
 
 So, where were we? We had found that for certain parameter ranges, the long term behaviour of our system seemed to be unpredictable, and somehow stuck on this strange surface of the Strange Attractor. We’re going to study this system for now in the region just beyond where it becomes truly chaotic, with σ=10, $b=\frac{8}{3}$and $r=25$, just after the Hopf bifurcation.

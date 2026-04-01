@@ -3,8 +3,6 @@ title: "Section 3.6: Poincaré maps"
 weight: 36
 math: true
 ---
-# MAM2046W - Second year nonlinear dynamics
-
 ## Section 3.6: Poincaré maps
 
 We’re now going to introduce one of the key methods which will be needed for studying chaos later in the course. It’s a way to get a picture of what is happening in a phase portrait in potentially higher dimensional systems where just looking at the phase portrait as we have studied it so far is going to be too complicated.

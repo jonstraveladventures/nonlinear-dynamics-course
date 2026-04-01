@@ -3,8 +3,6 @@ title: "Section 2.1: Limit Cycles"
 weight: 21
 math: true
 ---
-# MAM2046W - Second year nonlinear dynamics
-
 ## Section 2.1: Limit Cycles
 
 We’re going to start with an example here.

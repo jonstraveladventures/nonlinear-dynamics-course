@@ -3,8 +3,6 @@ title: "Section 2.4: Liénard Systems"
 weight: 24
 math: true
 ---
-# MAM2046W - Second year nonlinear dynamics
-
 ## Section 2.4: Liénard Systems
 
 In general within mathematics, we often like to be able to make general statements about classes of systems. As an example, one can say that for any dynamical system of the form

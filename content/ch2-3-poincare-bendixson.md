@@ -3,8 +3,6 @@ title: "Section 2.3: The Poincaré-Bendixson theorem"
 weight: 23
 math: true
 ---
-# MAM2046W - Second year nonlinear dynamics
-
 ## Section 2.3: The Poincaré-Bendixson theorem
 
 We actually already touched on this in section 1.2 but we are going to look at it in much more detail now. This will allow us to show that there exist closed orbits, as opposed to the previous section where we were finding methods to show that there were no closed orbits.

@@ -3,8 +3,6 @@ title: "Section 3.2: Hopf bifurcations"
 weight: 32
 math: true
 ---
-# MAM2046W - Second year nonlinear dynamics
-
 ## Section 3.2: Hopf bifurcations
 
 So, it seems that everything is the same in two dimensions as it was in one dimension in terms of bifurcations...but actually, if we dig a little deeper we will see that there is more to understand here.

@@ -3,8 +3,6 @@ title: "Section 1.6: Index Theory"
 weight: 16
 math: true
 ---
-# MAM2046W - Second year nonlinear dynamics
-
 ## Section 1.6: Index Theory
 
 In this section we are going to develop some tools to allow us to say things about large scale, or **global** properties of a phase portrait. So far we have been able to zoom in on what is happening at, or close to a fixed point, but it would be useful to be able to talk about larger-scale properties of the dynamics of a system. This is going to seem a bit abstract at first, but stick with it and we will end up with some very powerful technology.

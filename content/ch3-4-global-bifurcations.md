@@ -3,8 +3,6 @@ title: "Section 3.4: Global bifurcations of cycles"
 weight: 34
 math: true
 ---
-# MAM2046W - Second year nonlinear dynamics
-
 ## Section 3.4: Global bifurcations of cycles
 
 We’ve now seen that while the normal types of bifurcations from 1d persist in 2d and don’t give us anything very different, the existence of limit cycles gives us something more interesting. So far we’ve looked at Supercritical Hopf bifurcations, by which a stable fixed point can explode out into a stable limit cycle and an unstable fixed point, or in the case of the subcritical Hopf bifurcation, an unstable limit cycle can engulf a stable fixed point to become an unstable fixed point. Finally we saw degenerate Hopf bifurcations where there are no limit cycles but only centers about the fixed point which changes from a stable to an unstable spiral across the bifurcation.

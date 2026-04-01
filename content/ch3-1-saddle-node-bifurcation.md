@@ -3,8 +3,6 @@ title: "Section 3.1: Saddle-nodes, transcritical and pitchfork bifurcations in t
 weight: 31
 math: true
 ---
-# MAM2046W - Second year nonlinear dynamics
-
 ## Section 3.1: Saddle-nodes, transcritical and pitchfork bifurcations in two dimensions
 
 We spent a lot of time last year looking at bifurcations in one dimensional systems. Remember they correspond to having some parameter in our system which we can tune, and as we do so the fixed point structure changes. Essentially it was about stable and unstable fixed points coming together and annihilating, or appearing out of thin air, or swapping stabilities. $\left(0\to 2,2\to 0,2\to 2,1\to 3 \text{ or } 3\to 1\right)$.

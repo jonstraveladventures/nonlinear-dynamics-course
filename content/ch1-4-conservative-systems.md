@@ -3,8 +3,6 @@ title: "Section 1.4: Conservative systems"
 weight: 14
 math: true
 ---
-# MAM2046W - Second year nonlinear dynamics
-
 ## Section 1.4: Conservative systems
 
 We are going to just touch the surface of one of the most important topics in modern physics - that of **conservation laws**. I’m sure that you’ve all heard of the conservation of energy, but this is just one particular example of a **conservative quantity**. Conservation laws are related to **symmetry** properties of a system, and understanding symmetries leads to a deep understanding of many different types of system. In particular, within much of theoretical high energy physics, symmetry is at the heart of, well, almost everything.

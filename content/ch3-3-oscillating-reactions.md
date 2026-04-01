@@ -3,8 +3,6 @@ title: "Section 3.3: Oscillating chemical reactions"
 weight: 33
 math: true
 ---
-# MAM2046W - Second year nonlinear dynamics
-
 ## Section 3.3: Oscillating chemical reactions
 
 In this section we’re going to look at a model for a complex chemical reaction, which involves chlorine dioxide, iodine and malonic acid:

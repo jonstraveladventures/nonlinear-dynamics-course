@@ -3,8 +3,6 @@ title: "Section 2.5: Relaxation oscillations"
 weight: 25
 math: true
 ---
-# MAM2046W - Second year nonlinear dynamics
-
 ## Section 2.5: Relaxation oscillations
 
 In this section and the next we are going to look at systems where particular parameters can be taken as large and ask if we can get some understanding beyond the fact that there are simply closed cycles. While in the general case it’s hard to make statements about the form of the closed cycles, in these limits we can actually make some very concrete statements.

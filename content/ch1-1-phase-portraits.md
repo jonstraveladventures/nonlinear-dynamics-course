@@ -3,8 +3,6 @@ title: "Section 1.1: Phase portraits in two dimensions"
 weight: 11
 math: true
 ---
-# MAM2046W - Second year nonlinear dynamics
-
 ## Section 1.1: Phase portraits in two dimensions
 
 Before we start, I will use phase portrait, phase diagram and phase plane somewhat interchangably.

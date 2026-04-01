@@ -3,8 +3,6 @@ title: "Section 1.5: Reversible systems"
 weight: 15
 math: true
 ---
-# MAM2046W - Second year nonlinear dynamics
-
 ## Section 1.5: Reversible systems
 
 If you make a movie of an egg dropping on the floor and then play it forwards and backwards, it’s very obvious which one is the correct direction. Eggs don’t simply coalesce from a mess on the floor, and jump back up into your hand.

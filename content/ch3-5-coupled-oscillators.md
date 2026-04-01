@@ -3,8 +3,6 @@ title: "Section 3.5: Coupled oscillators and quasiperiodicity"
 weight: 35
 math: true
 ---
-# MAM2046W - Second year nonlinear dynamics
-
 ## Section 3.5: Coupled oscillators and quasiperiodicity
 
 When we discussed the phase space of the pendulum in first year, we said that we were free to choose $\theta{}\left(0\right)$ and $\dot{\theta{}}\left(0\right)$, which is indeed true, but we ended up plotting trajectories in phase space like:

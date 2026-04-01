@@ -287,8 +287,10 @@ def cell_to_md(cell: list, image_counter: list[int], images_dir: str) -> str | N
 
     # ── Headings ────────────────────────────────────────────────────────────
     if cell_type == "Title":
-        text = clean_text_whitespace(extract_text(content))
-        return f"# {text}" if text else None
+        # Skip — the Hugo page header already shows the title.
+        # The Title cell is the generic "MAM2046W - Second year nonlinear dynamics"
+        # which is redundant on every page.
+        return None
 
     if cell_type == "Section":
         text = clean_text_whitespace(extract_text(content))

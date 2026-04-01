@@ -3,8 +3,6 @@ title: "Section 2.6: Weakly nonlinear oscillators"
 weight: 26
 math: true
 ---
-# MAM2046W - Second year nonlinear dynamics
-
 ## Section 2.6: Weakly nonlinear oscillators
 
 Not the Van der Pol oscillator again, I hear you cry!! Yep, I ’m afraid so...but this time in a different limit. Not the limit of very strong nonlinearities, but the opposite limit, where it ’s very close to linear:

@@ -3,8 +3,6 @@ title: "Section 1.3: Fixed Points and Linearisation"
 weight: 13
 math: true
 ---
-# MAM2046W - Second year nonlinear dynamics
-
 ## Section 1.3: Fixed Points and Linearisation
 
 Again we had a look at this topic back in MAM1043H. If you don ’t remember this in detail (or at all), take a look here. Note also that I’ve added a very small section at the end in blue here which I had not discussed last year and will be important for the assignment.

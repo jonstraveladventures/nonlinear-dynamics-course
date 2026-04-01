@@ -3,8 +3,6 @@ title: "Section 0.0: Course Introduction"
 weight: 0
 math: true
 ---
-# MAM2046W - Second year nonlinear dynamics
-
 ## Section 0.0: Course Introduction
 
 If you find any mistakes, or have comments on the notes, please message me at jon.shock@gmail.com.
