@@ -1,5 +1,5 @@
 ---
-title: "MAM2046W - Second year nonlinear dynamics"
+title: "Section 1.3: Fixed Points and Linearisation"
 weight: 13
 math: true
 ---
@@ -62,11 +62,11 @@ $$
 $$
 We can actually write this whole thing in matrix form as
 $$
-(\begin{pmatrix} \dot{u} \\ \dot{v} \end{pmatrix})=(\begin{pmatrix} {\partial{}}_{x}f & {\partial{}}_{y}f \\ {\partial{}}_{x}g & {\partial{}}_{y}g \end{pmatrix})|_{x^{*},y^{*}}(\begin{pmatrix} u \\ v \end{pmatrix})
+(\begin{matrix} \dot{u} \\ \dot{v} \end{matrix})=(\begin{matrix} {\partial{}}_{x}f & {\partial{}}_{y}f \\ {\partial{}}_{x}g & {\partial{}}_{y}g \end{matrix})|_{x^{*},y^{*}}(\begin{matrix} u \\ v \end{matrix})
 $$
 The matrix:
 $$
-A=(\begin{pmatrix} {\partial{}}_{x}f & {\partial{}}_{y}f \\ {\partial{}}_{x}g & {\partial{}}_{y}g \end{pmatrix})|_{x^{*},y^{*}}
+A=(\begin{matrix} {\partial{}}_{x}f & {\partial{}}_{y}f \\ {\partial{}}_{x}g & {\partial{}}_{y}g \end{matrix})|_{x^{*},y^{*}}
 $$
 Is known as the Jacobian matrix at the fixed point. Jacobians show up all over applied mathematics, and you can see a nice Khan academy video about it here.
 This all feels a bit abstract at the moment. Let’s look at a particular example. Taking the two-dimensional non-linear system given by
@@ -80,22 +80,22 @@ The first thing that we see is that this system is **decoupled**. This means tha
 First we want to find the fixed points. These are given by solving $\dot{x}$=$\dot{y}=0.$ and we get three fixed points, at coordinate $(-1,0),(0,0) \text{ and } (1,0)$. We we are trying to do with the linearisation analysis is to get an idea of the nature of these fixed points.
 Next we want to find the Jacobian matrix which is the matrix of partial derivatives. Then we will find the Jacobian matrix at the fixed points. This gives us
 $$
-A=(\begin{pmatrix} -1+3x^{2} & 0 \\ 0 & -2 \end{pmatrix})|_{x^{*},y^{*}}
+A=(\begin{matrix} -1+3x^{2} & 0 \\ 0 & -2 \end{matrix})|_{x^{*},y^{*}}
 $$
 which, when evaluated at the three fixed points is:
 $$
-A_{1}=(\begin{pmatrix} 2 & 0 \\ 0 & -2 \end{pmatrix}), A_{2}=(\begin{pmatrix} -1 & 0 \\ 0 & -2 \end{pmatrix}), A_{3}=(\begin{pmatrix} 2 & 0 \\ 0 & -2 \end{pmatrix})
+A_{1}=(\begin{matrix} 2 & 0 \\ 0 & -2 \end{matrix}), A_{2}=(\begin{matrix} -1 & 0 \\ 0 & -2 \end{matrix}), A_{3}=(\begin{matrix} 2 & 0 \\ 0 & -2 \end{matrix})
 $$
 where we have written $A_{i}, i=1,2,3$ for the three fixed points listed above. Now we have the linearised dynamical system where the equations are just:
 $$
-(\begin{pmatrix} \dot{u} \\ \dot{v} \end{pmatrix})=(\begin{pmatrix} 2 & 0 \\ 0 & -2 \end{pmatrix})(\begin{pmatrix} u \\ v \end{pmatrix})   (\text{ for the } \text{ first and } \text{ last fixed } \text{ points }) \text{ and }    (\begin{pmatrix} \dot{u} \\ \dot{v} \end{pmatrix})=(\begin{pmatrix} -1 & 0 \\ 0 & -2 \end{pmatrix})(\begin{pmatrix} u \\ v \end{pmatrix})  \text{ for the } \text{ middle one }.
+(\begin{matrix} \dot{u} \\ \dot{v} \end{matrix})=(\begin{matrix} 2 & 0 \\ 0 & -2 \end{matrix})(\begin{matrix} u \\ v \end{matrix})   (\text{ for the } \text{ first and } \text{ last fixed } \text{ points }) \text{ and }    (\begin{matrix} \dot{u} \\ \dot{v} \end{matrix})=(\begin{matrix} -1 & 0 \\ 0 & -2 \end{matrix})(\begin{matrix} u \\ v \end{matrix})  \text{ for the } \text{ middle one }.
 $$
 ok, so now we can deal with these in the same way as we did for any linear second order system. We calculate the trace and determinant and figure out where these lie in the family of different linear second order systems. Make sure that you can see why they sit at the red points in the plot below:
 ![Figure 3](/images/part13/output_003.png)
-We see here that we have two saddle points (both at the same position in the $(\Delta{},\Tau{}) \text{ plane },$ and one stable node (although it’s close to being a star or degenerate node). Both of these are not the borderline cases that we hinted about above, so we can believe that the linearised system does give us useful information about the full non-linear system in the region close to the fixed points.
+We see here that we have two saddle points (both at the same position in the $(\Delta{},\tau{}) \text{ plane },$ and one stable node (although it’s close to being a star or degenerate node). Both of these are not the borderline cases that we hinted about above, so we can believe that the linearised system does give us useful information about the full non-linear system in the region close to the fixed points.
 Let’s solve the linearised system exactly for the case of
 $$
-(\begin{pmatrix} \dot{u} \\ \dot{v} \end{pmatrix})=(\begin{pmatrix} 2 & 0 \\ 0 & -2 \end{pmatrix})(\begin{pmatrix} u \\ v \end{pmatrix})
+(\begin{matrix} \dot{u} \\ \dot{v} \end{matrix})=(\begin{matrix} 2 & 0 \\ 0 & -2 \end{matrix})(\begin{matrix} u \\ v \end{matrix})
 $$
 This solution to this is:
 $$
@@ -148,7 +148,7 @@ $$
 $$
 Which can be written as:
 $$
-(\begin{pmatrix} \dot{x} \\ \dot{y} \end{pmatrix})=(\begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix})(\begin{pmatrix} x \\ y \end{pmatrix})
+(\begin{matrix} \dot{x} \\ \dot{y} \end{matrix})=(\begin{matrix} 0 & -1 \\ 1 & 0 \end{matrix})(\begin{matrix} x \\ y \end{matrix})
 $$
 Which sits here (the red spot) in the space of possible linear systems:
 ![Figure 11](/images/part13/output_011.png)
@@ -162,26 +162,26 @@ $$
 which are indeed spirals. For $a=0, \text{ these }$ solutions are exact, and we might imagine that for small $a \text{ they would }$ also be good approximations of the true solutions for small values of $(x,y)$ and therefore that all solutions would look something like:
 ![Figure 12](/images/part13/output_012.png)
 In this small region. However, we can show that this isn’t the case by making a change of coordinates and solving the system exactly.
-Let’s go from Cartesian to Polar coordinates by letting $x=r \text{ cos } \Theta{}, y=r \text{ sin } \Theta{}$ which means that:
+Let’s go from Cartesian to Polar coordinates by letting $x=r \text{ cos } \theta{}, y=r \text{ sin } \theta{}$ which means that:
 $$
-\dot{x}=\frac{d (r \text{ cos } \Theta{})}{\text{ dt }}=\dot{r} \text{ cos } \Theta{}-r \dot{\Theta{}} \text{ sin } \Theta{}
+\dot{x}=\frac{d (r \text{ cos } \theta{})}{\text{ dt }}=\dot{r} \text{ cos } \theta{}-r \dot{\theta{}} \text{ sin } \theta{}
 $$
 $$
-\dot{y}=\frac{d (r \text{ sin } \Theta{})}{\text{ dt }}=\dot{r} \text{ sin } \Theta{}+r \dot{\Theta{}} \text{ cos } \Theta{}
+\dot{y}=\frac{d (r \text{ sin } \theta{})}{\text{ dt }}=\dot{r} \text{ sin } \theta{}+r \dot{\theta{}} \text{ cos } \theta{}
 $$
 So we have:
 $$
-\dot{r} \text{ cos } \Theta{}-r \dot{\Theta{}} \text{ sin } \Theta{} = -r \text{ sin } \Theta{}+a r^{3} \text{ cos } \Theta{}
+\dot{r} \text{ cos } \theta{}-r \dot{\theta{}} \text{ sin } \theta{} = -r \text{ sin } \theta{}+a r^{3} \text{ cos } \theta{}
 $$
 $$
-\dot{r} \text{ sin } \Theta{}+r \dot{\Theta{}} \text{ cos } \Theta{} = r \text{ cos } \Theta{}+a r^{3} \text{ sin } \Theta{}
+\dot{r} \text{ sin } \theta{}+r \dot{\theta{}} \text{ cos } \theta{} = r \text{ cos } \theta{}+a r^{3} \text{ sin } \theta{}
 $$
-Multiplying the top equation by cos Θ and the bottom by sin Θ gives us:
+Multiplying the top equation by cos θ and the bottom by sin θ gives us:
 $$
-\dot{r} {\text{ cos }}^{2} \Theta{}-r \dot{\Theta{}} \text{ sin } \Theta{} \text{ cos } \Theta{}= -r \text{ sin } \Theta{} \text{ cos } \Theta{}+a r^{3} {\text{ cos }}^{2} \Theta{}
+\dot{r} {\text{ cos }}^{2} \theta{}-r \dot{\theta{}} \text{ sin } \theta{} \text{ cos } \theta{}= -r \text{ sin } \theta{} \text{ cos } \theta{}+a r^{3} {\text{ cos }}^{2} \theta{}
 $$
 $$
-\dot{r} {\text{ sin }}^{2} \Theta{}+r \dot{\Theta{}} \text{ sin } \Theta{} \text{ cos } \Theta{}= r \text{ sin } \Theta{} \text{ cos } \Theta{}+a r^{3} {\text{ sin }}^{2} \Theta{}
+\dot{r} {\text{ sin }}^{2} \theta{}+r \dot{\theta{}} \text{ sin } \theta{} \text{ cos } \theta{}= r \text{ sin } \theta{} \text{ cos } \theta{}+a r^{3} {\text{ sin }}^{2} \theta{}
 $$
 Adding the equations together gives:
 $$
@@ -189,14 +189,14 @@ $$
 $$
 Plugging this back into either equation leaves us with:
 $$
-\dot{\Theta{}} =1
+\dot{\theta{}} =1
 $$
 So, it would have been easier to start with this, wouldn’t it? Well, the reason that we didn’t was to show (as you ’ll see in a moment) that linearising doesn’t always work.
 So, we can solve this exactly and we get:
 $$
-r =\frac{r_{0}}{\sqrt{1-2 a {r_{0}}^{2} t}}, \Theta{}={\Theta{}}_{0}+t
+r =\frac{r_{0}}{\sqrt{1-2 a {r_{0}}^{2} t}}, \theta{}={\theta{}}_{0}+t
 $$
-For $a=0, \text{ indeed we } DO \text{ get } $a circle, as we would expect, because the $a$ is the coefficient of the non-linear element of the equations. However, for $a\neq{}0$ the behaviour is distinctly different. For positive $a$ we can see that as $t \text{ increases }$, $r$ is going to increase, and as $t->\frac{1}{2a {r_{0}}^{2}}$, $r->\infty{}$. Conversely, for negative a we see that as $t->\infty{}$, $r->0$. So we will have the following exact solutions:
+For $a=0, \text{ indeed we } DO \text{ get } $a circle, as we would expect, because the $a$ is the coefficient of the non-linear element of the equations. However, for $a\neq{}0$ the behaviour is distinctly different. For positive $a$ we can see that as $t \text{ increases }$, $r$ is going to increase, and as $t\to \frac{1}{2a {r_{0}}^{2}}$, $r\to \infty{}$. Conversely, for negative a we see that as $t\to \infty{}$, $r\to 0$. So we will have the following exact solutions:
 ![Figure 13](/images/part13/output_013.png)
 So why is this system so sensitive to any change in $a? Well$, for $a=0 \text{ we have } \text{ perfect center } $solutions. A tiny tiny perturbation from a center solution is going to mean that after one orbit, if the path doesn’t close then we no longer have a center solution and we end up with either an inspiral or outspiral. The solutions would have to change in a very specific way to be perturbed away from centers, and yet to still come back to their starting places after one orbit. This isn’t impossible to imagine, but it’s clearly got to be a very special perturbation to do this.
 One thing to note here is that for $a=0$, the fixed point is stable, whereas for $a>0$ it becomes unstable, so the non-linearity can not only change behaviour near the fixed point, it can even change the nature of the fixed point.
@@ -237,9 +237,9 @@ $$
 $$
 If we naively try to linearise about the fixed point at $(x,y)=(0,0)$, we would find that the Jacobian is
 $$
-A|_{x^{*},y^{*}}=(\begin{pmatrix} -1 & 1 \\ 0 & 0 \end{pmatrix})
+A|_{x^{*},y^{*}}=(\begin{matrix} -1 & 1 \\ 0 & 0 \end{matrix})
 $$
-which has Δ=0, Τ=-1, and we would classify this as having non-isolated fixed points...which doesn’t make sense as we know that the fixed point is at (0,0). We’ve lost vital information by getting rid of the $x^{2} $part. The issue is that we simply can’t linearise this equation. It is what it is, and the fixed point doesn’t have any interpretation in terms of the linear fixed points.
+which has Δ=0, τ=-1, and we would classify this as having non-isolated fixed points...which doesn’t make sense as we know that the fixed point is at (0,0). We’ve lost vital information by getting rid of the $x^{2} $part. The issue is that we simply can’t linearise this equation. It is what it is, and the fixed point doesn’t have any interpretation in terms of the linear fixed points.
 If we plot this vector field close to the fixed point we see:
 ![Figure 17](/images/part13/output_017.png)
 Where the fixed point at the center simply isn’t one of the linear fixed points, in any limit. It’s kind of saddle-pointesque...there are lines flowing in, and lines flowing out, but it ’s a pretty weird one.
@@ -255,11 +255,11 @@ $$
 $$
 1) Explain why these equations seem reasonable. You don’t need to explain the numbers specifically, but give a general explanation for each term and the relative magnitude of the numbers.
 2) Now calculate the fixed points of this system. There should be four of them. Plot them in the (B,D) plane.
-3) For each fixed point, calculate the Jacobian and calculate Δ and Τ. Locate these fixed points in the (Δ,Τ) plane and discuss the nature of each fixed point.
+3) For each fixed point, calculate the Jacobian and calculate Δ and τ. Locate these fixed points in the (Δ,τ) plane and discuss the nature of each fixed point.
 4) Calculate the eigenvalues and eigenvectors associated to each fixed point.
 5) Draw in arrows corresponding to the flows close to each fixed point.
 6) Now draw in what you might guess to be the flows outside of the fixed point regions. Note that you are quite constrained by the fact that you know that flows cannot cross one another.
 7. For a saddle-point, the incoming flows correspond to a **stable manifold.**Label this in the figure.
 8) Interpret what this phase diagram is telling you about the ecological system.
 9. Assuming that you don’t start off exactly at any of the fixed points, what are the possible long-term situations in this environment. Why do you think that this might be called **The Principle of Competitive Exclusion**?
-10. Shade in the region in the plot from which you will end up with only dassies as $t->\infty{}.$ This region is known as a **Basin of Attraction**for the point $(0,N_{D}$) where $N_{D}$ is whatever the non-zero stable fixed point for dassies is. Note that the stable manifold separates the two basins of attraction in this model. The trajectories of the stable manifold are called the **Separatrices**.
+10. Shade in the region in the plot from which you will end up with only dassies as $t\to \infty{}.$ This region is known as a **Basin of Attraction**for the point $(0,N_{D}$) where $N_{D}$ is whatever the non-zero stable fixed point for dassies is. Note that the stable manifold separates the two basins of attraction in this model. The trajectories of the stable manifold are called the **Separatrices**.

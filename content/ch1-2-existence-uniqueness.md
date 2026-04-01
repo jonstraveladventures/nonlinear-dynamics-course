@@ -1,5 +1,5 @@
 ---
-title: "MAM2046W - Second year nonlinear dynamics"
+title: "Section 1.2: Existence and Uniqueness"
 weight: 12
 math: true
 ---

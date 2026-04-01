@@ -495,17 +495,18 @@ def main():
     images_dir = args.images_dir or f"images/{args.input.stem}"
     blocks = walk_notebook(nb, images_dir)
 
-    # Extract title from the first heading block (first line only), with fallback
+    # Extract title: prefer the first ## Section heading (specific to this page)
+    # over the generic # MAM2046W course title that appears in every notebook
     title = "Untitled"
-    fallback_title = None
+    h1_title = None
     for b in blocks:
-        if b.startswith("# "):
-            title = b[2:].split("\n")[0].strip()
-            break
-        if fallback_title is None and b.startswith("## "):
-            fallback_title = b[3:].split("\n")[0].strip()
-    if title == "Untitled" and fallback_title:
-        title = fallback_title
+        if b.startswith("## ") and title == "Untitled":
+            title = b[3:].split("\n")[0].strip()
+        elif b.startswith("# ") and h1_title is None:
+            h1_title = b[2:].split("\n")[0].strip()
+    # Fall back to # heading if no ## found (e.g. part0 intro)
+    if title == "Untitled" and h1_title:
+        title = h1_title
     if args.title:
         title = args.title
 

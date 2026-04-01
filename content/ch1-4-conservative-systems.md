@@ -1,5 +1,5 @@
 ---
-title: "MAM2046W - Second year nonlinear dynamics"
+title: "Section 1.4: Conservative systems"
 weight: 14
 math: true
 ---
@@ -15,7 +15,7 @@ However, if you closed all the doors and put blinds on the windows then maybe yo
 Anyway, we will not worry about the details of this too much now, but that ’s just a quick taster as to the importance of symmetries. For now, we are going to be interested in particular types of **conservative systems**.
 Let’s start off with a second order system given by Newton ’s law
 $$
-m \overset{\bullet{} \bullet{}}{x}=F(x)
+m \ddot{x}=F(x)
 $$
 You can also write this as $F=m a. $Here $m \text{ is the } \text{ mass }$ of some object and it says that the acceleration of the object is equal to the force applied to it divided by the mass. Small masses accelerate faster under a given force than do large masses.
 Note that we have written here that the force can be a function of the position, but not of time (corresponding to a driving force), or of the velocity of the object (corresponding to a damping force)
@@ -27,11 +27,11 @@ This says that the force comes from a difference in the potential energy between
 It turns out that for all systems for which $F \text{ is } $a function only of $x$ you can write the force in terms of this gradient.
 We can now write Newton’s law as
 $$
-m \overset{\bullet{} \bullet{}}{x}+\frac{d V}{d x}=0
+m \ddot{x}+\frac{d V}{d x}=0
 $$
 Now multiply both sides by $\dot{x}$:
 $$
-\dot{x} m \overset{\bullet{} \bullet{}}{x}+\dot{x} \frac{d V}{d x}=0
+\dot{x} m \ddot{x}+\dot{x} \frac{d V}{d x}=0
 $$
 Show that this is the same as writing
 $$
@@ -68,10 +68,10 @@ looks like:
 Remember that the force is equal to the negative of the gradient, so where there is a steep gradient, the force is larger and at the bottom of the two wells there is zero gradient so no force and the particle just sits there.
 Writing Newton’s law for this system and fixing $m=1$) gives:
 $$
-\overset{\bullet{} \bullet{}}{x}+\frac{d (-\frac{1}{2}x^{2}+\frac{1}{4}x^{4})}{d x}=0
+\ddot{x}+\frac{d (-\frac{1}{2}x^{2}+\frac{1}{4}x^{4})}{d x}=0
 $$
 $$
-\overset{\bullet{} \bullet{}}{x}=x-x^{3}
+\ddot{x}=x-x^{3}
 $$
 We can use the old trick that we learned in MAM1043H to write this second order system as two first order systems:
 $$
@@ -83,15 +83,15 @@ $$
 Make sure that you can show that there are three fixed points: ${\text{ fp }}_{1}\text{ at }$ $(-1,0), {\text{ fp }}_{2}\text{ at } (0,0), {\text{ fp }}_{3} \text{ at } (1,0).$
 The Jacobian of this system is:
 $$
-A=(\begin{pmatrix} 0 & 1 \\ 1-3x^{2} & 0 \end{pmatrix})
+A=(\begin{matrix} 0 & 1 \\ 1-3x^{2} & 0 \end{matrix})
 $$
 Which at the three fixed points gives
 $$
-A_{1}=(\begin{pmatrix} 0 & 1 \\ -2 & 0 \end{pmatrix}), A_{2}=(\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}), A_{3}=(\begin{pmatrix} 0 & 1 \\ -2 & 0 \end{pmatrix})
+A_{1}=(\begin{matrix} 0 & 1 \\ -2 & 0 \end{matrix}), A_{2}=(\begin{matrix} 0 & 1 \\ 1 & 0 \end{matrix}), A_{3}=(\begin{matrix} 0 & 1 \\ -2 & 0 \end{matrix})
 $$
 Leading to:
 $$
-({\Delta{}}_{1},{\Tau{}}_{1})=(2,0),   ({\Delta{}}_{1},{\Tau{}}_{1})=(-1,0),   ({\Delta{}}_{1},{\Tau{}}_{1})=(2,0)
+({\Delta{}}_{1},{\tau{}}_{1})=(2,0),   ({\Delta{}}_{1},{\tau{}}_{1})=(-1,0),   ({\Delta{}}_{1},{\tau{}}_{1})=(2,0)
 $$
 ![Figure 3](/images/part14-2/output_003.png)
 So we have two centers and one saddle point.
@@ -167,36 +167,36 @@ Try and think what happens also if the fixed point is not isolated - for instanc
 Hang on, but I thought that conservative vector fields were curl free?
 So, there are two things which shouldn’t be conflated here. A conservative system in the sense of there being conservation of energy, and a conservative vector field in the sense that around any closed curve there is no work done on the particle. In the latter case, the vector field is the force on the particle and thus you should think of this as a system, maybe in two dimensions, with forces acting on it. Here we are really thinking about a system which lives in a two dimensional phase space, but the ‘spatial’ location is just one dimensional. When we are talking about a vector field in this course we mean a vector field in phase space and this is different from having something of the form:
 $$
-F=\nabla{}\Phi{}
+F=\nabla{}\phi{}
 $$
 Which is a conservative vector field, which is indeed curl free.
 Essentially “conservative” here has two different meanings. In our case, there can be curl in the vector field in the phase plane.
 Assignment 2
 We’re going to look here at an equation which comes from general relativity. It’s going to be a bit strange to start with, as where we normally expect time, we’re actually going to see a different variable.
-Let’s imagine that we have a planet orbiting a star. We can write the coordinates in polar coordinates and we could think of writing $r(t) \text{ and } \Theta{}(t)$ as the positions in the plane of motion. However, it’s possible to do a change of variable which allows us to think not about the motion through time, but the trajectory in a sort of parametric way, where we have r(Θ). As an example, if you wrote an equation
+Let’s imagine that we have a planet orbiting a star. We can write the coordinates in polar coordinates and we could think of writing $r(t) \text{ and } \theta{}(t)$ as the positions in the plane of motion. However, it’s possible to do a change of variable which allows us to think not about the motion through time, but the trajectory in a sort of parametric way, where we have r(θ). As an example, if you wrote an equation
 $$
-r(\Theta{})=\Theta{}
+r(\theta{})=\theta{}
 $$
-This would correspond to a spiral. as Θ increases, so $r$ increases.
+This would correspond to a spiral. as θ increases, so $r$ increases.
 ![Figure 17](/images/part14-2/output_017.png)
 We could plot something more complicated, like
 $$
-r(\Theta{})=\text{ sin }({\Theta{}}^{2})+\frac{1}{1+{\Theta{}}^{2}}
+r(\theta{})=\text{ sin }({\theta{}}^{2})+\frac{1}{1+{\theta{}}^{2}}
 $$
 I’ve no idea what this looks like...let ’s see...
 ![Figure 18](/images/part14-2/output_018.png)
 Gahhh! That’s kinda cool...
-OK, so it turns out that you can write the equations in General Relativity for a planet moving about a star in a differential equation in terms of r( Θ)...but we’re going to mess things up a bit and instead define $u=\frac{1}{r}$ and write things in terms of u(Θ). Drumroll...
+OK, so it turns out that you can write the equations in General Relativity for a planet moving about a star in a differential equation in terms of r( θ)...but we’re going to mess things up a bit and instead define $u=\frac{1}{r}$ and write things in terms of u(θ). Drumroll...
 $$
-\frac{d^{2}u}{d {\Theta{}}^{2}}+u=\Alpha{}+\Epsilon{} u^{2}
+\frac{d^{2}u}{d {\theta{}}^{2}}+u=\alpha{}+\epsilon{} u^{2}
 $$
-where Α comes out of classical gravity and is a positive parameter, and Ε $u^{2}$ is the so called relativistic correction. We can think of Ε as a very small parameter which tells us that the real world is well approximated by classical gravity, but that we need to take relativity into account if we want really precise answers.
+where α comes out of classical gravity and is a positive parameter, and ε $u^{2}$ is the so called relativistic correction. We can think of ε as a very small parameter which tells us that the real world is well approximated by classical gravity, but that we need to take relativity into account if we want really precise answers.
 You should look at this equation, and see how it compares with Newton ’s law (hint hint):
 $$
 \frac{d^{2}x}{d t^{2}}=\frac{-d V}{d x}
 $$
-OK, so we can also take the equation for u(Θ) and do our usual trick to turn it into two first order equations...actually, that’s a lie...you can!
-1. Letting $v=\frac{d u}{d \Theta{}}$ write the equation as a system in the $(u,v) \text{ plane }.$
+OK, so we can also take the equation for u(θ) and do our usual trick to turn it into two first order equations...actually, that’s a lie...you can!
+1. Letting $v=\frac{d u}{d \theta{}}$ write the equation as a system in the $(u,v) \text{ plane }.$
 2) Find the equilibrium points of the system and classify them using linear stability analysis.
 3. If you found a center, you now want to show that this is in fact a non-linear center. How would we do this? Well, we know that if there is a conserved quantity in the system, then a linear center will remain a center. We have to be a bit careful here as we’re not looking for some quantity $E(u,v)$ for which:
 $$
@@ -204,14 +204,14 @@ $$
 $$
 there’s no $t$ floating about. You need to find a quantity for which
 $$
-\frac{d E(u,v)}{d \Theta{}}=0
+\frac{d E(u,v)}{d \theta{}}=0
 $$
-where remember $u \text{ and } v \text{ are functions } \text{ of } \Theta{}.$
+where remember $u \text{ and } v \text{ are functions } \text{ of } \theta{}.$
 a) Use the lessons learned in this chapter to find such a quantity.
 - b) Show that it is indeed conserved.
 - c) Show that the linear center you found (which you now know is a non-linear center) is a minimum of $E \text{ and not } $a maximum. To do this, you need to do the equivalent of calculating the second derivative and showing that it’s positive for it to be a local minimum. This is done using the Jacobian, but not the same Jacobian that you’ve been looking at so far in this course. Calculate:
 $$
-(\begin{pmatrix} \frac{{\partial{}}^{2}E}{\partial{}u^{2}} & \frac{{\partial{}}^{2}E}{\partial{}v\partial{}u} \\ \frac{{\partial{}}^{2}E}{\partial{}u\partial{}v} & \frac{{\partial{}}^{2}E}{\partial{}v^{2}} \end{pmatrix})
+(\begin{matrix} \frac{{\partial{}}^{2}E}{\partial{}u^{2}} & \frac{{\partial{}}^{2}E}{\partial{}v\partial{}u} \\ \frac{{\partial{}}^{2}E}{\partial{}u\partial{}v} & \frac{{\partial{}}^{2}E}{\partial{}v^{2}} \end{matrix})
 $$
 And calculating the determinant of this. So long as $\frac{\partial{}E}{\partial{}u} \text{ and } \frac{\partial{}E}{\partial{}v} $are both zero, if the determinant of the Jacobian is positive then you are at a local minimum.
 4) This equilibrium point corresponds to a circular orbit. Show this, and find what its radius is.

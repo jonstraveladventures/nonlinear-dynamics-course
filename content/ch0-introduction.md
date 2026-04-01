@@ -1,5 +1,5 @@
 ---
-title: "MAM2046W - Second year nonlinear dynamics"
+title: "Section 0.0: Course Introduction"
 weight: 0
 math: true
 ---
@@ -96,9 +96,9 @@ x'(t)=A x(t)
 $$
 Where
 $$
-x=(\begin{pmatrix} x \\ y \end{pmatrix}) ,  A=(\begin{pmatrix} a & b \\ c & d \end{pmatrix})
+x=(\begin{matrix} x \\ y \end{matrix}) ,  A=(\begin{matrix} a & b \\ c & d \end{matrix})
 $$
 We are actually going to be able to use lots of the machinery that we developed in the first year, so remind yourselves of this here. There is also a very nice set of lecture notes here\ which gives a detailed overview of such systems. I’d definitely recommend using this as a resource.
-The main thing to remember about this is that to find the different types of behaviour, you need to calculate the determinant (Δ) and trace (Τ) of the matrix $A$. We could then plot the different types of behaviour in a two dimensional space like this:
+The main thing to remember about this is that to find the different types of behaviour, you need to calculate the determinant (Δ) and trace (τ) of the matrix $A$. We could then plot the different types of behaviour in a two dimensional space like this:
 ![Figure 1](/images/part0/output_001.png)
 This plot alone will help us a lot when we move on in the next section to the non-linear case.

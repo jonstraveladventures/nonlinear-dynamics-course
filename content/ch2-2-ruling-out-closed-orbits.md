@@ -1,5 +1,5 @@
 ---
-title: "MAM2046W - Second year nonlinear dynamics"
+title: "Section 2.2: Ruling out closed orbits"
 weight: 22
 math: true
 ---
@@ -97,28 +97,28 @@ E=\frac{1}{2}(x^{2}+{\dot{x}}^{2})=\frac{1}{2}(x^{2}+y^{2})
 $$
 where
 $$
-\dot{E}=x \dot{x}+y \dot{y}=x y+y(-x-y^{3})=-y^{4}=-{\dot{x}}^{4}<=0
+\dot{E}=x \dot{x}+y \dot{y}=x y+y(-x-y^{3})=-y^{4}=-{\dot{x}}^{4}\leq 0
 $$
 and it’s only zero for a fixed point.
-What this means is that for **any**trajectory which isn't a fixed point, the energy of our system is decreasing. In fact this is the dynamical system for a damped harmonic oscillator $(\overset{\bullet{} \bullet{}}{x}+{\dot{x}}^{3}+x=0)$, so it makes sense that the energy of the system always decreases.
+What this means is that for **any**trajectory which isn't a fixed point, the energy of our system is decreasing. In fact this is the dynamical system for a damped harmonic oscillator $(\ddot{x}+{\dot{x}}^{3}+x=0)$, so it makes sense that the energy of the system always decreases.
 Considering a closed cycle (we will use closed cycle/orbit interchangeably) in this system $\Delta{}E$ around the cycle must be zero, for the same reason as with ΔV above. We can write the change as:
 $$
-\Delta{}E={\int{}}_{0}^{T}\dot{E}\mathrm{d}t=-{\int{}}_{0}^{T}{\dot{x}}^{4}\mathrm{d}t<=0
+\Delta{}E={\int{}}_{0}^{T}\dot{E}\mathrm{d}t=-{\int{}}_{0}^{T}{\dot{x}}^{4}\mathrm{d}t\leq 0
 $$
-So we have that $\Delta{}E=0$ and $\Delta{}E<=0$ which is a contradiction, so we can’t have closed cycles in this system.
+So we have that $\Delta{}E=0$ and $\Delta{}E\leq 0$ which is a contradiction, so we can’t have closed cycles in this system.
 Liapunov/Lyapunov functions
 This is the first time in this course, or the previous one we have mentioned the name Lyapunov, but it will come up a number of times as we go on, in particular when we get on to chaos.
 In the previous example we were able to show the absence of closed cycles by finding an energy function which always decreased along non-fixed-point trajectories. In fact we can generalise this that any system for which we can find a positive function, $V(x)$, of the phase space coordinates away from a fixed point at $x^{*}$:
 $$
-V(x)={\begin{pmatrix} >0, \text{ for } x!=x^{*} \\ 0, \text{ for } x=x^{*} \end{pmatrix}
+V(x)={\begin{matrix} >0, \text{ for } x\neq x^{*} \\ 0, \text{ for } x=x^{*} \end{matrix}
 $$
 and where the rate of change of $V(x) \text{ is negative } \text{ along trajectories }:$
 $$
-\dot{V}={\begin{pmatrix} <0, \text{ for } x!=x^{*} \\ 0, \text{ for } x=x^{*} \end{pmatrix}
+\dot{V}={\begin{matrix} <0, \text{ for } x\neq x^{*} \\ 0, \text{ for } x=x^{*} \end{matrix}
 $$
 then we can say that there are no closed orbits **and**$x^{*} \text{ will be } $globally asymptotically stable. This means that wherever you start in this system, you will always end up at $x^{*}$. That is:
 $$
-x(t)->x^{*} \text{ as } t->\infty{}
+x(t)\to x^{*} \text{ as } t\to \infty{}
 $$
 The reason for this is that because you must always move along trajectories such that $V \text{ is decreasing }$, there’s no way of getting stuck at any point except $x^{*}$ as if you did, $\dot{V}$ would be zero, and we know that it can’t be except at the fixed point.
 Finding this Lyapunov function, $V$, is generally very hard, if it’s possible at all and there is no systematic way of finding one.
@@ -151,7 +151,7 @@ $$
 where $l$ parameterises the path along the boundary and C labels the boundary of $R.$
 Let’s just look at a quick example of this. Taking the vector field
 $$
-v=(\begin{pmatrix} y \text{ sin } y \\ \text{ cos } y+x/2 \end{pmatrix})
+v=(\begin{matrix} y \text{ sin } y \\ \text{ cos } y+x/2 \end{matrix})
 $$
 and taking some region given in blue below, we plot the vector field, some region R, and the unit normal to the boundary of the region given by the black arrows:
 ![Figure 3](/images/part22/output_003.png)
@@ -179,7 +179,7 @@ $$
 ({\partial{}}_{x},{\partial{}}_{y}). (g(x,y)(f_{x}(x,y),f_{y}(x,y)))={\partial{}}_{x}(g f_{x})+{\partial{}}_{y}(g f_{y})
 $$
 where we’ve written $f=(f_{x},f_{y}).$
-Again we are going to prove this by contradiction and we are going to use Green’s theorem where will use $v=g(x)f(x)==g(x) \dot{x}$ as our vector field.
+Again we are going to prove this by contradiction and we are going to use Green’s theorem where will use $v=g(x)f(x)= g(x) \dot{x}$ as our vector field.
 Let’s assume that there is some closed orbit, $C, $that lies entirely within $R$. Let $A$ be the region inside the closed orbit. Then we can apply Green ’s theorem to the region within the closed orbit:
 $$
 \int{}{\int{}}_{A} \nabla{}. (g(x) \dot{x}) d A={\oint{}}_{C}(g(x) \dot{x}).n d l
@@ -194,7 +194,7 @@ Just to give a bit more of a picture here, we are saying that we have some vecto
 The trick to Dulac’s criterian is that finding $g(x) \text{ may be } \text{ very hard }.$ I’m going to show you an example, but you wouldn ’t be expected to find this function $g.$
 Given a vector field:
 $$
-\dot{x}=(\begin{pmatrix} y \\ -x-y+x^{2}+y^{2} \end{pmatrix})
+\dot{x}=(\begin{matrix} y \\ -x-y+x^{2}+y^{2} \end{matrix})
 $$
 If you take
 $$

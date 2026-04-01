@@ -1,5 +1,5 @@
 ---
-title: "MAM2046W - Second year nonlinear dynamics"
+title: "Section 2.3: The Poincaré-Bendixson theorem"
 weight: 23
 math: true
 ---
@@ -8,49 +8,49 @@ math: true
 We actually already touched on this in section 1.2 but we are going to look at it in much more detail now. This will allow us to show that there exist closed orbits, as opposed to the previous section where we were finding methods to show that there were no closed orbits.
 Note very importantly that when we say that there are no fixed points in $R$ this doesn’t mean that there can be no fixed points inside the closed orbit. This sounds very strange at first, but $R $could, for instance have a piece taken out of the middle of it, where the fixed point exists. For example:
 ![Figure 1](/images/part23/output_001.png)
-Here we have a region $R$ (the blue shaded region) which is closed and bounded (think of it as being a finite region which has a border), where the vector field is continuously differentiable on an open subset of $R$ (ie. it doesn’t have to be differentiable on the boundary itself). We have a curve $C$ which is always within $R$. There are no fixed points in $R$. This means that we are guaranteed that there will be a closed orbit, and indeed the closed orbit is the one which $C$ tends to as $t->\infty{}$.
+Here we have a region $R$ (the blue shaded region) which is closed and bounded (think of it as being a finite region which has a border), where the vector field is continuously differentiable on an open subset of $R$ (ie. it doesn’t have to be differentiable on the boundary itself). We have a curve $C$ which is always within $R$. There are no fixed points in $R$. This means that we are guaranteed that there will be a closed orbit, and indeed the closed orbit is the one which $C$ tends to as $t\to \infty{}$.
 In fact we will always have a hole in the middle, because if there is a closed orbit then there must be a fixed point within it, so we have to exclude that from $R$ by cutting a hole out of it.
 There’s something that we should note about the vector field in the above example. On the boundary of the region $R$ the vector field is always pointing in. This means that once you are in, you’re in. You can’t escape the region, because any trajectory which left the region would have a vector pointing out of it.
 This is the whole trick to finding the right region such that we have a trajectory which is always within that region. Such a region is called a**trapping region**.
 So long as we can find a trapping region, and we can make sure that there are no fixed points within that region, then we are sorted.
 Example
-Here we will be able to find a trapping region by looking carefully at the vector field. The equation in question is similar to the previous one, but with an extra term, parameterised by a constant Μ. Again we are looking at polar coordinates:
+Here we will be able to find a trapping region by looking carefully at the vector field. The equation in question is similar to the previous one, but with an extra term, parameterised by a constant μ. Again we are looking at polar coordinates:
 $$
-\dot{r}=r (1-r^{2})+r \Mu{} \text{ cos } \Theta{}
+\dot{r}=r (1-r^{2})+r \mu{} \text{ cos } \theta{}
 $$
 $$
-\dot{\Theta{}}=1
+\dot{\theta{}}=1
 $$
-Μ here is a constant and we will look at it for positive values only (negative values are the same as letting $\Theta{}->\Theta{}+\Pi{}$).
+μ here is a constant and we will look at it for positive values only (negative values are the same as letting $\theta{}\to \theta{}+\pi{}$).
 The question is whether we can find some region with an inner radius for which $\dot{r}$ is always positive, and an outer radius where $\dot{r}$ is always negative. Note that here we are just trying to find a perfect annulus. The bounding region doesn't have to be, but we will look for such a region here.
 We want to find $r_{\text{ min }}$ for which:
 $$
-r_{\text{ min }} (1-{r_{\text{ min }}}^{2})+r_{\text{ min }} \Mu{} \text{ cos } \Theta{}>0
+r_{\text{ min }} (1-{r_{\text{ min }}}^{2})+r_{\text{ min }} \mu{} \text{ cos } \theta{}>0
 $$
-For all values of Θ. Solving for $r_{\text{ min } }\text{ gives }$:
+For all values of θ. Solving for $r_{\text{ min } }\text{ gives }$:
 $$
-r_{\text{ min }}<\sqrt{1+\Mu{} \text{ cos } \Theta{}}
+r_{\text{ min }}<\sqrt{1+\mu{} \text{ cos } \theta{}}
 $$
-What is the lowest value that the right hand side can take? Well, the minimum value of cos Θ is -1, so we can be sure that
+What is the lowest value that the right hand side can take? Well, the minimum value of cos θ is -1, so we can be sure that
 $$
-r_{\text{ min }}<\sqrt{1-\Mu{}}
+r_{\text{ min }}<\sqrt{1-\mu{}}
 $$
 So we can always be sure that on a circle of $r$=$r_{\text{ min }},$ $\dot{r}$ will be positive. To play it safe, let’s set
 $$
-r_{\text{ min }}=0.9\sqrt{1-\Mu{}}
+r_{\text{ min }}=0.9\sqrt{1-\mu{}}
 $$
-We see here that with our stricter bound, we are constrained to $\Mu{}<=1$, and in fact we have to exclude Μ=1 as well because with Μ=1, $r_{\text{ min }}=0$ and there is a fixed point there, so we can’t include it. So we are only looking at cases for which $\Mu{}<1$.
+We see here that with our stricter bound, we are constrained to $\mu{}\leq 1$, and in fact we have to exclude μ=1 as well because with μ=1, $r_{\text{ min }}=0$ and there is a fixed point there, so we can’t include it. So we are only looking at cases for which $\mu{}<1$.
 Now running through the same argument for $r_{\text{ max }}$ for which we have to have $\dot{r}$ negative you should find
 $$
-r_{\text{ max }}>\sqrt{1+\Mu{}}
+r_{\text{ max }}>\sqrt{1+\mu{}}
 $$
 and again we can set
 $$
-r_{\text{ max }}=1.1\sqrt{1+\Mu{}}
+r_{\text{ max }}=1.1\sqrt{1+\mu{}}
 $$
-In the following we animate over different values of Μ from 0 to 1. You can see that the arrows don’t shift so much other than in the top right corner as Μ changes. We look at a trajectory that starts just inside the region and note that it is always contained within our annulus of radius
+In the following we animate over different values of μ from 0 to 1. You can see that the arrows don’t shift so much other than in the top right corner as μ changes. We look at a trajectory that starts just inside the region and note that it is always contained within our annulus of radius
 $$
-0.9\sqrt{1-\Mu{}}< r<1.1\sqrt{1+\Mu{}}
+0.9\sqrt{1-\mu{}}< r<1.1\sqrt{1+\mu{}}
 $$
 ![Figure 2](/images/part23/output_002.png)
 Indeed we can see that the trajectory is always within the annulus that we have created, and that there does appear to be a limit cycle.
@@ -81,7 +81,7 @@ It looks like we might be in trouble. If this is an attractor then we are in tro
 Can we figure out for which values of $a$ and $b$ this fixed point is an attractor and when it’s a repeller? Sure, we can use linearisation to do this.
 We first have to find the Jacobian of our system:
 $$
-A=(\begin{pmatrix} -1+2 x y & a+x^{2} \\ -2 x y & -(a+x^{2}) \end{pmatrix})
+A=(\begin{matrix} -1+2 x y & a+x^{2} \\ -2 x y & -(a+x^{2}) \end{matrix})
 $$
 The fixed point is at
 $$
@@ -89,22 +89,22 @@ $$
 $$
 So the Jacobian at this point is:
 $$
-A=(\begin{pmatrix} -1+2 \frac{b^{2}}{a+b^{2}} & a+b^{2} \\ -2 \frac{b^{2}}{a+b^{2}} & -(a+b^{2}) \end{pmatrix})
+A=(\begin{matrix} -1+2 \frac{b^{2}}{a+b^{2}} & a+b^{2} \\ -2 \frac{b^{2}}{a+b^{2}} & -(a+b^{2}) \end{matrix})
 $$
 The determinant and trace of this are:
 $$
-\Delta{}=a+b^{2},       \Tau{}=-1+2\frac{b^{2}}{a+b^{2}}-(a+b^{2})
+\Delta{}=a+b^{2},       \tau{}=-1+2\frac{b^{2}}{a+b^{2}}-(a+b^{2})
 $$
 Let’s remind ourselves once more of the possible behaviours in 2d linear systems:
 ![Figure 5](/images/part23/output_005.png)
 Well $\Delta{}>0$ in this case as $a \text{ and } b \text{ are both } \text{ positive }.$
-It actually doesn’t matter whether the fixed point is a node or a spiral, just whether or not it’s stable or unstable, so we only need to know whether Τ is greater than or less than 0. The dividing line between the two is going to be when
+It actually doesn’t matter whether the fixed point is a node or a spiral, just whether or not it’s stable or unstable, so we only need to know whether τ is greater than or less than 0. The dividing line between the two is going to be when
 $$
 -1+2\frac{b^{2}}{a+b^{2}}-(a+b^{2})=0   \Longrightarrow{}   b=\sqrt{\frac{1}{2}(1-2a\pm{}\sqrt{1-8a})}
 $$
 Which is given by
 ![Figure 6](/images/part23/output_006.png)
-To see which is which, we let a=0, b=0.5 and see that Τ=0.75, which implies that the region shaded in blue corresponds to unstable spirals/nodes. If we have an unstable node/spiral, we can excise this region from the trapping region, and will end up with arrows pointing into the trapping region, therefore the shaded region is the region of closed orbits:
+To see which is which, we let a=0, b=0.5 and see that τ=0.75, which implies that the region shaded in blue corresponds to unstable spirals/nodes. If we have an unstable node/spiral, we can excise this region from the trapping region, and will end up with arrows pointing into the trapping region, therefore the shaded region is the region of closed orbits:
 ![Figure 7](/images/part23/output_007.png)
 Let’s look at the vector field for, for instance $a=0.04, b=0.5$ and show the region excised - we will discuss this more in a moment - this region is **not** quite correct:
 ![Figure 8](/images/part23/output_008.png)

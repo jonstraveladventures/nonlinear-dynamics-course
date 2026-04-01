@@ -1,5 +1,5 @@
 ---
-title: "MAM2046W - Second year nonlinear dynamics"
+title: "Section 1.1: Phase portraits in two dimensions"
 weight: 11
 math: true
 ---
@@ -127,9 +127,9 @@ $$
 (where here we have used $x \text{ and } y \text{ instead of } x_{1} \text{ and } x_{2}$).
 0. Draw the $x$ and $y$ axes for (-2,2) in the $x$ direction and (-1,1) in the $y$ direction.
 1) Find the fixed point of this system of equations. Plot this point in the phase diagram.
-2. a) Find the general exact solution to the second equation and see what happens to $y$ as $t->\infty{}$.
+2. a) Find the general exact solution to the second equation and see what happens to $y$ as $t\to \infty{}$.
 b) What happens to $e^{-y}?$
-c) What does the first equation look like as $t->\infty{}$?
+c) What does the first equation look like as $t\to \infty{}$?
 d) What is the solution to the first equation in this limit?
 e) What does the above information tell you about the flow in the phase diagram
 3. Note that $y=0$ solves the second equation exactly. Find a solution with $y=0$ which solves both equations. What does this say about the stability of the fixed point? See how to notate this in the phase diagram.

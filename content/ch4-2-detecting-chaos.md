@@ -1,31 +1,31 @@
 ---
-title: "MAM2046W - Second year nonlinear dynamics"
+title: "Section 4.2: The Lorenz equations - detecting chaos"
 weight: 43
 math: true
 ---
 # MAM2046W - Second year nonlinear dynamics
 ## Section 4.2: The Lorenz equations - detecting chaos
-So, where were we? We had found that for certain parameter ranges, the long term behaviour of our system seemed to be unpredictable, and somehow stuck on this strange surface of the Strange Attractor. We’re going to study this system for now in the region just beyond where it becomes truly chaotic, with Σ=10, $b=\frac{8}{3}$and $r=25$, just after the Hopf bifurcation.
+So, where were we? We had found that for certain parameter ranges, the long term behaviour of our system seemed to be unpredictable, and somehow stuck on this strange surface of the Strange Attractor. We’re going to study this system for now in the region just beyond where it becomes truly chaotic, with σ=10, $b=\frac{8}{3}$and $r=25$, just after the Hopf bifurcation.
 ![Figure 1](/images/part42/output_001.png)
 One simple question that we can ask is what happens if you start two trajectories off very close to one another...like really close, and let them play out their trajectories. It’s clear that they can only ever get a finite distance apart, because they will both be stuck on the strange attractor, but really we are interested in the behaviour soon after they set off (so long as they have gone past the transient non-chaotic behaviour).
-So we’re going to do the following. We will start a trajectory off from the point $(10,-10,0)$ and let it run until $t=100$. We will then take that position, and continue running it until $t=200$, along with another trajectory which will start from the same place that the first is at at $t=100$, but shifted in its $x $position by just ${10}^{-15}. $We can then calculate the distance, Δ(t), between them as a function of time...however they will start off so close together that we should take
+So we’re going to do the following. We will start a trajectory off from the point $(10,-10,0)$ and let it run until $t=100$. We will then take that position, and continue running it until $t=200$, along with another trajectory which will start from the same place that the first is at at $t=100$, but shifted in its $x $position by just ${10}^{-15}. $We can then calculate the distance, δ(t), between them as a function of time...however they will start off so close together that we should take
 $$
-\text{ ln }(\Delta{}(t))     \text{ where }      \Delta{}(t)=|(x_{1}(t),y_{1}(t),z_{1}(t))-(x_{2}(t),y_{2}(t),z_{2}(t))|
+\text{ ln }(\delta{}(t))     \text{ where }      \delta{}(t)=|(x_{1}(t),y_{1}(t),z_{1}(t))-(x_{2}(t),y_{2}(t),z_{2}(t))|
 $$
 ![Figure 2](/images/part42/output_002.png)
 We see here that there are two regimes. One, where we have this rise, and then it seems to level out. It levels out because it’s trapped in a finite region, and they can only get so far apart. What we are interested in is the rise of the first part. If we can calculate the gradient of the first straight line part, then we should have that:
 $$
-\text{ ln }(\Delta{}(t))=a+\Lambda{} t \Longrightarrow{}\Delta{}(t)={\Delta{}}_{0}e^{\Lambda{} t}
+\text{ ln }(\delta{}(t))=a+\lambda{} t \Longrightarrow{}\delta{}(t)={\delta{}}_{0}e^{\lambda{} t}
 $$
-Note that often Δ is defined as the vector quantity, but here I ’m just treating it as the magnitude. Note also that we are taking $t$ here to start at the moment that the second trajectory starts off close to the first.
+Note that often δ is defined as the vector quantity, but here I ’m just treating it as the magnitude. Note also that we are taking $t$ here to start at the moment that the second trajectory starts off close to the first.
 So let’s do that for the line above:
 ![Figure 3](/images/part42/output_003.png)
-So here we have calculated Λ and it gives around 0.84...but that ’s just one particular trajectory. We can do better than this by starting the two trajectories at different times in the first ’s trajectory. Here we take different starting points and create a histogram of the Λ we find.
+So here we have calculated λ and it gives around 0.84...but that ’s just one particular trajectory. We can do better than this by starting the two trajectories at different times in the first ’s trajectory. Here we take different starting points and create a histogram of the λ we find.
 ![Figure 4](/images/part42/output_004.png)
-This parameter, Λ, which is found numerically is called the Lyapunov exponent - or more accurately **a** Lyapunov exponent. Rather than asking about two trajectories, starting a little way apart, we can ask about a small sphere of starting points, and ask about how changes its shape changes in different directions.
+This parameter, λ, which is found numerically is called the Lyapunov exponent - or more accurately **a** Lyapunov exponent. Rather than asking about two trajectories, starting a little way apart, we can ask about a small sphere of starting points, and ask about how changes its shape changes in different directions.
 This exponential behaviour that we have found, with a well-defined Lyapunov exponent is one of the key signs of chaos. We can ask how long into the future out predictions will be good...but it depends on what we mean by good. Let’s say that we want our numerical answer to be within Δ of the true answer. We can ask when
 $$
-\Delta{}\approx{}{\Delta{}}_{0}e^{\Lambda{} t_{\text{ horizon }}}   \Longrightarrow{}  t_{\text{ horizon }}\sim{}O(\frac{1}{\Lambda{}}\text{ ln }(\frac{\Delta{}}{{\Delta{}}_{0}}))
+\Delta{}\approx{}{\delta{}}_{0}e^{\lambda{} t_{\text{ horizon }}}   \Longrightarrow{}  t_{\text{ horizon }}\sim{}O(\frac{1}{\lambda{}}\text{ ln }(\frac{\Delta{}}{{\delta{}}_{0}}))
 $$
 Let’s say then that the precision of our computer is ${10}^{-32}$ - ie. we can set our numbers with up to 32 decimal places of precision. Let’s say that we want our final answer to be within ${10}^{-3} $of the true answer, then
 $$
@@ -37,11 +37,11 @@ $$
 t_{\text{ horizon }}\sim{}O(\frac{1}{0.926}\text{ ln }(\frac{{10}^{-3}}{{10}^{-6}}))=O(\frac{1}{0.926}3 \text{ ln }(10))\sim{}7.7
 $$
 Not a long time into the future. The thing to note here is that an increase in precision from ${10}^{-6}$ to ${10}^{-32}$ (26 orders of magnitude) only increases the time horizon by a factor of 10.
-This **exponential behaviour** is the first defining property of a chaotic system. The second is that **as**$t->\infty{}$**trajectories cannot go to fixed points, and either periodic or quasiperiodic orbits**. This shows that the “transient chaos ” that we looked at in the last lesson isn ’t truly chaotic as the long time behaviour actually settled down to one of the fixed points. True chaos can only occur after the Hopf bifurcation where there are no longer any stable fixed points.
+This **exponential behaviour** is the first defining property of a chaotic system. The second is that **as**$t\to \infty{}$**trajectories cannot go to fixed points, and either periodic or quasiperiodic orbits**. This shows that the “transient chaos ” that we looked at in the last lesson isn ’t truly chaotic as the long time behaviour actually settled down to one of the fixed points. True chaos can only occur after the Hopf bifurcation where there are no longer any stable fixed points.
 The third factor is that **our system needs to be deterministic**. The seeming unpredictability in the system comes from the non-linear features and not because of any underlying noise in the system. There is a form of chaos called quantum chaos which is not within a deterministic system, but that is something that we will not go into in this course!
 The other word that we introduced in the last lecture was this idea of an attractor (be it strange or not). An attractor is some set of points/lines/volume in phase space that has three main properties:
 1. If you start in that set, you remain in that set forever
-2. There is some open set in phase space such that if you start in that set, you will end up in the attractor as $t->\infty{}$.
+2. There is some open set in phase space such that if you start in that set, you will end up in the attractor as $t\to \infty{}$.
 3) There is no proper subset of the attractor that has the above properties.
 The Lorenz Map
 Let’s just take our prototypical example trajectory above and plot just $z(t)$:
@@ -52,7 +52,7 @@ We can label these as $z_{1}$for the position of the first peak, $z_{2}$ for the
 ![Figure 7](/images/part42/output_007.png)
 ok, so we’re taking the highest point reached on every pass around the strange attractor. Here we are only plotting for some small time window. Big deal...so what? Well, would you imagine that the $z_{n}$ are related to each other? We can plot $z_{n+1}$ against $z_{n}$ here and we get something rather peculiar. This is a mapping:
 $$
-Lorenz \text{ mapping }: z_{n}->z_{n+1}
+Lorenz \text{ mapping }: z_{n}\to z_{n+1}
 $$
 On what follows, the blue dots are values of $(z_{n},z_{n+1})$ and the red line is just the line $z_{n+1}=z_{n}$.
 ![Figure 8](/images/part42/output_008.png)
@@ -63,29 +63,29 @@ So this looks kind of pretty, but is it useful? Well, strangely, it turns out th
 Indeed one thing which is striking, is that there is, seemingly, an intersection between the Lorenz map, and the line $z_{n+1}=z_{n}$. This would mean that there is some value $z^{*}$ for which $f(z^{*})=z^{*}$ - ie. a fixed point in the system, and so seemingly some periodic orbit - ie a closed orbit. Can we show that if indeed such a fixed point exists, that it is unstable?
 Well, just as in any first order system, to have a fixed point, even in a discrete map, as this is, we can perform a linearisation around the fixed point. We have to be a bit careful though, as what we want to say is that
 $$
-f(z^{*}+{\Eta{}}_{n})=z^{*}+{\Eta{}}_{n+1}
+f(z^{*}+{\eta{}}_{n})=z^{*}+{\eta{}}_{n+1}
 $$
-ie. we start off a certain distance ${\Eta{}}_{n}$ from the fixed point and we end up a distance ${\Eta{}}_{n+1}$from it. Now linearising:
+ie. we start off a certain distance ${\eta{}}_{n}$ from the fixed point and we end up a distance ${\eta{}}_{n+1}$from it. Now linearising:
 $$
-f(z^{*})+f'(z^{*}){\Eta{}}_{n}+...=z^{*}+{\Eta{}}_{n+1}
+f(z^{*})+f'(z^{*}){\eta{}}_{n}+...=z^{*}+{\eta{}}_{n+1}
 $$
 But because $f(z^{*})=z^{*}$ we have the approximation:
 $$
-f'(z^{*}){\Eta{}}_{n}={\Eta{}}_{n+1}
+f'(z^{*}){\eta{}}_{n}={\eta{}}_{n+1}
 $$
 Remember that this is a difference equation, and not a differential equation, so there’s going to be no integrating going on here. We do however have:
 $$
-f'(z^{*})=\frac{{\Eta{}}_{n+1}}{{\Eta{}}_{n}}
+f'(z^{*})=\frac{{\eta{}}_{n+1}}{{\eta{}}_{n}}
 $$
 Taking the absolute value of both sides we have:
 $$
-|f'(z^{*})|=|\frac{{\Eta{}}_{n+1}}{{\Eta{}}_{n}}|
+|f'(z^{*})|=|\frac{{\eta{}}_{n+1}}{{\eta{}}_{n}}|
 $$
 The Lorenz map seems to always have a gradient whose absolute value is greater than 1, in particular at the fixed point:
 ![Figure 10](/images/part42/output_010.png)
 The gradient here has magnitude greater than one, and indeed that is always so . This means that:
 $$
-|\frac{{\Eta{}}_{n+1}}{{\Eta{}}_{n}}| >1
+|\frac{{\eta{}}_{n+1}}{{\eta{}}_{n}}| >1
 $$
 Which means that we are moving away from the fixed point. ie. the fixed point is unstable.
 But here we have just shown that there isn’t a stable closed orbit that always comes back to the same value of $z_{n}$. Couldn’t there be one that goes between two different values of $z$, or more? Let’s just look at the two period case. This would mean that $z_{n+2}=z_{n}$. We can call this one $z^{*}$, though of course it’s not actually a fixed point.
@@ -94,19 +94,19 @@ f(f(z^{*}))=z^{*}
 $$
 But let’s again perturb this:
 $$
-f(f(z^{*}+{\Eta{}}_{n}))=z^{*}+{\Eta{}}_{n+2}
+f(f(z^{*}+{\eta{}}_{n}))=z^{*}+{\eta{}}_{n+2}
 $$
 which we can expand to give:
 $$
-f(f(z^{*})+f'(z^{*}){\Eta{}}_{n}))=z^{*}+{\Eta{}}_{n+2}
+f(f(z^{*})+f'(z^{*}){\eta{}}_{n}))=z^{*}+{\eta{}}_{n+2}
 $$
 and then expand the outer $f$ to give:
 $$
-f(f(z^{*}))+f'(f(z^{*}))f'(z^{*}){\Eta{}}_{n}=z^{*}+{\Eta{}}_{n+2}
+f(f(z^{*}))+f'(f(z^{*}))f'(z^{*}){\eta{}}_{n}=z^{*}+{\eta{}}_{n+2}
 $$
 But again we know that $f(f(z^{*}))=z^{*}$:
 $$
-f'(f(z^{*}))f'(z^{*}){\Eta{}}_{n}={\Eta{}}_{n+2}  \Longrightarrow{}  |f'(f(z^{*}))f'(z^{*})|=|\frac{{\Eta{}}_{n+2}}{{\Eta{}}_{n}}|
+f'(f(z^{*}))f'(z^{*}){\eta{}}_{n}={\eta{}}_{n+2}  \Longrightarrow{}  |f'(f(z^{*}))f'(z^{*})|=|\frac{{\eta{}}_{n+2}}{{\eta{}}_{n}}|
 $$
 and the same argument as before holds. All gradients have absolute value greater than 1, so the left hand side is greater than one, and our perturbation has grown. We can do exactly the same thing with any p-cycle, and we will just get a product of derivatives of $f.$ So there can be no stable closed orbits.
 So we know that there are no stable fixed points, and we have just argued (if not proved) that there are no stable limit cycles...so it does indeed seem to be chaotic.

@@ -1,5 +1,5 @@
 ---
-title: "MAM2046W - Second year nonlinear dynamics"
+title: "Section 1.5: Reversible systems"
 weight: 15
 math: true
 ---
@@ -14,7 +14,7 @@ Let’s say we just take the pendulum starting on the left and swing it one half
 Swapping the direction of time is the same as swapping $t<-> -t$. Let’s look at this more generally, and in terms of the equations themselves.
 Let’s go back to our Newton’s law for a conservative system:
 $$
-m \overset{\bullet{} \bullet{}}{x}=F(x)
+m \ddot{x}=F(x)
 $$
 which is equivalent to:
 $$
@@ -24,8 +24,8 @@ which is really
 $$
 m \frac{d}{d t}\frac{d}{d t}x=F(x)
 $$
-The first thing that we see here is that if we let $t->-t, $then $\frac{d}{d t}->$ $\frac{d}{d (-t)}=-\frac{d}{d t}$, and so $\frac{d^{2}}{d t^{2}}->\frac{d^{2}}{d t^{2}} $ie. it doesn’t change.
-So that under the transformation of $t->-t $the equation of motion remains the same.
+The first thing that we see here is that if we let $t\to -t, $then $\frac{d}{d t}\to $ $\frac{d}{d (-t)}=-\frac{d}{d t}$, and so $\frac{d^{2}}{d t^{2}}\to \frac{d^{2}}{d t^{2}} $ie. it doesn’t change.
+So that under the transformation of $t\to -t $the equation of motion remains the same.
 Actually we have to be slightly more careful here because we would like to know what’s happening in the phase plane (labeling the phase plane directions $(x,v)$). So let’s go to the coupled first order system:
 $$
 \dot{v}=\frac{F(x)}{m}
@@ -33,14 +33,14 @@ $$
 $$
 \dot{x}=v
 $$
-Now, if we just let $t->-t, $then the system doesn’t remain the same. If we just did this then we’d end up with:
+Now, if we just let $t\to -t, $then the system doesn’t remain the same. If we just did this then we’d end up with:
 $$
 -\dot{v}=\frac{F(x)}{m}
 $$
 $$
 - \dot{x}=v
 $$
-which is a different set of equations. If however we **also** let $v->-v$ then all of a sudden we get back to
+which is a different set of equations. If however we **also** let $v\to -v$ then all of a sudden we get back to
 $$
 \dot{v}=\frac{F(x)}{m}
 $$
@@ -50,10 +50,10 @@ $$
 Which says that if we swap the direction of time, and the direction of the velocity then the system remains **invariant**. This makes sense in terms of the pendulum. Swap the direction of time, and the video will look the same, just with everything moving in the opposite direction.
 What does this look like in terms of a trajectory? Well, taking some part of a trajectory in the phase plane, for instance:
 ![Figure 1](/images/part15/output_001.png)
-Letting $v->-v$ will reflect the curve about the x-axis, but we also have to let $t->-t$ which corresponds to reversing the direction of the arrow to, so this will give the red curve in the figure below:
+Letting $v\to -v$ will reflect the curve about the x-axis, but we also have to let $t\to -t$ which corresponds to reversing the direction of the arrow to, so this will give the red curve in the figure below:
 ![Figure 2](/images/part15/output_002.png)
 The system is reversible, if the red curve is **also** a trajectory of the original system.
-In terms of the equations, any system for which $t->-t$ and $v->-v$ is a symmetry is reversible.
+In terms of the equations, any system for which $t\to -t$ and $v\to -v$ is a symmetry is reversible.
 Given a more general system:
 $$
 \dot{x}=f(x,y)
@@ -61,7 +61,7 @@ $$
 $$
 \dot{y}=g(x,y)
 $$
-what constraints are there on $f$ and $g$ such that the system is reversible under $t->-t$ and $y->-y$ (note that we have written $y \text{ now instead } \text{ of } v \text{ to be } a \text{ bit more } \text{ general }.$
+what constraints are there on $f$ and $g$ such that the system is reversible under $t\to -t$ and $y\to -y$ (note that we have written $y \text{ now instead } \text{ of } v \text{ to be } a \text{ bit more } \text{ general }.$
 Well, first of all performing the transformations we get:
 $$
 - \dot{x}=f(x,-y)
@@ -101,13 +101,13 @@ $$
 $$
 Let’s focus on the fixed point at the origin. The Jacobian of this system is
 $$
-A=(\begin{pmatrix} 0 & 1-3y^{2} \\ -1 & -2 y \end{pmatrix})
+A=(\begin{matrix} 0 & 1-3y^{2} \\ -1 & -2 y \end{matrix})
 $$
 which for the origin is
 $$
-A_{\text{ origin }}=(\begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix})
+A_{\text{ origin }}=(\begin{matrix} 0 & 1 \\ -1 & 0 \end{matrix})
 $$
-Which sits at the point (1,0) in the $(\Delta{},\Tau{}) \text{ plane and } $so is indeed a center. We can also see that close to the origin, our system linearises to:
+Which sits at the point (1,0) in the $(\Delta{},\tau{}) \text{ plane and } $so is indeed a center. We can also see that close to the origin, our system linearises to:
 $$
 \dot{x}=y
 $$
@@ -118,7 +118,7 @@ which tells us that the center is moving in the clockwise direction (for $x=0 \t
 OK, so we have a reversible system, with a center at the origin, so we know that we must have closed cycles around the fixed point at the origin.
 For the other fixed points we have
 $$
-A_{(-1,1)}=(\begin{pmatrix} 0 & -2 \\ -1 & -2 \end{pmatrix}) , A_{(-1,-1)}=(\begin{pmatrix} 0 & -2 \\ -1 & 2 \end{pmatrix})
+A_{(-1,1)}=(\begin{matrix} 0 & -2 \\ -1 & -2 \end{matrix}) , A_{(-1,-1)}=(\begin{matrix} 0 & -2 \\ -1 & 2 \end{matrix})
 $$
 Which are at
 $$
@@ -130,12 +130,12 @@ respectively. ie. they are both saddle points. We can calculate the eigenvalues 
 which corresponds to one positive and one negative eigenvalue ($(1+\sqrt{3}) \text{ is positive }, (1-\sqrt{3}) \text{ is negative }) $in both cases (unsurprisingly), and we have the associated flow directions for each.
 Let’s just focus on the first fixed point’s the eigenvalues and eigenvectors. At (-1,1) we have
 $$
-{\Lambda{}}_{1}=-1-\sqrt{3}, v_{1}=(\begin{pmatrix} -1+\sqrt{3} \\ 1 \end{pmatrix})
+{\lambda{}}_{1}=-1-\sqrt{3}, v_{1}=(\begin{matrix} -1+\sqrt{3} \\ 1 \end{matrix})
 $$
 $$
-{\Lambda{}}_{2}=-1+\sqrt{3}, v_{2}=(\begin{pmatrix} -1-\sqrt{3} \\ 1 \end{pmatrix})
+{\lambda{}}_{2}=-1+\sqrt{3}, v_{2}=(\begin{matrix} -1-\sqrt{3} \\ 1 \end{matrix})
 $$
-${\Lambda{}}_{1}$ is negative, so this corresponds to the inflowing eigenvector. ${\Lambda{}}_{2} \text{ is positive }$ so this corresponds to the outflowing eigenvector.
+${\lambda{}}_{1}$ is negative, so this corresponds to the inflowing eigenvector. ${\lambda{}}_{2} \text{ is positive }$ so this corresponds to the outflowing eigenvector.
 We can look at the same thing for the fixed point at (-1,-1)
 Let's draw on what we know...
 ![Figure 7](/images/part15/output_007.png)
@@ -156,7 +156,7 @@ Note that there are two trajectories joining the two saddlepoints, one going to 
 Here are plots of the homoclinic (the orange paths on the left) and heteroclinic trajectories (the black paths on the right) for comparison:
 $$
 An important generalisation
-We have spoken about the particular time-reversal symmetry of $t->-t$ along with the equivalent of the reversal in the velocity, but we can actually find systems which are time reversal invariant when we make some other transformation in the (x,y) plane. The only constraint is that whatever the transformation $(x,y)->R(x,y)$, the application of this transformation again has to take us back to (x,y), i.e $R^{2}(x,y)=(x,y)$. An example of this used below is of $(x,y)->(-x,-y).$
+We have spoken about the particular time-reversal symmetry of $t\to -t$ along with the equivalent of the reversal in the velocity, but we can actually find systems which are time reversal invariant when we make some other transformation in the (x,y) plane. The only constraint is that whatever the transformation $(x,y)\to R(x,y)$, the application of this transformation again has to take us back to (x,y), i.e $R^{2}(x,y)=(x,y)$. An example of this used below is of $(x,y)\to (-x,-y).$
 Are all conservative systems reversible, and vice versa?
 For the case of a reversible system which is not conservative. See exercise 2 below.
 For the case of conservative systems which are not reversible, I was able to find a couple of papers which discuss this in the literature, though the systems are a lot more complicated than we cover in this course. These papers are:
@@ -174,11 +174,11 @@ We can see that a) this system has the right symmetries to be reversible $(f(x,y
 Taking the red arrows, there’s only really one thing that they can do:
 ![Figure 13](/images/part15/output_013.png)
 Plotting the flow lines on top of this we get:
-So we see that we have a homoclinic orbit. OK, but we just have a system which is reversible and has a center on the x-axis. How could we turn this into something with a center away from the x-axis. Well, remember that for a reversible system, actually we just need that we have a symmetry such that under some $R$, we have that $R^{2}(x,y)=(x,y)$ and $t->-t$. This is any reflection, and so we can actually rotate the whole plane, and there will still be a reflection symmetry.
+So we see that we have a homoclinic orbit. OK, but we just have a system which is reversible and has a center on the x-axis. How could we turn this into something with a center away from the x-axis. Well, remember that for a reversible system, actually we just need that we have a symmetry such that under some $R$, we have that $R^{2}(x,y)=(x,y)$ and $t\to -t$. This is any reflection, and so we can actually rotate the whole plane, and there will still be a reflection symmetry.
 ![Figure 14](/images/part15/output_014.png)
-Let’s rotate the coordinate system by -$\frac{\Pi{}}{4} \text{ radians in } \text{ the anticlockwise } \text{ direction } $which will be equivalent to rotating the system by $\frac{\Pi{}}{4}$ anticlockwise. To do this we can perform a rotation on our $(x,y) $coordinates as:
+Let’s rotate the coordinate system by -$\frac{\pi{}}{4} \text{ radians in } \text{ the anticlockwise } \text{ direction } $which will be equivalent to rotating the system by $\frac{\pi{}}{4}$ anticlockwise. To do this we can perform a rotation on our $(x,y) $coordinates as:
 $$
-(\begin{pmatrix} x' \\ y' \end{pmatrix})=(\begin{pmatrix} \text{ cos }(-\frac{\Pi{}}{4}) & -\text{ sin }(-\frac{\Pi{}}{4}) \\ \text{ sin }(-\frac{\Pi{}}{4}) & \text{ cos }(-\frac{\Pi{}}{4}) \end{pmatrix}) (\begin{pmatrix} x \\ y \end{pmatrix})=\frac{1}{\sqrt{2}}(\begin{pmatrix} 1 & 1 \\ -1 & 1 \end{pmatrix}) (\begin{pmatrix} x \\ y \end{pmatrix})
+(\begin{matrix} x' \\ y' \end{matrix})=(\begin{matrix} \text{ cos }(-\frac{\pi{}}{4}) & -\text{ sin }(-\frac{\pi{}}{4}) \\ \text{ sin }(-\frac{\pi{}}{4}) & \text{ cos }(-\frac{\pi{}}{4}) \end{matrix}) (\begin{matrix} x \\ y \end{matrix})=\frac{1}{\sqrt{2}}(\begin{matrix} 1 & 1 \\ -1 & 1 \end{matrix}) (\begin{matrix} x \\ y \end{matrix})
 $$
 Performing this change of variables and then just relabelling the new $x'$ and $y'$ to $x \text{ and } y$ gives:
 $$
@@ -203,7 +203,7 @@ Note that this has an attracting fixed point, and so cannot be conservative, but
 Assignment
 The non-dimensionalised pendulum is modelled by
 $$
-\overset{\bullet{} \bullet{} }{\Theta{}}+\text{ sin } \Theta{}=0
+\ddot{\theta{}}+\text{ sin } \theta{}=0
 $$
 1. Write this as a coupled set of first order equations.
 2. Is the system reversible?
@@ -216,7 +216,7 @@ $$
 8) Use the energy function to plot some characteristic trajectories above and below the horizontal axis.
 9. For $E=1$ you should find heteroclinic orbits. Indicate these in the diagram.
 10. What dynamics do the saddles correspond to?
-11. The phase plane as you have it is infinitely long in the $\Theta{}-\text{ direction }$. Cut the phase plane at the first left and first right saddle points to the center, and imagine folding this up into a cylinder, identifying the two saddle points and standing the cylinder on its end. Try and sketch what trajectories would look like.
+11. The phase plane as you have it is infinitely long in the $\theta{}-\text{ direction }$. Cut the phase plane at the first left and first right saddle points to the center, and imagine folding this up into a cylinder, identifying the two saddle points and standing the cylinder on its end. Try and sketch what trajectories would look like.
 12. This one is tricky to visualise! You can take the cylinder that you have, and rather than plotting the angle and angular velocity directions, plot the angle around the cylinder and the energy vertically. You should end up with something that looks like this. You are **NOT** expected to be able to figure this out for yourself. However, I want you to spend a while pondering what this means. Ignore the gaps in the lines...this is just a function of the way that this is plotted.
 ![Figure 16](/images/part15/output_016.png)
 13. **Extension:**Now imagine that you add a damping term to this system. Is it still conservative? Is it still reversible? How will the phase space look now? Try and draw the phase space just by thinking about the behaviour of a damped pendulum and without going through all of the calculation. What would the equivalent of the strange u-shaped diagram above look like for the damped trajectories?

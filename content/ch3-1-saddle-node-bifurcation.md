@@ -1,11 +1,11 @@
 ---
-title: "MAM2046W - Second year nonlinear dynamics"
+title: "Section 3.1: Saddle-nodes, transcritical and pitchfork bifurcations in two dimensions"
 weight: 31
 math: true
 ---
 # MAM2046W - Second year nonlinear dynamics
 ## Section 3.1: Saddle-nodes, transcritical and pitchfork bifurcations in two dimensions
-We spent a lot of time last year looking at bifurcations in one dimensional systems. Remember they correspond to having some parameter in our system which we can tune, and as we do so the fixed point structure changes. Essentially it was about stable and unstable fixed points coming together and annihilating, or appearing out of thin air, or swapping stabilities. $(0->2,2->0,2->2,1->3 \text{ or } 3->1)$.
+We spent a lot of time last year looking at bifurcations in one dimensional systems. Remember they correspond to having some parameter in our system which we can tune, and as we do so the fixed point structure changes. Essentially it was about stable and unstable fixed points coming together and annihilating, or appearing out of thin air, or swapping stabilities. $(0\to 2,2\to 0,2\to 2,1\to 3 \text{ or } 3\to 1)$.
 Now that we have moved up from one dimensional systems to two dimensional systems, presumably we are going to have a much richer structure of the way that bifurcations can happen...well, for the most part that’s not quite true, at least not when we are simply looking at fixed points bumping into each other and changing in the various ways that they could in one dimension.
 For the basic types of bifurcations that we looked at before, fixed points still have to come together for a bifurcation to occur, and just because they can do so in a plane rather than on a line doesn’t make the types of behaviour possible much richer. In fact things will get more interesting only when we start to think about limit cycles, which of course can’t occur in one dimension.
 Remember in a one-dimensional system a fixed point is just give by solving
@@ -57,10 +57,10 @@ $$
 where for now $a \text{ and } b$ are just free (but positive) parameters and we will take $x \text{ and } y$ to both be also positive.
 The null-clines are given by the two separate equations:
 $$
-0=-a x+y     ->     y=a x
+0=-a x+y     \to      y=a x
 $$
 $$
-0=\frac{x^{2}}{1+x^{2}}-b y    ->    y=\frac{x^{2}}{b (1+x^{2})}
+0=\frac{x^{2}}{1+x^{2}}-b y    \to     y=\frac{x^{2}}{b (1+x^{2})}
 $$
 Plotting this for a particular choice of $a$ and $b$ we have:
 ![Figure 3](/images/part31/output_003.png)
@@ -71,11 +71,11 @@ $$
 y=a x      \text{ and }     y=\frac{x^{2}}{b (1+x^{2})}
 $$
 $$
-a x=\frac{x^{2}}{b (1+x^{2})}      ->    x=0, x=\frac{1\pm{}\sqrt{1-4 a^{2} b^{2}}}{2 a b}
+a x=\frac{x^{2}}{b (1+x^{2})}      \to     x=0, x=\frac{1\pm{}\sqrt{1-4 a^{2} b^{2}}}{2 a b}
 $$
 The x=0 fixed point is there independent of the values of $a$ and $b$, but the other fixed points are only there if the term inside the square root is real. Indeed those two fixed points become one when:
 $$
-1-4 a^{2} b^{2}=0     ->    a=\frac{1}{2b}
+1-4 a^{2} b^{2}=0     \to     a=\frac{1}{2b}
 $$
 Fixing $b=1 $we have the following, with $a$ varying, and the vector field plotted over the top:
 ![Figure 4](/images/part31/output_004.png)
@@ -98,11 +98,11 @@ a_{c}=\frac{1}{2b}
 $$
 Can we learn anything about the types of fixed points? Well, remember that we can look at the Jacobian of the system at the fixed points. The Jacobian is:
 $$
-A=(\begin{pmatrix} {\partial{}}_{x}f & {\partial{}}_{y}f \\ {\partial{}}_{x}g & {\partial{}}_{y}g \end{pmatrix})=(\begin{pmatrix} -a & 1 \\ \frac{2x}{{(1+x^{2})}^{2}} & -b \end{pmatrix})
+A=(\begin{matrix} {\partial{}}_{x}f & {\partial{}}_{y}f \\ {\partial{}}_{x}g & {\partial{}}_{y}g \end{matrix})=(\begin{matrix} -a & 1 \\ \frac{2x}{{(1+x^{2})}^{2}} & -b \end{matrix})
 $$
 Which at the fixed points is:
 $$
-A_{x=0}=(\begin{pmatrix} -a & 1 \\ 0 & -b \end{pmatrix})  ,     A_{x=\frac{1-\sqrt{1-4 a^{2} b^{2}}}{2 a b}}=(\begin{pmatrix} -a & 1 \\ a b (1+\sqrt{1-4 a^{2} b^{2}}) & -b \end{pmatrix}),     A_{x=\frac{1+\sqrt{1-4 a^{2} b^{2}}}{2 a b}}=(\begin{pmatrix} -a & 1 \\ a b (1-\sqrt{1-4 a^{2} b^{2}}) & -b \end{pmatrix})
+A_{x=0}=(\begin{matrix} -a & 1 \\ 0 & -b \end{matrix})  ,     A_{x=\frac{1-\sqrt{1-4 a^{2} b^{2}}}{2 a b}}=(\begin{matrix} -a & 1 \\ a b (1+\sqrt{1-4 a^{2} b^{2}}) & -b \end{matrix}),     A_{x=\frac{1+\sqrt{1-4 a^{2} b^{2}}}{2 a b}}=(\begin{matrix} -a & 1 \\ a b (1-\sqrt{1-4 a^{2} b^{2}}) & -b \end{matrix})
 $$
 The trace of this is always negative, so depending on the sign of the determinant, you will either have a saddle, or a purely attractive node (a sink). There are no unstable spirals, for instance.
 The determinant is
@@ -111,12 +111,12 @@ $$
 $$
 So the $x=0 \text{ fixed }$ point appears either to be a stable node or stable spiral. Reminding ourselves of our favourite diagram we have:
 ![Figure 6](/images/part31/output_006.png)
-So for a stable spiral, we would need to have Τ negative, which we do, and we would have to have $\Tau{}>-\sqrt{4 \Delta{}} -> {\Tau{}}^{2}-4\Delta{}<0$, ie.
+So for a stable spiral, we would need to have τ negative, which we do, and we would have to have $\tau{}>-\sqrt{4 \Delta{}} \to {\tau{}}^{2}-4\Delta{}<0$, ie.
 $$
 {(-a-b)}^{2}-4 a b<0    \text{ implying } {(a-b)}^{2}<0
 $$
 However, there is no value of $a$ and $b$ for which this is true, so we always have a stable node at $x=0.$
-The next fixed point along in increasing $x$ is a saddle point (both Τ and Δ negative), and then the last one is either a stable node or a stable spiral. Again, for it to be a stable spiral we would need:
+The next fixed point along in increasing $x$ is a saddle point (both τ and Δ negative), and then the last one is either a stable node or a stable spiral. Again, for it to be a stable spiral we would need:
 $$
 {(-a-b)}^{2}-4 a b\sqrt{1-4 a^{2} b^{2}}<0
 $$
@@ -126,16 +126,16 @@ We see, as we have seen before, that in the case where there are three fixed poi
 To the bottom left of the blue line everything flows to the fixed point at 0. To the top right of the blue line everything flows to the non-zero fixed point.
 OK, so we’ve spent a lot of time now looking at saddle-node bifurcations. How about the other types that we see in one-dimension. Well, I ’m going to leave it as an exercise for you to explore the following bifurcations:
 $$
-\dot{x}=\Mu{} x-x^{2}, \dot{y}=-y
+\dot{x}=\mu{} x-x^{2}, \dot{y}=-y
 $$
 $$
-\dot{x}=\Mu{} x-x^{3}, \dot{y}=-y
+\dot{x}=\mu{} x-x^{3}, \dot{y}=-y
 $$
 $$
-\dot{x}=\Mu{} x+x^{3}, \dot{y}=-y
+\dot{x}=\mu{} x+x^{3}, \dot{y}=-y
 $$
 While these examples are decoupled, and so in some sense even more similar to the one-dimensional cases we’ve already seen, you should see that we could rotate the plane and create non-linear combinations of $x \text{ and } y$ such that the examples are less trivial, but still qualitatively the same.
 Also explore the example
 $$
-\dot{x}=\Mu{} x+y+\text{ sin } x, \dot{y}=x-y
+\dot{x}=\mu{} x+y+\text{ sin } x, \dot{y}=x-y
 $$

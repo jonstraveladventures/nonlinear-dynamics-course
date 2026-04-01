@@ -12,13 +12,16 @@ import warnings
 
 # Characters that appear in math contexts → LaTeX commands
 MATH_CHARS: dict[str, str] = {
-    "Alpha": r"\Alpha", "Beta": r"\Beta", "Gamma": r"\Gamma",
-    "Delta": r"\Delta", "Epsilon": r"\Epsilon", "Zeta": r"\Zeta",
-    "Eta": r"\Eta", "Theta": r"\Theta", "Iota": r"\Iota",
-    "Kappa": r"\Kappa", "Lambda": r"\Lambda", "Mu": r"\Mu",
-    "Nu": r"\Nu", "Xi": r"\Xi", "Pi": r"\Pi", "Rho": r"\Rho",
-    "Sigma": r"\Sigma", "Tau": r"\Tau", "Upsilon": r"\Upsilon",
-    "Phi": r"\Phi", "Chi": r"\Chi", "Psi": r"\Psi", "Omega": r"\Omega",
+    # In Wolfram: \[Theta] = lowercase θ, \[CapitalTheta] = uppercase Θ
+    # So "Theta" → \theta (lowercase), "CapitalTheta" → \Theta (uppercase)
+    "Alpha": r"\alpha", "Beta": r"\beta", "Gamma": r"\gamma",
+    "Delta": r"\delta", "Epsilon": r"\epsilon", "Zeta": r"\zeta",
+    "Eta": r"\eta", "Theta": r"\theta", "Iota": r"\iota",
+    "Kappa": r"\kappa", "Lambda": r"\lambda", "Mu": r"\mu",
+    "Nu": r"\nu", "Xi": r"\xi", "Pi": r"\pi", "Rho": r"\rho",
+    "Sigma": r"\sigma", "Tau": r"\tau", "Upsilon": r"\upsilon",
+    "Phi": r"\phi", "Chi": r"\chi", "Psi": r"\psi", "Omega": r"\omega",
+    # Lowercase aliases (some notebooks use these)
     "alpha": r"\alpha", "beta": r"\beta", "gamma": r"\gamma",
     "delta": r"\delta", "epsilon": r"\epsilon", "zeta": r"\zeta",
     "eta": r"\eta", "theta": r"\theta", "iota": r"\iota",
@@ -112,12 +115,13 @@ MATH_CHARS: dict[str, str] = {
 
 # Characters that appear in text contexts → Unicode
 TEXT_CHARS: dict[str, str] = {
-    "Alpha": "Α", "Beta": "Β", "Gamma": "Γ", "Delta": "Δ",
-    "Epsilon": "Ε", "Zeta": "Ζ", "Eta": "Η", "Theta": "Θ",
-    "Iota": "Ι", "Kappa": "Κ", "Lambda": "Λ", "Mu": "Μ",
-    "Nu": "Ν", "Xi": "Ξ", "Pi": "Π", "Rho": "Ρ",
-    "Sigma": "Σ", "Tau": "Τ", "Upsilon": "Υ", "Phi": "Φ",
-    "Chi": "Χ", "Psi": "Ψ", "Omega": "Ω",
+    # In Wolfram: \[Theta] = lowercase θ, \[CapitalTheta] = uppercase Θ
+    "Alpha": "α", "Beta": "β", "Gamma": "γ", "Delta": "δ",
+    "Epsilon": "ε", "Zeta": "ζ", "Eta": "η", "Theta": "θ",
+    "Iota": "ι", "Kappa": "κ", "Lambda": "λ", "Mu": "μ",
+    "Nu": "ν", "Xi": "ξ", "Pi": "π", "Rho": "ρ",
+    "Sigma": "σ", "Tau": "τ", "Upsilon": "υ", "Phi": "φ",
+    "Chi": "χ", "Psi": "ψ", "Omega": "ω",
     "alpha": "α", "beta": "β", "gamma": "γ", "delta": "δ",
     "epsilon": "ε", "zeta": "ζ", "eta": "η", "theta": "θ",
     "iota": "ι", "kappa": "κ", "lambda": "λ", "mu": "μ",
@@ -287,6 +291,12 @@ def box_to_latex(node) -> str:
         # Bare string token — convert special chars, escape LaTeX specials
         s = replace_wolfram_chars(node, math=True)
         # Don't escape if it already looks like a LaTeX command
+        # Map literal operator tokens to LaTeX
+        OPERATOR_MAP = {"->": r"\to ", "=>": r"\Rightarrow ", ">=": r"\geq ",
+                        "<=": r"\leq ", "!=": r"\neq ", "==": r"= ",
+                        "<<": r"\ll ", ">>": r"\gg ", "<>": r"\neq "}
+        if s in OPERATOR_MAP:
+            return OPERATOR_MAP[s]
         if s.startswith("\\") or s in ("+", "-", "=", ",", ".", ";", ":", "!", "?",
                                         "(", ")", "[", "]", "|", "/", "*", "'", "^", "_"):
             return s
@@ -348,14 +358,31 @@ def box_to_latex(node) -> str:
         case "OverscriptBox":
             base = box_to_latex(args[0]) if len(args) > 0 else ""
             over = box_to_latex(args[1]) if len(args) > 1 else ""
-            # Common: dot/double-dot for derivatives
+            # Common: dot/double-dot/triple-dot for derivatives
             over_s = over.strip()
-            if over_s in (".", r"\bullet", r"\bullet{}", "·", r"\circ{}"):
+            # Single dot (time derivative)
+            if over_s in (".", r"\bullet", r"\bullet{}", "·", r"\circ{}",
+                          r"\bullet {}", "•"):
                 return rf"\dot{{{base}}}"
-            if over_s in ("..", ".."):
+            # Double dot (second derivative)
+            if (over_s in ("..", "‥")
+                    or r"\bullet" in over_s and over_s.count(r"\bullet") == 2):
                 return rf"\ddot{{{base}}}"
-            if over_s == r"\to" or over_s == "→":
+            # Triple dot (third derivative)
+            if r"\bullet" in over_s and over_s.count(r"\bullet") >= 3:
+                return rf"\dddot{{{base}}}"
+            # Arrow → vector notation
+            if over_s in (r"\to", r"\to{}", "→", r"\rightarrow", r"\rightarrow{}"):
                 return rf"\vec{{{base}}}"
+            # Hat
+            if over_s in ("^", "ˆ"):
+                return rf"\hat{{{base}}}"
+            # Bar
+            if over_s in ("_", "¯", "-", "—"):
+                return rf"\bar{{{base}}}"
+            # Tilde
+            if over_s in ("~", "˜"):
+                return rf"\tilde{{{base}}}"
             return rf"\overset{{{over}}}{{{base}}}"
 
         case "UnderscriptBox":
@@ -381,7 +408,7 @@ def box_to_latex(node) -> str:
             return box_to_latex(args[0]) if args else ""
 
         case "GridBox":
-            # Render as a LaTeX matrix (pmatrix)
+            # Render as bare matrix (outer RowBox provides parens)
             if not args:
                 return ""
             rows = args[0]  # list of rows, each row is a list of cells
@@ -394,7 +421,7 @@ def box_to_latex(node) -> str:
                 else:
                     latex_rows.append(box_to_latex(row))
             body = r" \\ ".join(latex_rows)
-            return rf"\begin{{pmatrix}} {body} \end{{pmatrix}}"
+            return rf"\begin{{matrix}} {body} \end{{matrix}}"
 
         case "TagBox":
             # TagBox[expr, tag, ...] — render expr only

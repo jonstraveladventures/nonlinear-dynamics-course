@@ -1,5 +1,5 @@
 ---
-title: "MAM2046W - Second year nonlinear dynamics"
+title: "Section 3.3: Oscillating chemical reactions"
 weight: 33
 math: true
 ---
@@ -87,15 +87,15 @@ Now we can form a trapping region as follows (with $b=1)$:
 OK, so we have a trapping region apart from the fixed point. If we can excise the fixed point and show that it is a repeller, then we are done and we have a stable limit cycle. So when is this fixed point a repeller?
 Well, let’s calculate the Jacobian at the fixed point. We could calculate it at $(x^{*},y^{*})=(\frac{a}{5},1+\frac{a^{2}}{25})$ but it’s actually easier to note that at the fixed point $y^{*}=1+x^{*2}$:
 $$
-A_{(x^{*},1+x^{*2})}=\frac{1}{1+x^{*2}}(\begin{pmatrix} 3x^{*2}-5 & -4 x^{*} \\ 2b x^{*^{2}} & -b x^{*} \end{pmatrix})
+A_{(x^{*},1+x^{*2})}=\frac{1}{1+x^{*2}}(\begin{matrix} 3x^{*2}-5 & -4 x^{*} \\ 2b x^{*^{2}} & -b x^{*} \end{matrix})
 $$
 and plugging in $x^{*}=\frac{a}{5} \text{ we have }:$
 $$
-A_{(\frac{a}{5},1+\frac{a^{2}}{25})}=\frac{1}{1+\frac{a^{2}}{25}}(\begin{pmatrix} 3\frac{a^{2}}{25}-5 & -4 \frac{a}{5} \\ 2b \frac{a^{2}}{25} & -b \frac{a}{5} \end{pmatrix})
+A_{(\frac{a}{5},1+\frac{a^{2}}{25})}=\frac{1}{1+\frac{a^{2}}{25}}(\begin{matrix} 3\frac{a^{2}}{25}-5 & -4 \frac{a}{5} \\ 2b \frac{a^{2}}{25} & -b \frac{a}{5} \end{matrix})
 $$
 which has trace and determinant:
 $$
-\Delta{}=\frac{b a}{1+\frac{a^{2}}{25}}, \Tau{}=3-\frac{8+a \frac{b}{5}}{1+\frac{a^{2}}{25}}
+\Delta{}=\frac{b a}{1+\frac{a^{2}}{25}}, \tau{}=3-\frac{8+a \frac{b}{5}}{1+\frac{a^{2}}{25}}
 $$
 the determinant is clearly always positive. Now the question is the sign of the trace. If it is positive, then we have a repeller (spiral, star or node), and this occurs when:
 $$
