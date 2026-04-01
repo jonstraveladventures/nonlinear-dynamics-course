@@ -119,12 +119,7 @@ $$
 
 Fixing $b=1 $we have the following, with $a$ varying, and the vector field plotted over the top:
 
-<div class="frame-widget" id="manip-saddle-node">
-<img id="manip-sn-img" src="" alt="Phase portrait">
-<input type="range" id="manip-sn-slider" min="0" max="20" value="10" step="1">
-<p class="param-label">a = <span id="manip-sn-val">0.500</span></p>
-</div>
-<script src="https://jonstraveladventures.github.io/nonlinear-dynamics-course/js/widgets/manip-saddle-node.js"></script>
+![Saddle-node bifurcation animation](/images/part31/anim_saddle_node.gif)
 
 What do we see? We see two fixed points coming together as the parameter changes, and annihilating.
 
