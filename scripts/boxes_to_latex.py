@@ -77,6 +77,37 @@ MATH_CHARS: dict[str, str] = {
     "Because": r"\because",
     "Congruent": r"\cong",
     "SmallCircle": r"\circ",
+    "NoBreak": "",
+    "Del": r"\nabla",
+    "ContourIntegral": r"\oint",
+    "ScriptCapitalO": r"\mathcal{O}",
+    "ScriptCapitalN": r"\mathcal{N}",
+    "ScriptCapitalL": r"\mathcal{L}",
+    "GreaterTilde": r"\gtrsim",
+    "LessTilde": r"\lesssim",
+    "DoubleLongRightArrow": r"\Longrightarrow",
+    "DoubleLongLeftArrow": r"\Longleftarrow",
+    "DoubleLongLeftRightArrow": r"\Longleftrightarrow",
+    "LongRightArrow": r"\longrightarrow",
+    "LongLeftArrow": r"\longleftarrow",
+    "LongLeftRightArrow": r"\longleftrightarrow",
+    "LineSeparator": r"\\",
+    "Perpendicular": r"\perp",
+    "Parallel": r"\parallel",
+    "Conjugate": r"\overline",
+    "HumpEqual": r"\bumpeq",
+    "Equilibrium": r"\rightleftharpoons",
+    "ReverseEquilibrium": r"\leftrightharpoons",
+    "InvisibleTimes": "",
+    "InvisibleComma": "",
+    "InvisibleSpace": "",
+    "InvisibleApplication": "",
+    "InvisiblePrefixScriptBase": "",
+    "NegativeVeryThinSpace": "",
+    "VeryThinSpace": r"\,",
+    "ThinSpace": r"\,",
+    "MediumSpace": r"\;",
+    "ThickSpace": r"\;",
 }
 
 # Characters that appear in text contexts → Unicode
@@ -174,6 +205,35 @@ TEXT_CHARS: dict[str, str] = {
     "DoubleStruckCapitalZ": "ℤ",
     "DoubleStruckCapitalN": "ℕ",
     "DoubleStruckCapitalQ": "ℚ",
+    "NoBreak": "",
+    "Del": "∇",
+    "ContourIntegral": "∮",
+    "ScriptCapitalO": "O",
+    "ScriptCapitalN": "N",
+    "ScriptCapitalL": "L",
+    "GreaterTilde": "≳",
+    "LessTilde": "≲",
+    "DoubleLongRightArrow": "⟹",
+    "DoubleLongLeftArrow": "⟸",
+    "DoubleLongLeftRightArrow": "⟺",
+    "LongRightArrow": "⟶",
+    "LongLeftArrow": "⟵",
+    "LongLeftRightArrow": "⟷",
+    "Perpendicular": "⊥",
+    "Parallel": "∥",
+    "HumpEqual": "≏",
+    "Equilibrium": "⇌",
+    "ReverseEquilibrium": "⇋",
+    "InvisibleTimes": "",
+    "InvisibleComma": "",
+    "InvisibleSpace": "",
+    "InvisibleApplication": "",
+    "InvisiblePrefixScriptBase": "",
+    "VeryThinSpace": " ",
+    "ThinSpace": " ",
+    "MediumSpace": " ",
+    "ThickSpace": " ",
+    "NegativeVeryThinSpace": "",
 }
 
 
@@ -203,6 +263,16 @@ def needs_braces(s: str) -> str:
     if len(s) <= 1:
         return s
     return "{" + s + "}"
+
+
+_TEXT_RUN_RE = re.compile(r'\\text\{\s*(\S+)\s*\}\s*\\text\{\s*')
+
+
+def merge_text_runs(latex: str) -> str:
+    r"""Merge consecutive \text{ word } \text{ word } into \text{ word word }."""
+    while _TEXT_RUN_RE.search(latex):
+        latex = _TEXT_RUN_RE.sub(r'\\text{ \1 ', latex)
+    return latex
 
 
 def box_to_latex(node) -> str:
@@ -245,7 +315,8 @@ def box_to_latex(node) -> str:
         case "RowBox":
             # args = [list_of_children]
             children = args[0] if args and isinstance(args[0], list) else args
-            return "".join(box_to_latex(c) for c in children)
+            result = "".join(box_to_latex(c) for c in children)
+            return merge_text_runs(result)
 
         case "FractionBox":
             num = box_to_latex(args[0]) if len(args) > 0 else ""
@@ -279,9 +350,9 @@ def box_to_latex(node) -> str:
             over = box_to_latex(args[1]) if len(args) > 1 else ""
             # Common: dot/double-dot for derivatives
             over_s = over.strip()
-            if over_s in (".", r"\bullet", "·"):
+            if over_s in (".", r"\bullet", r"\bullet{}", "·", r"\circ{}"):
                 return rf"\dot{{{base}}}"
-            if over_s == "..":
+            if over_s in ("..", ".."):
                 return rf"\ddot{{{base}}}"
             if over_s == r"\to" or over_s == "→":
                 return rf"\vec{{{base}}}"

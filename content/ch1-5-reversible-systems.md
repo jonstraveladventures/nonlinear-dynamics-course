@@ -28,24 +28,24 @@ The first thing that we see here is that if we let $t->-t, $then $\frac{d}{d t}-
 So that under the transformation of $t->-t $the equation of motion remains the same.
 Actually we have to be slightly more careful here because we would like to know what’s happening in the phase plane (labeling the phase plane directions $(x,v)$). So let’s go to the coupled first order system:
 $$
-\overset{\bullet{} }{v}=\frac{F(x)}{m}
+\dot{v}=\frac{F(x)}{m}
 $$
 $$
-\overset{\bullet{} }{x}=v
+\dot{x}=v
 $$
 Now, if we just let $t->-t, $then the system doesn’t remain the same. If we just did this then we’d end up with:
 $$
--\overset{\bullet{} }{v}=\frac{F(x)}{m}
+-\dot{v}=\frac{F(x)}{m}
 $$
 $$
-- \overset{\bullet{} }{x}=v
+- \dot{x}=v
 $$
 which is a different set of equations. If however we **also** let $v->-v$ then all of a sudden we get back to
 $$
-\overset{\bullet{} }{v}=\frac{F(x)}{m}
+\dot{v}=\frac{F(x)}{m}
 $$
 $$
-\overset{\bullet{} }{x}=v
+\dot{x}=v
 $$
 Which says that if we swap the direction of time, and the direction of the velocity then the system remains **invariant**. This makes sense in terms of the pendulum. Swap the direction of time, and the video will look the same, just with everything moving in the opposite direction.
 What does this look like in terms of a trajectory? Well, taking some part of a trajectory in the phase plane, for instance:
@@ -56,22 +56,22 @@ The system is reversible, if the red curve is **also** a trajectory of the origi
 In terms of the equations, any system for which $t->-t$ and $v->-v$ is a symmetry is reversible.
 Given a more general system:
 $$
-\overset{\bullet{} }{x}=f(x,y)
+\dot{x}=f(x,y)
 $$
 $$
-\overset{\bullet{} }{y}=g(x,y)
+\dot{y}=g(x,y)
 $$
-what constraints are there on $f$ and $g$ such that the system is reversible under $t->-t$ and $y->-y$ (note that we have written $y \text{ now } \text{ instead } \text{ of } v \text{ to } \text{ be } a \text{ bit } \text{ more } \text{ general }.$
+what constraints are there on $f$ and $g$ such that the system is reversible under $t->-t$ and $y->-y$ (note that we have written $y \text{ now instead } \text{ of } v \text{ to be } a \text{ bit more } \text{ general }.$
 Well, first of all performing the transformations we get:
 $$
-- \overset{\bullet{} }{x}=f(x,-y)
+- \dot{x}=f(x,-y)
 $$
 $$
-\overset{\bullet{} }{y}=g(x,-y)
+\dot{y}=g(x,-y)
 $$
-where the $\overset{\bullet{} }{y}$ has not changed sign because both $t \text{ and } y $have changed.
-So for this to be invariant under the change, we need that $f$ is odd in $y$ and $g \text{ is } \text{ even } \text{ in } y$ which will give us back our original system.
-So that's it. For a two-dimensional first order system to be reversible (ie. time reversal invariant), we need that $f$ is odd in $y$ and $g \text{ is } \text{ even } \text{ in } y$.
+where the $\dot{y}$ has not changed sign because both $t \text{ and } y $have changed.
+So for this to be invariant under the change, we need that $f$ is odd in $y$ and $g \text{ is even } \text{ in } y$ which will give us back our original system.
+So that's it. For a two-dimensional first order system to be reversible (ie. time reversal invariant), we need that $f$ is odd in $y$ and $g \text{ is even } \text{ in } y$.
 Remember from the last section that if you take a conservative system, where there is a linear center (ie. when you perform the linear analysis you find a center), then this center is robust in the full non-linear model (ie. the center is really there in the full system, not just the linearised system). Well, it turns out that in reversible systems, the same holds. A center which is really there in the non-linear system is called a non-linear center.
 We will state a theorem which will be in terms of a system which has a linear center at the origin of the phase plane. This can be extended to any position along the x-axis of the phase plane.
 Essentially this says that if you know that you have the following linear center:
@@ -82,12 +82,12 @@ One way to think about this is that the instability of a linear center can lead 
 Example
 Let’s look at
 $$
-\overset{\bullet{} }{x}=y-y^{3}
+\dot{x}=y-y^{3}
 $$
 $$
-\overset{\bullet{} }{y}=-x-y^{2}
+\dot{y}=-x-y^{2}
 $$
-First we see that the $\overset{\bullet{} }{x}$ equation is odd in $y$, and the $\overset{\bullet{} }{y}$ equation is even in $y$, so our system is reversible. We know immediately that it will be symmetric about the x-axis.
+First we see that the $\dot{x}$ equation is odd in $y$, and the $\dot{y}$ equation is even in $y$, so our system is reversible. We know immediately that it will be symmetric about the x-axis.
 Finding the fixed points is equivalent to solving
 $$
 0=y-y^{3}
@@ -101,24 +101,24 @@ $$
 $$
 Let’s focus on the fixed point at the origin. The Jacobian of this system is
 $$
-A=(\text{\textbackslash[NoBreak]}\begin{pmatrix} 0 & 1-3y^{2} \\ -1 & -2 y \end{pmatrix}\text{\textbackslash[NoBreak]})
+A=(\begin{pmatrix} 0 & 1-3y^{2} \\ -1 & -2 y \end{pmatrix})
 $$
 which for the origin is
 $$
-A_{\text{ origin }}=(\text{\textbackslash[NoBreak]}\begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix}\text{\textbackslash[NoBreak]})
+A_{\text{ origin }}=(\begin{pmatrix} 0 & 1 \\ -1 & 0 \end{pmatrix})
 $$
-Which sits at the point (1,0) in the $(\Delta{},\Tau{}) \text{ plane } \text{ and } $so is indeed a center. We can also see that close to the origin, our system linearises to:
+Which sits at the point (1,0) in the $(\Delta{},\Tau{}) \text{ plane and } $so is indeed a center. We can also see that close to the origin, our system linearises to:
 $$
-\overset{\bullet{} }{x}=y
+\dot{x}=y
 $$
 $$
-\overset{\bullet{} }{y}=-x
+\dot{y}=-x
 $$
-which tells us that the center is moving in the clockwise direction (for $x=0 \text{ and } y=1, \overset{\bullet{} }{x}$ is positive)
+which tells us that the center is moving in the clockwise direction (for $x=0 \text{ and } y=1, \dot{x}$ is positive)
 OK, so we have a reversible system, with a center at the origin, so we know that we must have closed cycles around the fixed point at the origin.
 For the other fixed points we have
 $$
-A_{(-1,1)}=(\text{\textbackslash[NoBreak]}\begin{pmatrix} 0 & -2 \\ -1 & -2 \end{pmatrix}\text{\textbackslash[NoBreak]}) , A_{(-1,-1)}=(\text{\textbackslash[NoBreak]}\begin{pmatrix} 0 & -2 \\ -1 & 2 \end{pmatrix}\text{\textbackslash[NoBreak]})
+A_{(-1,1)}=(\begin{pmatrix} 0 & -2 \\ -1 & -2 \end{pmatrix}) , A_{(-1,-1)}=(\begin{pmatrix} 0 & -2 \\ -1 & 2 \end{pmatrix})
 $$
 Which are at
 $$
@@ -127,15 +127,15 @@ $$
 respectively. ie. they are both saddle points. We can calculate the eigenvalues and eigenvectors of these Jacobians and we get:
 ![Figure 5](/images/part15/output_005.png)
 ![Figure 6](/images/part15/output_006.png)
-which corresponds to one positive and one negative eigenvalue ($(1+\sqrt{3}) \text{ is } \text{ positive }, (1-\sqrt{3}) \text{ is } \text{ negative }) $in both cases (unsurprisingly), and we have the associated flow directions for each.
+which corresponds to one positive and one negative eigenvalue ($(1+\sqrt{3}) \text{ is positive }, (1-\sqrt{3}) \text{ is negative }) $in both cases (unsurprisingly), and we have the associated flow directions for each.
 Let’s just focus on the first fixed point’s the eigenvalues and eigenvectors. At (-1,1) we have
 $$
-{\Lambda{}}_{1}=-1-\sqrt{3}, v_{1}=(\text{\textbackslash[NoBreak]}\begin{pmatrix} -1+\sqrt{3} \\ 1 \end{pmatrix}\text{\textbackslash[NoBreak]})
+{\Lambda{}}_{1}=-1-\sqrt{3}, v_{1}=(\begin{pmatrix} -1+\sqrt{3} \\ 1 \end{pmatrix})
 $$
 $$
-{\Lambda{}}_{2}=-1+\sqrt{3}, v_{2}=(\text{\textbackslash[NoBreak]}\begin{pmatrix} -1-\sqrt{3} \\ 1 \end{pmatrix}\text{\textbackslash[NoBreak]})
+{\Lambda{}}_{2}=-1+\sqrt{3}, v_{2}=(\begin{pmatrix} -1-\sqrt{3} \\ 1 \end{pmatrix})
 $$
-${\Lambda{}}_{1}$ is negative, so this corresponds to the inflowing eigenvector. ${\Lambda{}}_{2} \text{ is } \text{ positive }$ so this corresponds to the outflowing eigenvector.
+${\Lambda{}}_{1}$ is negative, so this corresponds to the inflowing eigenvector. ${\Lambda{}}_{2} \text{ is positive }$ so this corresponds to the outflowing eigenvector.
 We can look at the same thing for the fixed point at (-1,-1)
 Let's draw on what we know...
 ![Figure 7](/images/part15/output_007.png)
@@ -160,33 +160,32 @@ We have spoken about the particular time-reversal symmetry of $t->-t$ along with
 Are all conservative systems reversible, and vice versa?
 For the case of a reversible system which is not conservative. See exercise 2 below.
 For the case of conservative systems which are not reversible, I was able to find a couple of papers which discuss this in the literature, though the systems are a lot more complicated than we cover in this course. These papers are:
-\InputExpressionUUID->ff54b4f8-1766-42a8-b6b4-bdd5b0b1bd2c
 Take a look if you want to know more.
 Can we find a reversible system where there is a centre which is not on the x-axis?
 We start with a system where the centre is on the x-axis, but not at the origin. This is given by
 $$
-\overset{\bullet{} }{x}=y
+\dot{x}=y
 $$
 $$
-\overset{\bullet{} }{y}=x-x^{2}
+\dot{y}=x-x^{2}
 $$
-We can see that a) this system has the right symmetries to be reversible $(f(x,y) \text{ is } \text{ odd } \text{ in } y \text{ and } g(x,y) \text{ is } \text{ even } \text{ in } y$). We can see that there are two fixed points in this system, at (0,0) and (0,1). We can show that these correspond in the linearisation to a saddle, and a center. Saddles are robust to nonlinearities, and so it will still be a saddle. The centre will also be robust, because this system is reversible. We can get a good picture of what is going on simply by plotting the flows at the null-clines, and plotting the direction of flow as well as the eigenvector directions for the saddle (in red):
+We can see that a) this system has the right symmetries to be reversible $(f(x,y) \text{ is odd } \text{ in } y \text{ and } g(x,y) \text{ is even } \text{ in } y$). We can see that there are two fixed points in this system, at (0,0) and (0,1). We can show that these correspond in the linearisation to a saddle, and a center. Saddles are robust to nonlinearities, and so it will still be a saddle. The centre will also be robust, because this system is reversible. We can get a good picture of what is going on simply by plotting the flows at the null-clines, and plotting the direction of flow as well as the eigenvector directions for the saddle (in red):
 ![Figure 12](/images/part15/output_012.png)
 Taking the red arrows, there’s only really one thing that they can do:
 ![Figure 13](/images/part15/output_013.png)
 Plotting the flow lines on top of this we get:
 So we see that we have a homoclinic orbit. OK, but we just have a system which is reversible and has a center on the x-axis. How could we turn this into something with a center away from the x-axis. Well, remember that for a reversible system, actually we just need that we have a symmetry such that under some $R$, we have that $R^{2}(x,y)=(x,y)$ and $t->-t$. This is any reflection, and so we can actually rotate the whole plane, and there will still be a reflection symmetry.
 ![Figure 14](/images/part15/output_014.png)
-Let’s rotate the coordinate system by -$\frac{\Pi{}}{4} \text{ radians } \text{ in } \text{ the } \text{ anticlockwise } \text{ direction } $which will be equivalent to rotating the system by $\frac{\Pi{}}{4}$ anticlockwise. To do this we can perform a rotation on our $(x,y) $coordinates as:
+Let’s rotate the coordinate system by -$\frac{\Pi{}}{4} \text{ radians in } \text{ the anticlockwise } \text{ direction } $which will be equivalent to rotating the system by $\frac{\Pi{}}{4}$ anticlockwise. To do this we can perform a rotation on our $(x,y) $coordinates as:
 $$
-(\text{\textbackslash[NoBreak]}\begin{pmatrix} x' \\ y' \end{pmatrix}\text{\textbackslash[NoBreak]})=(\text{\textbackslash[NoBreak]}\begin{pmatrix} \text{ cos }(-\frac{\Pi{}}{4}) & -\text{ sin }(-\frac{\Pi{}}{4}) \\ \text{ sin }(-\frac{\Pi{}}{4}) & \text{ cos }(-\frac{\Pi{}}{4}) \end{pmatrix}\text{\textbackslash[NoBreak]}) (\text{\textbackslash[NoBreak]}\begin{pmatrix} x \\ y \end{pmatrix}\text{\textbackslash[NoBreak]})=\frac{1}{\sqrt{2}}(\text{\textbackslash[NoBreak]}\begin{pmatrix} 1 & 1 \\ -1 & 1 \end{pmatrix}\text{\textbackslash[NoBreak]}) (\text{\textbackslash[NoBreak]}\begin{pmatrix} x \\ y \end{pmatrix}\text{\textbackslash[NoBreak]})
+(\begin{pmatrix} x' \\ y' \end{pmatrix})=(\begin{pmatrix} \text{ cos }(-\frac{\Pi{}}{4}) & -\text{ sin }(-\frac{\Pi{}}{4}) \\ \text{ sin }(-\frac{\Pi{}}{4}) & \text{ cos }(-\frac{\Pi{}}{4}) \end{pmatrix}) (\begin{pmatrix} x \\ y \end{pmatrix})=\frac{1}{\sqrt{2}}(\begin{pmatrix} 1 & 1 \\ -1 & 1 \end{pmatrix}) (\begin{pmatrix} x \\ y \end{pmatrix})
 $$
 Performing this change of variables and then just relabelling the new $x'$ and $y'$ to $x \text{ and } y$ gives:
 $$
-\overset{\bullet{} }{x}=\frac{1}{4}(-4 x+\sqrt{2} x^{2}+2 \sqrt{2} x y+\sqrt{2} y^{2})
+\dot{x}=\frac{1}{4}(-4 x+\sqrt{2} x^{2}+2 \sqrt{2} x y+\sqrt{2} y^{2})
 $$
 $$
-\overset{\bullet{} }{y}=\frac{1}{4} (-\sqrt{2} x^{2}+4 y-2 \sqrt{2} x y-\sqrt{2} y^{2})
+\dot{y}=\frac{1}{4} (-\sqrt{2} x^{2}+4 y-2 \sqrt{2} x y-\sqrt{2} y^{2})
 $$
 This looks like a hell of a mess, but if you now plot the flow lines in this new system we see:
 ![Figure 15](/images/part15/output_015.png)
@@ -194,10 +193,10 @@ We see that there is a reflection symmetry about the line $y=x$ and thus the sys
 An exercises for you
 1. Given
 $$
-\overset{\bullet{} }{x}=-2 \text{ cos } x-\text{ cos } y
+\dot{x}=-2 \text{ cos } x-\text{ cos } y
 $$
 $$
-\overset{\bullet{} }{y}=-2 \text{ cos } y-\text{ cos } x
+\dot{y}=-2 \text{ cos } y-\text{ cos } x
 $$
 Sketch the phase portrait.
 Note that this has an attracting fixed point, and so cannot be conservative, but it can be reversible. Check whether this is true.

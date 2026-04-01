@@ -16,13 +16,13 @@ So long as we can find a trapping region, and we can make sure that there are no
 Example
 Here we will be able to find a trapping region by looking carefully at the vector field. The equation in question is similar to the previous one, but with an extra term, parameterised by a constant Μ. Again we are looking at polar coordinates:
 $$
-\overset{\bullet{}}{r}=r (1-r^{2})+r \Mu{} \text{ cos } \Theta{}
+\dot{r}=r (1-r^{2})+r \Mu{} \text{ cos } \Theta{}
 $$
 $$
-\overset{\bullet{}}{\Theta{}}=1
+\dot{\Theta{}}=1
 $$
 Μ here is a constant and we will look at it for positive values only (negative values are the same as letting $\Theta{}->\Theta{}+\Pi{}$).
-The question is whether we can find some region with an inner radius for which $\overset{\bullet{}}{r}$ is always positive, and an outer radius where $\overset{\bullet{}}{r}$ is always negative. Note that here we are just trying to find a perfect annulus. The bounding region doesn't have to be, but we will look for such a region here.
+The question is whether we can find some region with an inner radius for which $\dot{r}$ is always positive, and an outer radius where $\dot{r}$ is always negative. Note that here we are just trying to find a perfect annulus. The bounding region doesn't have to be, but we will look for such a region here.
 We want to find $r_{\text{ min }}$ for which:
 $$
 r_{\text{ min }} (1-{r_{\text{ min }}}^{2})+r_{\text{ min }} \Mu{} \text{ cos } \Theta{}>0
@@ -35,12 +35,12 @@ What is the lowest value that the right hand side can take? Well, the minimum va
 $$
 r_{\text{ min }}<\sqrt{1-\Mu{}}
 $$
-So we can always be sure that on a circle of $r$=$r_{\text{ min }},$ $\overset{\bullet{}}{r}$ will be positive. To play it safe, let’s set
+So we can always be sure that on a circle of $r$=$r_{\text{ min }},$ $\dot{r}$ will be positive. To play it safe, let’s set
 $$
 r_{\text{ min }}=0.9\sqrt{1-\Mu{}}
 $$
 We see here that with our stricter bound, we are constrained to $\Mu{}<=1$, and in fact we have to exclude Μ=1 as well because with Μ=1, $r_{\text{ min }}=0$ and there is a fixed point there, so we can’t include it. So we are only looking at cases for which $\Mu{}<1$.
-Now running through the same argument for $r_{\text{ max }}$ for which we have to have $\overset{\bullet{}}{r}$ negative you should find
+Now running through the same argument for $r_{\text{ max }}$ for which we have to have $\dot{r}$ negative you should find
 $$
 r_{\text{ max }}>\sqrt{1+\Mu{}}
 $$
@@ -59,29 +59,29 @@ Let’s look at another example, this time a bit more real-world inspired, and a
 We will look at a pair of equations which model a particular chemical reaction, called glycolisis. This is something which is found in biological systems and is related to the concentrations of ADP (Adenosine Diphosphate), $x$, and F6P (fructose-6-phosphate), $y$. This is related to the energy systems in the body. ADP is the molecule which supplies energy to the cells. One molecule gets turned into the other and vice versa. The question is if there are any closed orbits, where you will have a constant cycling between the two, or if none exists and you just end up with a fixed point, perhaps with only one of the molecules being there and the other not at all.
 The equations modelling this system are:
 $$
-\overset{\bullet{}}{x}=-x+a y+x^{2}y
+\dot{x}=-x+a y+x^{2}y
 $$
 $$
-\overset{\bullet{}}{y}=b-a y-x^{2}y
+\dot{y}=b-a y-x^{2}y
 $$
 These are well and truly non-linearly coupled. $a \text{ and } b $are parameters related to the reaction and are both taken to be greater than 0. We are going to choose $a=\frac{1}{5},b=1$ for this example to see what happens with these values
-We can also take $x \text{ and } y \text{ as } \text{ both } \text{ being } \text{ positive } (\text{ they } \text{ are } \text{ chemical } \text{ concentrations }, \text{ remember }).$
+We can also take $x \text{ and } y \text{ as both } \text{ being positive } (\text{ they are } \text{ chemical concentrations }, \text{ remember }).$
 So, the question is whether we can find a trapping region in the phase space which does not contain any fixed point.
 I’m actually just going to give you the outer trapping region, as the argument for why it is a reasonable trapping reason is a little naunced, and not very enlightening.
 It turns out that the following region is a reasonable trapping region:
 ![Figure 3](/images/part23/output_003.png)
 It might not look like the arrows along the bottom are all pointing into the region, but this is an artifact of where the vectors are sampled. If you look along the x-axis you see that
 $$
-\overset{\bullet{}}{y}=b
+\dot{y}=b
 $$
 and with positive $b$ these vectors are bound to point up from the axis, and into the trapping region.
 So is that enough to prove that we have a closed orbit? Not yet, we have to have a trapping region with no fixed points, but there is a fixed point in this system at:
 ![Figure 4](/images/part23/output_004.png)
-It looks like we might be in trouble. If this is an attractor then we are in trouble, and it looks in this example with $a=\frac{1}{5},b=1 \text{ that } \text{ it } \text{ might } \text{ be }$. If that’s the case, then we can’t form cut out a region around the fixed point with a boundary such that the arrows are pointing into the trapping region.
+It looks like we might be in trouble. If this is an attractor then we are in trouble, and it looks in this example with $a=\frac{1}{5},b=1 \text{ that it } \text{ might be }$. If that’s the case, then we can’t form cut out a region around the fixed point with a boundary such that the arrows are pointing into the trapping region.
 Can we figure out for which values of $a$ and $b$ this fixed point is an attractor and when it’s a repeller? Sure, we can use linearisation to do this.
 We first have to find the Jacobian of our system:
 $$
-A=(\text{\textbackslash[NoBreak]}\begin{pmatrix} -1+2 x y & a+x^{2} \\ -2 x y & -(a+x^{2}) \end{pmatrix}\text{\textbackslash[NoBreak]})
+A=(\begin{pmatrix} -1+2 x y & a+x^{2} \\ -2 x y & -(a+x^{2}) \end{pmatrix})
 $$
 The fixed point is at
 $$
@@ -89,7 +89,7 @@ $$
 $$
 So the Jacobian at this point is:
 $$
-A=(\text{\textbackslash[NoBreak]}\begin{pmatrix} -1+2 \frac{b^{2}}{a+b^{2}} & a+b^{2} \\ -2 \frac{b^{2}}{a+b^{2}} & -(a+b^{2}) \end{pmatrix}\text{\textbackslash[NoBreak]})
+A=(\begin{pmatrix} -1+2 \frac{b^{2}}{a+b^{2}} & a+b^{2} \\ -2 \frac{b^{2}}{a+b^{2}} & -(a+b^{2}) \end{pmatrix})
 $$
 The determinant and trace of this are:
 $$
@@ -97,10 +97,10 @@ $$
 $$
 Let’s remind ourselves once more of the possible behaviours in 2d linear systems:
 ![Figure 5](/images/part23/output_005.png)
-Well $\Delta{}>0$ in this case as $a \text{ and } b \text{ are } \text{ both } \text{ positive }.$
+Well $\Delta{}>0$ in this case as $a \text{ and } b \text{ are both } \text{ positive }.$
 It actually doesn’t matter whether the fixed point is a node or a spiral, just whether or not it’s stable or unstable, so we only need to know whether Τ is greater than or less than 0. The dividing line between the two is going to be when
 $$
--1+2\frac{b^{2}}{a+b^{2}}-(a+b^{2})=0   \text{\textbackslash[DoubleLongRightArrow]}   b=\sqrt{\frac{1}{2}(1-2a\pm{}\sqrt{1-8a})}
+-1+2\frac{b^{2}}{a+b^{2}}-(a+b^{2})=0   \Longrightarrow{}   b=\sqrt{\frac{1}{2}(1-2a\pm{}\sqrt{1-8a})}
 $$
 Which is given by
 ![Figure 6](/images/part23/output_006.png)
@@ -127,10 +127,10 @@ Other ways of finding limit cycles
 This is an example taken from the exercises of section 7.3 of Strogatz, and it gives a nice alternative way of showing that there is a limit cycle.
 Given the vector field given by
 $$
-\overset{\bullet{}}{x}=x (1-4x^{2}-y^{2})-\frac{1}{2}y (1+x)
+\dot{x}=x (1-4x^{2}-y^{2})-\frac{1}{2}y (1+x)
 $$
 $$
-\overset{\bullet{}}{y}=y (1-4x^{2}-y^{2})+2x (1+x)
+\dot{y}=y (1-4x^{2}-y^{2})+2x (1+x)
 $$
 How can we show that there is a limit cycle here? Well, we can do this by constructing a function given by:
 $$
@@ -138,7 +138,7 @@ V={(1-4x^{2}-y^{2})}^{2}
 $$
 whose time derivative is:
 $$
-\overset{\bullet{}}{V}=-4V(4x^{2}+y^{2})
+\dot{V}=-4V(4x^{2}+y^{2})
 $$
 This helps us because it tells us that for trajectories of this system, this quantity $V $always decreases (or stays the same). It only ever stays the same though when $V=0$ and this only ever happens when
 $$
@@ -147,10 +147,10 @@ $$
 Which is an ellipse in the $(x,y) $plane, or when $x=y=0$. So let’s take a look first of all at the origin.
 We can easily linearise our system at the origin and it gives us:
 $$
-\overset{\bullet{}}{x}=x-\frac{1}{2}y
+\dot{x}=x-\frac{1}{2}y
 $$
 $$
-\overset{\bullet{}}{y}=y+2x
+\dot{y}=y+2x
 $$
 Which you can show easily gives you an unstable spiral. So if we start anywhere, then we are going to move towards the ellipse given by
 $$

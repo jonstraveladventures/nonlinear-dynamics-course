@@ -1,12 +1,6 @@
 <nav class="site-nav">
-  <a href="{{ "/" | relURL }}" class="site-title">MAM2046W</a>
+  <a href="{{ "/" | absURL }}" class="site-title">MAM2046W — Nonlinear Dynamics</a>
   <div class="nav-links">
-    {{ range .Site.Pages.ByWeight }}
-      {{ if and (not .IsSection) (not .IsHome) (eq .Kind "page") }}
-        <a href="{{ .RelPermalink }}" {{ if eq $.RelPermalink .RelPermalink }}class="active"{{ end }}>
-          {{ .LinkTitle }}
-        </a>
-      {{ end }}
-    {{ end }}
+    <a href="{{ "/" | absURL }}">Contents</a>
   </div>
 </nav>

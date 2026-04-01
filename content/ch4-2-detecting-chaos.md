@@ -15,7 +15,7 @@ $$
 ![Figure 2](/images/part42/output_002.png)
 We see here that there are two regimes. One, where we have this rise, and then it seems to level out. It levels out because it’s trapped in a finite region, and they can only get so far apart. What we are interested in is the rise of the first part. If we can calculate the gradient of the first straight line part, then we should have that:
 $$
-\text{ ln }(\Delta{}(t))=a+\Lambda{} t \text{\textbackslash[DoubleLongRightArrow]}\Delta{}(t)={\Delta{}}_{0}e^{\Lambda{} t}
+\text{ ln }(\Delta{}(t))=a+\Lambda{} t \Longrightarrow{}\Delta{}(t)={\Delta{}}_{0}e^{\Lambda{} t}
 $$
 Note that often Δ is defined as the vector quantity, but here I ’m just treating it as the magnitude. Note also that we are taking $t$ here to start at the moment that the second trajectory starts off close to the first.
 So let’s do that for the line above:
@@ -25,7 +25,7 @@ So here we have calculated Λ and it gives around 0.84...but that ’s just one 
 This parameter, Λ, which is found numerically is called the Lyapunov exponent - or more accurately **a** Lyapunov exponent. Rather than asking about two trajectories, starting a little way apart, we can ask about a small sphere of starting points, and ask about how changes its shape changes in different directions.
 This exponential behaviour that we have found, with a well-defined Lyapunov exponent is one of the key signs of chaos. We can ask how long into the future out predictions will be good...but it depends on what we mean by good. Let’s say that we want our numerical answer to be within Δ of the true answer. We can ask when
 $$
-\Delta{}\approx{}{\Delta{}}_{0}e^{\Lambda{} t_{\text{ horizon }}}   \text{\textbackslash[DoubleLongRightArrow]}  t_{\text{ horizon }}\sim{}O(\frac{1}{\Lambda{}}\text{ ln }(\frac{\Delta{}}{{\Delta{}}_{0}}))
+\Delta{}\approx{}{\Delta{}}_{0}e^{\Lambda{} t_{\text{ horizon }}}   \Longrightarrow{}  t_{\text{ horizon }}\sim{}O(\frac{1}{\Lambda{}}\text{ ln }(\frac{\Delta{}}{{\Delta{}}_{0}}))
 $$
 Let’s say then that the precision of our computer is ${10}^{-32}$ - ie. we can set our numbers with up to 32 decimal places of precision. Let’s say that we want our final answer to be within ${10}^{-3} $of the true answer, then
 $$
@@ -106,7 +106,7 @@ f(f(z^{*}))+f'(f(z^{*}))f'(z^{*}){\Eta{}}_{n}=z^{*}+{\Eta{}}_{n+2}
 $$
 But again we know that $f(f(z^{*}))=z^{*}$:
 $$
-f'(f(z^{*}))f'(z^{*}){\Eta{}}_{n}={\Eta{}}_{n+2}  \text{\textbackslash[DoubleLongRightArrow]}  |f'(f(z^{*}))f'(z^{*})|=|\frac{{\Eta{}}_{n+2}}{{\Eta{}}_{n}}|
+f'(f(z^{*}))f'(z^{*}){\Eta{}}_{n}={\Eta{}}_{n+2}  \Longrightarrow{}  |f'(f(z^{*}))f'(z^{*})|=|\frac{{\Eta{}}_{n+2}}{{\Eta{}}_{n}}|
 $$
 and the same argument as before holds. All gradients have absolute value greater than 1, so the left hand side is greater than one, and our perturbation has grown. We can do exactly the same thing with any p-cycle, and we will just get a product of derivatives of $f.$ So there can be no stable closed orbits.
 So we know that there are no stable fixed points, and we have just argued (if not proved) that there are no stable limit cycles...so it does indeed seem to be chaotic.

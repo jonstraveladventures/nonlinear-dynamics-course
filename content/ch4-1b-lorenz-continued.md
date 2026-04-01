@@ -1,9 +1,8 @@
 ---
-title: "Untitled"
+title: "Lorenz Equations (Continued)"
 weight: 42
 math: true
 ---
-## This notebook was almost entirely put together by Christopher Klausmeier of The Departments of Plant Biology & Integrative Biology Michigan State University (https://kl-lab.group/)
 ![Figure 1](/images/part41b/output_001.png)
 ![Figure 2](/images/part41b/output_002.png)
 ![Figure 3](/images/part41b/output_003.png)

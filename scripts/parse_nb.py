@@ -139,6 +139,11 @@ def clean_text_whitespace(s: str) -> str:
     """Collapse runs of whitespace in plain prose (not math)."""
     s = re.sub(r'[ \t]+', ' ', s)
     s = re.sub(r'\n{3,}', '\n\n', s)
+    # Strip leaked Mathematica metadata
+    s = re.sub(r'\\?InputExpressionUUID->[\w-]+', '', s)
+    s = re.sub(r'\\?ExpressionUUID->[\w-]+', '', s)
+    # Remove orphaned brace lines
+    s = re.sub(r'(?m)^\s*[{}]\s*$', '', s)
     # Convert N) enumeration to Markdown numbered lists
     s = re.sub(r'(?m)^(\d+)\)\s*', r'\1. ', s)
     # Convert a), b), c) sub-enumeration to indented sub-items
@@ -288,7 +293,10 @@ def cell_to_md(cell: list, image_counter: list[int], images_dir: str) -> str | N
     if cell_type == "Section":
         text = clean_text_whitespace(extract_text(content))
         # Skip author/contact info sections
-        if text and ("@" in text or "University of Cape Town" in text):
+        if text and ("@" in text or "University of Cape Town" in text
+                     or "notebook was" in text.lower()
+                     or "put together by" in text.lower()
+                     or "Michigan State" in text):
             return None
         return f"## {text}" if text else None
 
@@ -467,6 +475,7 @@ def main():
     ap.add_argument("output", type=Path, help="Output .md file")
     ap.add_argument("--images-dir", default="", help="Relative image path prefix for this page")
     ap.add_argument("--weight", type=int, default=10, help="Hugo page weight (ordering)")
+    ap.add_argument("--title", default=None, help="Override extracted title")
     args = ap.parse_args()
 
     print(f"Parsing {args.input} …", file=sys.stderr)
@@ -486,12 +495,19 @@ def main():
     images_dir = args.images_dir or f"images/{args.input.stem}"
     blocks = walk_notebook(nb, images_dir)
 
-    # Extract title from the first heading block (first line only)
+    # Extract title from the first heading block (first line only), with fallback
     title = "Untitled"
+    fallback_title = None
     for b in blocks:
         if b.startswith("# "):
             title = b[2:].split("\n")[0].strip()
             break
+        if fallback_title is None and b.startswith("## "):
+            fallback_title = b[3:].split("\n")[0].strip()
+    if title == "Untitled" and fallback_title:
+        title = fallback_title
+    if args.title:
+        title = args.title
 
     md = make_frontmatter(title, args.weight)
     md += "\n".join(blocks)

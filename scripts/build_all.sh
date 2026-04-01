@@ -42,7 +42,7 @@ NOTEBOOKS=(
   "MAM20462NDpart35.nb:ch3-5-coupled-oscillators.md:35:part35"
   "MAM20462NDpart36.nb:ch3-6-poincare-maps.md:36:part36"
   "MAM20462NDpart41.nb:ch4-1-lorenz-equations.md:41:part41"
-  "MAM20462NDpart41b.nb:ch4-1b-lorenz-continued.md:42:part41b"
+  "MAM20462NDpart41b.nb:ch4-1b-lorenz-continued.md:42:part41b:Lorenz Equations (Continued)"
   "MAM20462NDpart42.nb:ch4-2-detecting-chaos.md:43:part42"
 )
 
@@ -51,7 +51,7 @@ SUCCESS=0
 FAILED=0
 
 for entry in "${NOTEBOOKS[@]}"; do
-  IFS=':' read -r nb_file md_file weight img_dir <<< "$entry"
+  IFS=':' read -r nb_file md_file weight img_dir title_override <<< "$entry"
 
   nb_path="$NB_DIR/$nb_file"
   md_path="$PROJECT_DIR/content/$md_file"
@@ -63,9 +63,16 @@ for entry in "${NOTEBOOKS[@]}"; do
   fi
 
   echo "[$((SUCCESS + FAILED + 1))/$TOTAL] $nb_file → $md_file"
-  python3 "$PARSER" "$nb_path" "$md_path" \
-    --images-dir "/images/$img_dir" \
-    --weight "$weight" 2>&1 | grep -v "UserWarning" | sed 's/^/  /'
+  if [ -n "$title_override" ]; then
+    python3 "$PARSER" "$nb_path" "$md_path" \
+      --images-dir "/images/$img_dir" \
+      --weight "$weight" \
+      --title "$title_override" 2>&1 | grep -v "UserWarning" | sed 's/^/  /'
+  else
+    python3 "$PARSER" "$nb_path" "$md_path" \
+      --images-dir "/images/$img_dir" \
+      --weight "$weight" 2>&1 | grep -v "UserWarning" | sed 's/^/  /'
+  fi
 
   if [ $? -eq 0 ]; then
     SUCCESS=$((SUCCESS + 1))

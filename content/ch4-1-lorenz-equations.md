@@ -9,29 +9,29 @@ The moment is here...chaos has arrived...finally. Actually, in Greek mythology, 
 Here we are going to introduce a set of equations which encompass many of the phenomena that we have been speaking about in this course...and more...
 We are going to study the famous Lorenz equations:
 $$
-\overset{   \bullet{}   }{x}=\Sigma{}(y-x)
+\dot{x}=\Sigma{}(y-x)
 $$
 $$
-\overset{   \bullet{}   }{y}=r x-y-x z
+\dot{y}=r x-y-x z
 $$
 $$
-\overset{   \bullet{}   }{z}=x y-b z
+\dot{z}=x y-b z
 $$
 where $\Sigma{}, r \text{ and } b$ are positive real parameters. These equations look pretty innocuous...they are almost linear, and the non-linearities are just quadratic in the three variables $x, y \text{ and } z$. Ay, there’s the rub...we have three variables, and that is key. We hand-waved our way into believing (correctly), that for non-pathological two-dimensional continuous time systems we can ’t have chaos. But now we have three dimensions, and the cat is well and truly out of the bag and can dart and weave and pirouette in ways that it simply couldn’t in flatland.
 These equations came about from a simplified model of how air moves in the atmosphere, but it turns out that this system of equations can be used to describe quite a range of different processes. That’s part of the beauty of mathematical modeling. Often you will find that two systems, when looked at under a slightly blurry microscope, look remarkably similar, and results from one can be ported to the other. In Strogatz he discusses how this system of equations can be used to describe a chaotic waterwheel, and while the example is interesting, I don’t think that it leads to sufficient additional insight that we will use it here. Take a look in his book though for the full exposition.
 In fact, the original paper by Lorenz (Lorenz 1963) is surprisingly clear, and you may want to take this as a direction for your review paper project.
-Let’s look at the equations and ask about what we might be able to find out about the phase space without solving anything at all (remember...as lazy as possible, but no lazier...). The first equation is linear in $x \text{ and } y$ and is symmetric under $(x,y)->(-x,-y)$. Checking the other equations we see that this symmetry actually holds for all of them. This tells us something about trajectories in the $(x,y,z) \text{ phase } \text{ space }$. It says that if there exists some solution $(x(t),y(t),z(t))$ for some functions $x, y \text{ and } z, $then there must also be a solution $(-x(t),-y(t),z(t))$. This says then that all solutions must either have this as a symmetry, or the solution must have a twin with the $x \text{ and } y$ coordinates replaced by their negatives.
+Let’s look at the equations and ask about what we might be able to find out about the phase space without solving anything at all (remember...as lazy as possible, but no lazier...). The first equation is linear in $x \text{ and } y$ and is symmetric under $(x,y)->(-x,-y)$. Checking the other equations we see that this symmetry actually holds for all of them. This tells us something about trajectories in the $(x,y,z) \text{ phase space }$. It says that if there exists some solution $(x(t),y(t),z(t))$ for some functions $x, y \text{ and } z, $then there must also be a solution $(-x(t),-y(t),z(t))$. This says then that all solutions must either have this as a symmetry, or the solution must have a twin with the $x \text{ and } y$ coordinates replaced by their negatives.
 The next property that we can find is that this system is **dissipative**. This tells us that if we take some region in phase space and evolve it, then over time it will contract. If you know anything about chaos, and the Lorenz equations (and it’s fine if you don’t), this may seem very surprising...but we will see how it reconciles with the ideas of chaos later.
 Take some compact region in phase space, inside some closed surface at time $t: $$S(t)$. Inside this surface is some volume of phase space $V(t). $After some small amount of time, the points on the surface have all moved, and are making up some new surface $S(t+d t)$ and of course inside this is a new volume $V(t+d t).$
 Let’s take a one dimensional example. In this case the surface is actually the endpoints of an interval, and the volume is just an interval. Let’s look at the equation:
 $$
-\overset{   \bullet{}   }{x}=x^{2}-1
+\dot{x}=x^{2}-1
 $$
 And let’s ask what happens to the interval $[-1.5,-0.5]$ under the dynamics of the system. We have that:
 $$
-\frac{d x}{d t}=x^{2}-1 \text{\textbackslash[DoubleLongRightArrow]} d x=(x^{2}-1) d t
+\frac{d x}{d t}=x^{2}-1 \Longrightarrow{} d x=(x^{2}-1) d t
 $$
-So after time $d t$, a point $x \text{ moves } \text{ to }:$
+So after time $d t$, a point $x \text{ moves to }:$
 $$
 x+d x=x+(x^{2}-1) d t
 $$
@@ -48,7 +48,7 @@ The surface of this shape, $S(t)$ has, at each point on it a unit normal vector 
 ![Figure 3](/images/part41/output_003.png)
 The differential equation of our system can in general be written as a vector field:
 $$
-\overset{   \bullet{}   }{x}=f(x)
+\dot{x}=f(x)
 $$
 which tells us the direction and magnitude of movement of a given point in phase space. In particular, this means that it tells us where points on the sphere move to. $f $defines for us a set of vectors at every point on the surface. Here we just put that vector at one particular point..
 ![Figure 4](/images/part41/output_004.png)
@@ -65,20 +65,20 @@ V(t+d t)=V(t)+{\int{}}_{S(t)}(f.n \text{ dt })\mathrm{d}A
 $$
 and so:
 $$
-\frac{V(t+d t)-V(t)}{\text{ dt }}=\overset{   \bullet{}   }{V}={\int{}}_{S(t)}(f.n)\mathrm{d}A
+\frac{V(t+d t)-V(t)}{\text{ dt }}=\dot{V}={\int{}}_{S(t)}(f.n)\mathrm{d}A
 $$
 Then we can use the divergence theorem to get:
 $$
-\overset{   \bullet{}   }{V}={\int{}}_{V}(\text{\textbackslash[Del]}.f)\mathrm{d}V
+\dot{V}={\int{}}_{V}(\nabla{}.f)\mathrm{d}V
 $$
 where we dropped the $t$ in $V(t)$ though we know that this is integrated over the volume at time $t $to find the rate of change of the volume at that time.
 So for the Lorenz system,
 $$
-\text{\textbackslash[Del]}.f={\partial{}}_{x}(\Sigma{}(y-x))+{\partial{}}_{y}(r x-y-x z)+{\partial{}}_{z}(x y-b z)=-\Sigma{}-1-b
+\nabla{}.f={\partial{}}_{x}(\Sigma{}(y-x))+{\partial{}}_{y}(r x-y-x z)+{\partial{}}_{z}(x y-b z)=-\Sigma{}-1-b
 $$
 Which is therefore less than zero. Indeed it is also a constant, so the rate of change in any volume is always negative and is simply proportional to the volume:
 $$
-\overset{   \bullet{}   }{V}=-(\Sigma{}+1+b)V
+\dot{V}=-(\Sigma{}+1+b)V
 $$
 which we can solve to get:
 $$
@@ -115,11 +115,11 @@ $$
 Clearly the last two points only exist for $r>1$. They are called $C^{+}$ and $C^{-}$ and appear from the origin at $r=1$. Three fixed points appearing from one sounds a lot like a pitchfork bifurcation, and indeed that’s precisely what happens.
 Let’s look at the stability of the fixed points. The Jacobian for the system is our first three dimensional Jacobian:
 $$
-A=(\text{\textbackslash[NoBreak]}\begin{pmatrix} -\Sigma{} & \Sigma{} & 0 \\ r-z & -1 & -x \\ y & x & -b \end{pmatrix}\text{\textbackslash[NoBreak]})
+A=(\begin{pmatrix} -\Sigma{} & \Sigma{} & 0 \\ r-z & -1 & -x \\ y & x & -b \end{pmatrix})
 $$
 and thus:
 $$
-A_{\text{ origin }}=(\text{\textbackslash[NoBreak]}\begin{pmatrix} -\Sigma{} & \Sigma{} & 0 \\ r & -1 & 0 \\ 0 & 0 & -b \end{pmatrix}\text{\textbackslash[NoBreak]})
+A_{\text{ origin }}=(\begin{pmatrix} -\Sigma{} & \Sigma{} & 0 \\ r & -1 & 0 \\ 0 & 0 & -b \end{pmatrix})
 $$
 We see here that the z-direction decouples, and indeed we can see from the equations that close to the origin:
 $$
@@ -140,7 +140,7 @@ V=x^{2}+\Sigma{}(y^{2}+z^{2})
 $$
 Remember, this is not a volume, but a quantity (a bit like a potential) which takes on a value at every point in space. We need to show that for all trajectories (for $r<1)$ $V \text{ always }$ decreases. We calculate the time derivative, and plug in the equations of motion:
 $$
-\overset{   \bullet{}   }{V}= \overset{   \bullet{}   }{x}2x+\Sigma{}( \overset{   \bullet{}   }{y}2y+ \overset{   \bullet{}   }{z}2z)
+\dot{V}= \dot{x}2x+\Sigma{}( \dot{y}2y+ \dot{z}2z)
 $$
 $$
 =2(x \Sigma{}(y-x)+\Sigma{} y ( r x-y-x z)+\Sigma{} z (x y-b z))
@@ -158,11 +158,11 @@ which, so long as $r-1<0$ is necessarily negative. So all trajectories must decr
 Let’s now look at the system for $r>1$. The origin is now a saddle in the $(x,y)$ plane and attractive in the $z$ direction. But how about the other fixed points?
 The Jacobian at the $C^{\pm{}}$ fixed points is:
 $$
-A_{C^{\pm{}}}=(\text{\textbackslash[NoBreak]}\begin{pmatrix} -\Sigma{} & \Sigma{} & 0 \\ 1 & -1 & \mp{}\sqrt{b(r-1)} \\ \pm{}\sqrt{b(r-1)} & \pm{}\sqrt{b(r-1)} & -b \end{pmatrix}\text{\textbackslash[NoBreak]})
+A_{C^{\pm{}}}=(\begin{pmatrix} -\Sigma{} & \Sigma{} & 0 \\ 1 & -1 & \mp{}\sqrt{b(r-1)} \\ \pm{}\sqrt{b(r-1)} & \pm{}\sqrt{b(r-1)} & -b \end{pmatrix})
 $$
 To understand the nature of these fixed points, let’s solve the eigenvalue system numerically. We have:
 $$
-\text{ det }(\text{\textbackslash[NoBreak]}\begin{pmatrix} -\Sigma{}-\Lambda{} & \Sigma{} & 0 \\ 1 & -1-\Lambda{} & \mp{}\sqrt{b(r-1)} \\ \pm{}\sqrt{b(r-1)} & \pm{}\sqrt{b(r-1)} & -b-\Lambda{} \end{pmatrix}\text{\textbackslash[NoBreak]})=0
+\text{ det }(\begin{pmatrix} -\Sigma{}-\Lambda{} & \Sigma{} & 0 \\ 1 & -1-\Lambda{} & \mp{}\sqrt{b(r-1)} \\ \pm{}\sqrt{b(r-1)} & \pm{}\sqrt{b(r-1)} & -b-\Lambda{} \end{pmatrix})=0
 $$
 which gives:
 $$
@@ -218,7 +218,7 @@ These of course have to be the same Ω. For positive $b \text{ and } \Sigma{}$ a
 $$
 \sqrt{b(r+\Sigma{})}=\sqrt{\frac{2b \Sigma{}(r-1)}{1+b+\Sigma{}}}
 $$
-Solving for $r \text{ we } \text{ have }$:
+Solving for $r \text{ we have }$:
 $$
 r_{H} =\Sigma{}\frac{(3+b +\Sigma{})}{(\Sigma{}-b-1)}
 $$
@@ -275,7 +275,7 @@ Let’s just produce the same plots as before, this time with $r>r_{H}:$
 ![Figure 15](/images/part41/output_015.png)
 Here we produce the same starting points for the curves as last time, and this time we colour them based on where they started (red if the sign of $x_{0}>0$ and blue otherwise).
 ![Figure 16](/images/part41/output_016.png)
-What we see here doesn’t look all that different from what we had for a lower value of $r$, however now the blue and red lines seem to be all mixed up. There also appear to be two regions which don’t seem to be that mixed up, in the middle of each ‘disk’. However, these are regions which trajectories are moving away from. If we look at what happens after $t=180 \text{ and } \text{ up } \text{ to } t=200 $here, we see that none of the trajectories are in these regions close to the unstable fixed points:
+What we see here doesn’t look all that different from what we had for a lower value of $r$, however now the blue and red lines seem to be all mixed up. There also appear to be two regions which don’t seem to be that mixed up, in the middle of each ‘disk’. However, these are regions which trajectories are moving away from. If we look at what happens after $t=180 \text{ and up } \text{ to } t=200 $here, we see that none of the trajectories are in these regions close to the unstable fixed points:
 ![Figure 17](/images/part41/output_017.png)
 What we have here is a so-called strange attractor. It has zero volume, and is like a warped, wrapped surface around the unstable fixed points. All trajectories get attracted to this region, even if they start off way away from it...and yes, now we have chaos. You cannot make predictions about where a trajectory will end up unless you have perfect precision...and you never have perfect precision in reality. Chaos actually requires more than that which we will explore in the next set of notes.
 **A Strange Attractor**, as it is called, is really the far future behaviour (although to simulate it we don’t need to go so far into the future to see what ’s going on. It is called a strange attractor because it attracts all nearby trajectories (in fact in this case all trajectories) over time, and the strangeness is in its fractal properties, which we will take a look at.

@@ -17,7 +17,7 @@ Let’s start off with a second order system given by Newton ’s law
 $$
 m \overset{\bullet{} \bullet{}}{x}=F(x)
 $$
-You can also write this as $F=m a. $Here $m \text{ is } \text{ the } \text{ mass }$ of some object and it says that the acceleration of the object is equal to the force applied to it divided by the mass. Small masses accelerate faster under a given force than do large masses.
+You can also write this as $F=m a. $Here $m \text{ is the } \text{ mass }$ of some object and it says that the acceleration of the object is equal to the force applied to it divided by the mass. Small masses accelerate faster under a given force than do large masses.
 Note that we have written here that the force can be a function of the position, but not of time (corresponding to a driving force), or of the velocity of the object (corresponding to a damping force)
 We can rewrite the above by defining a potential energy $V(x)$ whose derivative is the negative of the force:
 $$
@@ -29,19 +29,19 @@ We can now write Newton’s law as
 $$
 m \overset{\bullet{} \bullet{}}{x}+\frac{d V}{d x}=0
 $$
-Now multiply both sides by $\overset{\bullet{}}{x}$:
+Now multiply both sides by $\dot{x}$:
 $$
-\overset{\bullet{}}{x} m \overset{\bullet{} \bullet{}}{x}+\overset{\bullet{}}{x} \frac{d V}{d x}=0
+\dot{x} m \overset{\bullet{} \bullet{}}{x}+\dot{x} \frac{d V}{d x}=0
 $$
 Show that this is the same as writing
 $$
-\frac{d}{d t}(\frac{1}{2}m{\overset{\bullet{}}{x}}^{2}+V)=0
+\frac{d}{d t}(\frac{1}{2}m{\dot{x}}^{2}+V)=0
 $$
 where we have used the chain rule, noting that really $V=V(x(t))$.
 We say that the left hand side is an **exact**time-derivative. Exact here meaning that the terms on the left can be written as the time derivative of the simple expression in brackets.
 In fact the thing in brackets is the kinetic energy plus the potential energy, which generically is the total energy, which we can call $E:$
 $$
-E=\frac{1}{2}m{\overset{\bullet{}}{x}}^{2}+V
+E=\frac{1}{2}m{\dot{x}}^{2}+V
 $$
 So
 $$
@@ -75,19 +75,19 @@ $$
 $$
 We can use the old trick that we learned in MAM1043H to write this second order system as two first order systems:
 $$
-\overset{\bullet{} }{x}=y
+\dot{x}=y
 $$
 $$
-\overset{\bullet{} }{y}=x-x^{3}
+\dot{y}=x-x^{3}
 $$
 Make sure that you can show that there are three fixed points: ${\text{ fp }}_{1}\text{ at }$ $(-1,0), {\text{ fp }}_{2}\text{ at } (0,0), {\text{ fp }}_{3} \text{ at } (1,0).$
 The Jacobian of this system is:
 $$
-A=(\text{\textbackslash[NoBreak]}\begin{pmatrix} 0 & 1 \\ 1-3x^{2} & 0 \end{pmatrix}\text{\textbackslash[NoBreak]})
+A=(\begin{pmatrix} 0 & 1 \\ 1-3x^{2} & 0 \end{pmatrix})
 $$
 Which at the three fixed points gives
 $$
-A_{1}=(\text{\textbackslash[NoBreak]}\begin{pmatrix} 0 & 1 \\ -2 & 0 \end{pmatrix}\text{\textbackslash[NoBreak]}), A_{2}=(\text{\textbackslash[NoBreak]}\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}\text{\textbackslash[NoBreak]}\text{\textbackslash[NoBreak]}), A_{3}=(\text{\textbackslash[NoBreak]}\begin{pmatrix} 0 & 1 \\ -2 & 0 \end{pmatrix}\text{\textbackslash[NoBreak]}\text{\textbackslash[NoBreak]})
+A_{1}=(\begin{pmatrix} 0 & 1 \\ -2 & 0 \end{pmatrix}), A_{2}=(\begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}), A_{3}=(\begin{pmatrix} 0 & 1 \\ -2 & 0 \end{pmatrix})
 $$
 Leading to:
 $$
@@ -97,9 +97,9 @@ $$
 So we have two centers and one saddle point.
 What do we remember from the section about linearisation? That centers are very very sensitive to non-linearities, and what might look like a center when we linearise might become either an attracting or repelling fixed point when we include non-linearities. So perhaps those centers are just a linearised dream and if you looked at the whole system they would disappear.
 However, we also know that our system is conservative and so there can ’t be any stable or unstable spirals or stars or degenerate nodes (attracting or repelling fixed points), so somehow the center may still remain.
-In fact we can find the trajectories by finding the paths for which $E$ is a constant. $E \text{ in } \text{ this } \text{ case }$ is just (remembering that $m=1)$:
+In fact we can find the trajectories by finding the paths for which $E$ is a constant. $E \text{ in this } \text{ case }$ is just (remembering that $m=1)$:
 $$
-E=\frac{1}{2}{\overset{\bullet{}}{x}}^{2}+V
+E=\frac{1}{2}{\dot{x}}^{2}+V
 $$
 $$
 =\frac{1}{2}y^{2}-\frac{1}{2}x^{2}+\frac{1}{4}x^{4}
@@ -120,14 +120,14 @@ Let’s first look at a large positive value of $E$, say $E=1$.
 ![Figure 4](/images/part14-2/output_004.png)
 What do we have here? Well, first of all we should figure out what direction we would travel around the trajectory. Well, let’s look at the point around $(0,1.42)$, right at the top. If we plug that into the equations then we get:
 $$
-\overset{\bullet{} }{x}=1
+\dot{x}=1
 $$
 $$
-\overset{\bullet{} }{y}=0
+\dot{y}=0
 $$
-So $x \text{ is } \text{ increasing } \text{ at } \text{ this } \text{ point } \text{ and } \text{ so } $the trajectory must be going clockwise:
+So $x \text{ is increasing } \text{ at this } \text{ point and } \text{ so } $the trajectory must be going clockwise:
 ![Figure 5](/images/part14-2/output_005.png)
-So what does this mean? Well, this trajectory corresponds to the system moving from around $x=-1.8 \text{ to } x=1.8 \text{ and } \text{ back } \text{ again } \text{ over } \text{ and } \text{ over }$. However, the (absolute) y-value (which is actually |$\overset{\bullet{}}{ x}$|, ie. the speed) is smallest at the extremes of $x$, then gets larger, then smaller for a bit at $x=0$, then larger again.
+So what does this mean? Well, this trajectory corresponds to the system moving from around $x=-1.8 \text{ to } x=1.8 \text{ and back } \text{ again over } \text{ and over }$. However, the (absolute) y-value (which is actually |$\dot{ x}$|, ie. the speed) is smallest at the extremes of $x$, then gets larger, then smaller for a bit at $x=0$, then larger again.
 Looking at our potential again:
 ![Figure 6](/images/part14-2/output_006.png)
 This is a trajectory that looks like:
@@ -156,7 +156,7 @@ $$
 ![Figure 15](/images/part14-2/output_015.png)
 This is a plot of the **energy function**of this system. Keep in mind as always that y is really the velocity. So we take the system at any position and any velocity and it will tell us the energy of the system for all time to come after that as it traces one of the contours on the energy surface.
 One important thing to note here is that the dynamics of this system shouldn ’t be confused with the dynamics of the particle rolling about in the double well. Dynamics here all happens along horizontal cross-sections corresponding to energy contours.
-A projection of these contours into the $(x,y) \text{ plane } \text{ simply } \text{ gives } \text{ the } \text{ trajectories } \text{ in } \text{ the } \text{ phase } \text{ space }.$
+A projection of these contours into the $(x,y) \text{ plane simply } \text{ gives the } \text{ trajectories in } \text{ the phase } \text{ space }.$
 ![Figure 16](/images/part14-2/output_016.png)
 Note that in this case the centers correspond to the minimal energy solutions and are stable fixed points. This won’t always be the case, but you would have to come up with non-differentiable potentials to find such scenarios, so we won’t worry about them here.
 Remember that we performed our fixed point analysis by looking at the Jacobian at the fixed points. This is equivalent to linearising the system, and we said that centers are very unstable to non-linearities...but it looks like the old centers are still centers, even if they don’t correspond to perfect circles, or ellipses. Why is this?
@@ -167,7 +167,7 @@ Try and think what happens also if the fixed point is not isolated - for instanc
 Hang on, but I thought that conservative vector fields were curl free?
 So, there are two things which shouldn’t be conflated here. A conservative system in the sense of there being conservation of energy, and a conservative vector field in the sense that around any closed curve there is no work done on the particle. In the latter case, the vector field is the force on the particle and thus you should think of this as a system, maybe in two dimensions, with forces acting on it. Here we are really thinking about a system which lives in a two dimensional phase space, but the ‘spatial’ location is just one dimensional. When we are talking about a vector field in this course we mean a vector field in phase space and this is different from having something of the form:
 $$
-F=\text{\textbackslash[Del]}\Phi{}
+F=\nabla{}\Phi{}
 $$
 Which is a conservative vector field, which is indeed curl free.
 Essentially “conservative” here has two different meanings. In our case, there can be curl in the vector field in the phase plane.
@@ -206,12 +206,12 @@ there’s no $t$ floating about. You need to find a quantity for which
 $$
 \frac{d E(u,v)}{d \Theta{}}=0
 $$
-where remember $u \text{ and } v \text{ are } \text{ functions } \text{ of } \Theta{}.$
+where remember $u \text{ and } v \text{ are functions } \text{ of } \Theta{}.$
 a) Use the lessons learned in this chapter to find such a quantity.
 - b) Show that it is indeed conserved.
-- c) Show that the linear center you found (which you now know is a non-linear center) is a minimum of $E \text{ and } \text{ not } $a maximum. To do this, you need to do the equivalent of calculating the second derivative and showing that it’s positive for it to be a local minimum. This is done using the Jacobian, but not the same Jacobian that you’ve been looking at so far in this course. Calculate:
+- c) Show that the linear center you found (which you now know is a non-linear center) is a minimum of $E \text{ and not } $a maximum. To do this, you need to do the equivalent of calculating the second derivative and showing that it’s positive for it to be a local minimum. This is done using the Jacobian, but not the same Jacobian that you’ve been looking at so far in this course. Calculate:
 $$
-(\text{\textbackslash[NoBreak]}\begin{pmatrix} \frac{{\partial{}}^{2}E}{\partial{}u^{2}} & \frac{{\partial{}}^{2}E}{\partial{}v\partial{}u} \\ \frac{{\partial{}}^{2}E}{\partial{}u\partial{}v} & \frac{{\partial{}}^{2}E}{\partial{}v^{2}} \end{pmatrix}\text{\textbackslash[NoBreak]})
+(\begin{pmatrix} \frac{{\partial{}}^{2}E}{\partial{}u^{2}} & \frac{{\partial{}}^{2}E}{\partial{}v\partial{}u} \\ \frac{{\partial{}}^{2}E}{\partial{}u\partial{}v} & \frac{{\partial{}}^{2}E}{\partial{}v^{2}} \end{pmatrix})
 $$
 And calculating the determinant of this. So long as $\frac{\partial{}E}{\partial{}u} \text{ and } \frac{\partial{}E}{\partial{}v} $are both zero, if the determinant of the Jacobian is positive then you are at a local minimum.
 4) This equilibrium point corresponds to a circular orbit. Show this, and find what its radius is.

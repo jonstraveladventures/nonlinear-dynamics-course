@@ -11,10 +11,10 @@ It’s going to turn out that most of the time, the ideas about being able to li
 But we’re getting ahead of ourselves here. Let ’s just see how we can extend the ideas of linearising a one-dimensional system to linearising a two-dimensional one.
 We start, as always these days, with our system looking like:
 $$
-\overset{\bullet{}}{x}=f(x,y)
+\dot{x}=f(x,y)
 $$
 $$
-\overset{\bullet{}}{y}=g(x,y)
+\dot{y}=g(x,y)
 $$
 where $f \text{ and } g \text{ are } $any non-linear functions, although we will require them to be differentiable at the fixed points. We will also presume that we have found a fixed point, at $(x^{*},y^{*})$ in the phase plane. Similar to the one-dimensional case, we will write our functions $x \text{ and } y$ as:
 $$
@@ -23,79 +23,79 @@ $$
 $$
 y(t)=y^{*}+v(t)
 $$
-where now $u \text{ and } v \text{ are } \text{ the } \text{ dynamical } \text{ parts }$ which are essentially telling us about movement around the fixed point. The idea is going to be that we will ask what happens when $u \text{ and } v \text{ are }$ both small, ie. when $x \text{ and } y \text{ are }$ close to their fixed point values. We will call $u \text{ and } v $the components of a **disturbance** from the fixed point. Let’s just look at an intuitive example of this.
+where now $u \text{ and } v \text{ are the } \text{ dynamical parts }$ which are essentially telling us about movement around the fixed point. The idea is going to be that we will ask what happens when $u \text{ and } v \text{ are }$ both small, ie. when $x \text{ and } y \text{ are }$ close to their fixed point values. We will call $u \text{ and } v $the components of a **disturbance** from the fixed point. Let’s just look at an intuitive example of this.
 Let’s say that we have a particle moving about in a bowl, where the bowl is given by the equations
 $$
 h={(x-2)}^{2}+{(y+3)}^{2}
 $$
 This looks like
 ![Figure 2](/images/part13/output_002.png)
-We could describe the position of the particle in terms of $x$ and $y_{ } \text{ positions }$, but we know that in this case the ‘fixed point ’ is at $(2,-3), \text{ so } \text{ if } \text{ we } \text{ define } x=2+u, y=-3+v, $then we can describe the movement in terms of $(u,v) \text{ coordinates }$, and now if $u \text{ and } v \text{ are } \text{ both } \text{ small }, \text{ then } \text{ we } \text{ are } \text{ close } \text{ to } \text{ the } \text{ fixed } \text{ point } \text{ of } \text{ this } \text{ system }, \text{ and }$ could study these small perturbations if we wished.
+We could describe the position of the particle in terms of $x$ and $y_{ } \text{ positions }$, but we know that in this case the ‘fixed point ’ is at $(2,-3), \text{ so if } \text{ we define } x=2+u, y=-3+v, $then we can describe the movement in terms of $(u,v) \text{ coordinates }$, and now if $u \text{ and } v \text{ are both } \text{ small }, \text{ then we } \text{ are close } \text{ to the } \text{ fixed point } \text{ of this } \text{ system }, \text{ and }$ could study these small perturbations if we wished.
 Anyway, this is just a toy example. Let’s think about things more generally.
-Remember that in the one dimensional example, we were able to write $\overset{\bullet{}}{x}=f(x) \text{ as } \overset{\bullet{}}{u}=f(x^{*}+u)=f(x^{*})+u\frac{d f(x)}{\text{ dx }}|_{x^{*}}+...$ Well, now we are going to do the same thing, but this time in two variables. We start by writing:
+Remember that in the one dimensional example, we were able to write $\dot{x}=f(x) \text{ as } \dot{u}=f(x^{*}+u)=f(x^{*})+u\frac{d f(x)}{\text{ dx }}|_{x^{*}}+...$ Well, now we are going to do the same thing, but this time in two variables. We start by writing:
 $$
-\overset{\bullet{}}{u}=f(x^{*}+u,y^{*}+v)
-$$
-$$
-\overset{\bullet{}}{v}=g(x^{*}+u,y^{*}+v)
-$$
-where we have been able to write $\overset{\bullet{}}{x}={\overset{\bullet{}}{x}}^{*}+\overset{\bullet{}}{u}=\overset{\bullet{}}{u}$ because $x^{*} \text{ is } $a constant and therefore its time derivative is zero...and similarly for $v$. Now let’s take the first of these expressions and perform a Taylor expansion about $(x^{*},y^{*})$:
-$$
-\overset{\bullet{}}{u}=f(x^{*}+u,y^{*}+v)
+\dot{u}=f(x^{*}+u,y^{*}+v)
 $$
 $$
-=f(x^{*},y^{*})+u{\partial{}}_{x}f(x,y)|_{x^{*},y^{*}}+v{\partial{}}_{y}f(x,y)|_{x^{*},y^{*}}+\text{\textbackslash[ScriptCapitalO]}(u^{2},v^{2},u v)
+\dot{v}=g(x^{*}+u,y^{*}+v)
 $$
-ok, so some notation here ${\partial{}}_{x}f(x,y)$ is just the partial derivative of $f$ with respect to $x$ and we are then evaluating this at the fixed point. $\text{\textbackslash[ScriptCapitalO]}(u^{2},v^{2},u v)$ says that we are neglecting terms of order $u^{2},v^{2} \text{ and } u v$ and of course higher order in $u \text{ and } v$. However, because we have said that we are looking at behaviour close to the fixed point, $u^{ }\text{ and } v $are both small, so the higher order terms can be neglected. Performing the same expansion for the second equation we end up with the following two linearised equations (neglecting quadratic terms) in the “disturbance”:
+where we have been able to write $\dot{x}={\dot{x}}^{*}+\dot{u}=\dot{u}$ because $x^{*} \text{ is } $a constant and therefore its time derivative is zero...and similarly for $v$. Now let’s take the first of these expressions and perform a Taylor expansion about $(x^{*},y^{*})$:
 $$
-\overset{\bullet{}}{u}=f(x^{*},y^{*})+u{\partial{}}_{x}f(x,y)|_{x^{*},y^{*}}+v{\partial{}}_{y}f(x,y)|_{x^{*},y^{*}}
+\dot{u}=f(x^{*}+u,y^{*}+v)
 $$
 $$
-\overset{\bullet{}}{v}=g(x^{*},y^{*})+u{\partial{}}_{x}g(x,y)|_{x^{*},y^{*}}+v{\partial{}}_{y}g(x,y)|_{x^{*},y^{*}}
+=f(x^{*},y^{*})+u{\partial{}}_{x}f(x,y)|_{x^{*},y^{*}}+v{\partial{}}_{y}f(x,y)|_{x^{*},y^{*}}+\mathcal{O}(u^{2},v^{2},u v)
+$$
+ok, so some notation here ${\partial{}}_{x}f(x,y)$ is just the partial derivative of $f$ with respect to $x$ and we are then evaluating this at the fixed point. $\mathcal{O}(u^{2},v^{2},u v)$ says that we are neglecting terms of order $u^{2},v^{2} \text{ and } u v$ and of course higher order in $u \text{ and } v$. However, because we have said that we are looking at behaviour close to the fixed point, $u^{ }\text{ and } v $are both small, so the higher order terms can be neglected. Performing the same expansion for the second equation we end up with the following two linearised equations (neglecting quadratic terms) in the “disturbance”:
+$$
+\dot{u}=f(x^{*},y^{*})+u{\partial{}}_{x}f(x,y)|_{x^{*},y^{*}}+v{\partial{}}_{y}f(x,y)|_{x^{*},y^{*}}
+$$
+$$
+\dot{v}=g(x^{*},y^{*})+u{\partial{}}_{x}g(x,y)|_{x^{*},y^{*}}+v{\partial{}}_{y}g(x,y)|_{x^{*},y^{*}}
 $$
 Actually, we can simplify this because we know that at the fixed point, $f \text{ and } g$ both evaluate to zero by definition, so we really have:
 $$
-\overset{\bullet{}}{u}=u{\partial{}}_{x}f(x,y)|_{x^{*},y^{*}}+v{\partial{}}_{y}f(x,y)|_{x^{*},y^{*}}
+\dot{u}=u{\partial{}}_{x}f(x,y)|_{x^{*},y^{*}}+v{\partial{}}_{y}f(x,y)|_{x^{*},y^{*}}
 $$
 $$
-\overset{\bullet{}}{v}=u{\partial{}}_{x}g(x,y)|_{x^{*},y^{*}}+v{\partial{}}_{y}g(x,y)|_{x^{*},y^{*}}
+\dot{v}=u{\partial{}}_{x}g(x,y)|_{x^{*},y^{*}}+v{\partial{}}_{y}g(x,y)|_{x^{*},y^{*}}
 $$
 We can actually write this whole thing in matrix form as
 $$
-(\text{\textbackslash[NoBreak]}\begin{pmatrix} \overset{\bullet{}}{u} \\ \overset{\bullet{}}{v} \end{pmatrix}\text{\textbackslash[NoBreak]})=(\text{\textbackslash[NoBreak]}\begin{pmatrix} {\partial{}}_{x}f & {\partial{}}_{y}f \\ {\partial{}}_{x}g & {\partial{}}_{y}g \end{pmatrix}\text{\textbackslash[NoBreak]})|_{x^{*},y^{*}}(\text{\textbackslash[NoBreak]}\begin{pmatrix} u \\ v \end{pmatrix}\text{\textbackslash[NoBreak]})
+(\begin{pmatrix} \dot{u} \\ \dot{v} \end{pmatrix})=(\begin{pmatrix} {\partial{}}_{x}f & {\partial{}}_{y}f \\ {\partial{}}_{x}g & {\partial{}}_{y}g \end{pmatrix})|_{x^{*},y^{*}}(\begin{pmatrix} u \\ v \end{pmatrix})
 $$
 The matrix:
 $$
-A=(\text{\textbackslash[NoBreak]}\begin{pmatrix} {\partial{}}_{x}f & {\partial{}}_{y}f \\ {\partial{}}_{x}g & {\partial{}}_{y}g \end{pmatrix}\text{\textbackslash[NoBreak]})|_{x^{*},y^{*}}
+A=(\begin{pmatrix} {\partial{}}_{x}f & {\partial{}}_{y}f \\ {\partial{}}_{x}g & {\partial{}}_{y}g \end{pmatrix})|_{x^{*},y^{*}}
 $$
 Is known as the Jacobian matrix at the fixed point. Jacobians show up all over applied mathematics, and you can see a nice Khan academy video about it here.
 This all feels a bit abstract at the moment. Let’s look at a particular example. Taking the two-dimensional non-linear system given by
 $$
-\overset{\bullet{}}{x}=-x+x^{3}
+\dot{x}=-x+x^{3}
 $$
 $$
-\overset{\bullet{}}{y}=-2y
+\dot{y}=-2y
 $$
-The first thing that we see is that this system is **decoupled**. This means that the dynamics in the $x \text{ direction } \text{ is } \text{ not } \text{ dependent } \text{ on } \text{ the } y \text{ position }, \text{ and } \text{ vice } \text{ versa }. $We could actually find the solutions for $x$ and $y$ separately, but let’s go through the analysis above.
-First we want to find the fixed points. These are given by solving $\overset{\bullet{}}{x}$=$\overset{\bullet{}}{y}=0.$ and we get three fixed points, at coordinate $(-1,0),(0,0) \text{ and } (1,0)$. We we are trying to do with the linearisation analysis is to get an idea of the nature of these fixed points.
+The first thing that we see is that this system is **decoupled**. This means that the dynamics in the $x \text{ direction is } \text{ not dependent } \text{ on the } y \text{ position }, \text{ and vice } \text{ versa }. $We could actually find the solutions for $x$ and $y$ separately, but let’s go through the analysis above.
+First we want to find the fixed points. These are given by solving $\dot{x}$=$\dot{y}=0.$ and we get three fixed points, at coordinate $(-1,0),(0,0) \text{ and } (1,0)$. We we are trying to do with the linearisation analysis is to get an idea of the nature of these fixed points.
 Next we want to find the Jacobian matrix which is the matrix of partial derivatives. Then we will find the Jacobian matrix at the fixed points. This gives us
 $$
-A=(\text{\textbackslash[NoBreak]}\begin{pmatrix} -1+3x^{2} & 0 \\ 0 & -2 \end{pmatrix}\text{\textbackslash[NoBreak]})|_{x^{*},y^{*}}
+A=(\begin{pmatrix} -1+3x^{2} & 0 \\ 0 & -2 \end{pmatrix})|_{x^{*},y^{*}}
 $$
 which, when evaluated at the three fixed points is:
 $$
-A_{1}=(\text{\textbackslash[NoBreak]}\begin{pmatrix} 2 & 0 \\ 0 & -2 \end{pmatrix}\text{\textbackslash[NoBreak]}), A_{2}=(\text{\textbackslash[NoBreak]}\begin{pmatrix} -1 & 0 \\ 0 & -2 \end{pmatrix}\text{\textbackslash[NoBreak]}), A_{3}=(\text{\textbackslash[NoBreak]}\begin{pmatrix} 2 & 0 \\ 0 & -2 \end{pmatrix}\text{\textbackslash[NoBreak]})
+A_{1}=(\begin{pmatrix} 2 & 0 \\ 0 & -2 \end{pmatrix}), A_{2}=(\begin{pmatrix} -1 & 0 \\ 0 & -2 \end{pmatrix}), A_{3}=(\begin{pmatrix} 2 & 0 \\ 0 & -2 \end{pmatrix})
 $$
 where we have written $A_{i}, i=1,2,3$ for the three fixed points listed above. Now we have the linearised dynamical system where the equations are just:
 $$
-(\text{\textbackslash[NoBreak]}\begin{pmatrix} \overset{\bullet{}}{u} \\ \overset{\bullet{}}{v} \end{pmatrix}\text{\textbackslash[NoBreak]})=(\text{\textbackslash[NoBreak]}\begin{pmatrix} 2 & 0 \\ 0 & -2 \end{pmatrix}\text{\textbackslash[NoBreak]})(\text{\textbackslash[NoBreak]}\begin{pmatrix} u \\ v \end{pmatrix}\text{\textbackslash[NoBreak]})   (\text{ for } \text{ the } \text{ first } \text{ and } \text{ last } \text{ fixed } \text{ points }) \text{ and }    (\text{\textbackslash[NoBreak]}\begin{pmatrix} \overset{\bullet{}}{u} \\ \overset{\bullet{}}{v} \end{pmatrix}\text{\textbackslash[NoBreak]})=(\text{\textbackslash[NoBreak]}\begin{pmatrix} -1 & 0 \\ 0 & -2 \end{pmatrix}\text{\textbackslash[NoBreak]})(\text{\textbackslash[NoBreak]}\begin{pmatrix} u \\ v \end{pmatrix}\text{\textbackslash[NoBreak]})  \text{ for } \text{ the } \text{ middle } \text{ one }.
+(\begin{pmatrix} \dot{u} \\ \dot{v} \end{pmatrix})=(\begin{pmatrix} 2 & 0 \\ 0 & -2 \end{pmatrix})(\begin{pmatrix} u \\ v \end{pmatrix})   (\text{ for the } \text{ first and } \text{ last fixed } \text{ points }) \text{ and }    (\begin{pmatrix} \dot{u} \\ \dot{v} \end{pmatrix})=(\begin{pmatrix} -1 & 0 \\ 0 & -2 \end{pmatrix})(\begin{pmatrix} u \\ v \end{pmatrix})  \text{ for the } \text{ middle one }.
 $$
 ok, so now we can deal with these in the same way as we did for any linear second order system. We calculate the trace and determinant and figure out where these lie in the family of different linear second order systems. Make sure that you can see why they sit at the red points in the plot below:
 ![Figure 3](/images/part13/output_003.png)
 We see here that we have two saddle points (both at the same position in the $(\Delta{},\Tau{}) \text{ plane },$ and one stable node (although it’s close to being a star or degenerate node). Both of these are not the borderline cases that we hinted about above, so we can believe that the linearised system does give us useful information about the full non-linear system in the region close to the fixed points.
 Let’s solve the linearised system exactly for the case of
 $$
-(\text{\textbackslash[NoBreak]}\begin{pmatrix} \overset{\bullet{}}{u} \\ \overset{\bullet{}}{v} \end{pmatrix}\text{\textbackslash[NoBreak]})=(\text{\textbackslash[NoBreak]}\begin{pmatrix} 2 & 0 \\ 0 & -2 \end{pmatrix}\text{\textbackslash[NoBreak]})(\text{\textbackslash[NoBreak]}\begin{pmatrix} u \\ v \end{pmatrix}\text{\textbackslash[NoBreak]})
+(\begin{pmatrix} \dot{u} \\ \dot{v} \end{pmatrix})=(\begin{pmatrix} 2 & 0 \\ 0 & -2 \end{pmatrix})(\begin{pmatrix} u \\ v \end{pmatrix})
 $$
 This solution to this is:
 $$
@@ -110,17 +110,17 @@ Plotting some characteristic flows near the fixed point (ie. for small $u \text{
 Now doing the same thing for the other fixed points and including the nature of the fixed points we have:
 ![Figure 5](/images/part13/output_005.png)
 What we have been able to do here is to get a sense of what is happening in this system close to the fixed points.
-We can also look at the nullclines. Let’s ask when the flows are perfectly vertical. That would be when $\overset{\bullet{}}{x}$=0. This is equivalent to solving just
+We can also look at the nullclines. Let’s ask when the flows are perfectly vertical. That would be when $\dot{x}$=0. This is equivalent to solving just
 $$
 0=-x+x^{3}
 $$
 but leaving $y$ unfixed. In fact we see here that for $x=-1,0 \text{ and } 1$, the flows are purely vertical. We can then solve for the y equation for these values. Actually, in this case because the system is uncoupled, the value of $x$ has makes no difference and we just have:
 $$
-\overset{\bullet{}}{y}=-2y \text{\textbackslash[LongRightArrow]} y=y_{0}e^{-2t}
+\dot{y}=-2y \longrightarrow{} y=y_{0}e^{-2t}
 $$
 which says that these nullclines all correspond to decaying values of $y$. Let’s add these to the phase diagram:
 ![Figure 6](/images/part13/output_006.png)
-Now for the horizontal nullclines, these are found by setting $\overset{\bullet{}}{y}=0$, which is solved for $y=0. $We can actually see from the above phase diagram how these lines must flow along the x-axis:
+Now for the horizontal nullclines, these are found by setting $\dot{y}=0$, which is solved for $y=0. $We can actually see from the above phase diagram how these lines must flow along the x-axis:
 ![Figure 7](/images/part13/output_007.png)
 This already gives us a pretty good idea about the flows. Now imagine that you start at the position of the red dot in the following:
 ![Figure 8](/images/part13/output_008.png)
@@ -133,22 +133,22 @@ OK, let’s take stock of what we did here. We started off by finding the fixed 
 Next we are going to look at an example where, naively we would have a “Center” solution, but in fact even a tiny non-linearity changes this. Let’s see...
 This is actually a carefully chosen example because it can be solved exactly by performing a change of coordinates. We will study the system given by:
 $$
-\overset{\bullet{}}{x}=-y+a x (x^{2}+y^{2})
+\dot{x}=-y+a x (x^{2}+y^{2})
 $$
 $$
-\overset{\bullet{}}{y}=x+a y (x^{2}+y^{2})
+\dot{y}=x+a y (x^{2}+y^{2})
 $$
 There is only one fixed point for this system at $(x^{*},y^{*})=(0,0)$. Because of this, dealing with small perturbations is equivalent to dealing with small $x$ and $y$.
 I leave it as an exercise for you to see that you can linearise this system about the fixed point as:
 $$
-\overset{\bullet{}}{x}=-y
+\dot{x}=-y
 $$
 $$
-\overset{\bullet{}}{y}=x
+\dot{y}=x
 $$
 Which can be written as:
 $$
-(\text{\textbackslash[NoBreak]}\begin{pmatrix} \overset{\bullet{}}{x} \\ \overset{\bullet{}}{y} \end{pmatrix}\text{\textbackslash[NoBreak]})=(\text{\textbackslash[NoBreak]}\begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}\text{\textbackslash[NoBreak]})(\text{\textbackslash[NoBreak]}\begin{pmatrix} x \\ y \end{pmatrix}\text{\textbackslash[NoBreak]})
+(\begin{pmatrix} \dot{x} \\ \dot{y} \end{pmatrix})=(\begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix})(\begin{pmatrix} x \\ y \end{pmatrix})
 $$
 Which sits here (the red spot) in the space of possible linear systems:
 ![Figure 11](/images/part13/output_011.png)
@@ -159,46 +159,46 @@ $$
 $$
 y=x_{0}\text{ sin } t+y_{0} \text{ cos } t
 $$
-which are indeed spirals. For $a=0, \text{ these }$ solutions are exact, and we might imagine that for small $a \text{ they } \text{ would }$ also be good approximations of the true solutions for small values of $(x,y)$ and therefore that all solutions would look something like:
+which are indeed spirals. For $a=0, \text{ these }$ solutions are exact, and we might imagine that for small $a \text{ they would }$ also be good approximations of the true solutions for small values of $(x,y)$ and therefore that all solutions would look something like:
 ![Figure 12](/images/part13/output_012.png)
 In this small region. However, we can show that this isn’t the case by making a change of coordinates and solving the system exactly.
 Let’s go from Cartesian to Polar coordinates by letting $x=r \text{ cos } \Theta{}, y=r \text{ sin } \Theta{}$ which means that:
 $$
-\overset{\bullet{}}{x}=\frac{d (r \text{ cos } \Theta{})}{\text{ dt }}=\overset{\bullet{}}{r} \text{ cos } \Theta{}-r \overset{\bullet{}}{\Theta{}} \text{ sin } \Theta{}
+\dot{x}=\frac{d (r \text{ cos } \Theta{})}{\text{ dt }}=\dot{r} \text{ cos } \Theta{}-r \dot{\Theta{}} \text{ sin } \Theta{}
 $$
 $$
-\overset{\bullet{}}{y}=\frac{d (r \text{ sin } \Theta{})}{\text{ dt }}=\overset{\bullet{}}{r} \text{ sin } \Theta{}+r \overset{\bullet{}}{\Theta{}} \text{ cos } \Theta{}
+\dot{y}=\frac{d (r \text{ sin } \Theta{})}{\text{ dt }}=\dot{r} \text{ sin } \Theta{}+r \dot{\Theta{}} \text{ cos } \Theta{}
 $$
 So we have:
 $$
-\overset{\bullet{}}{r} \text{ cos } \Theta{}-r \overset{\bullet{}}{\Theta{}} \text{ sin } \Theta{} = -r \text{ sin } \Theta{}+a r^{3} \text{ cos } \Theta{}
+\dot{r} \text{ cos } \Theta{}-r \dot{\Theta{}} \text{ sin } \Theta{} = -r \text{ sin } \Theta{}+a r^{3} \text{ cos } \Theta{}
 $$
 $$
-\overset{\bullet{}}{r} \text{ sin } \Theta{}+r \overset{\bullet{}}{\Theta{}} \text{ cos } \Theta{} = r \text{ cos } \Theta{}+a r^{3} \text{ sin } \Theta{}
+\dot{r} \text{ sin } \Theta{}+r \dot{\Theta{}} \text{ cos } \Theta{} = r \text{ cos } \Theta{}+a r^{3} \text{ sin } \Theta{}
 $$
 Multiplying the top equation by cos Θ and the bottom by sin Θ gives us:
 $$
-\overset{\bullet{}}{r} {\text{ cos }}^{2} \Theta{}-r \overset{\bullet{}}{\Theta{}} \text{ sin } \Theta{} \text{ cos } \Theta{}= -r \text{ sin } \Theta{} \text{ cos } \Theta{}+a r^{3} {\text{ cos }}^{2} \Theta{}
+\dot{r} {\text{ cos }}^{2} \Theta{}-r \dot{\Theta{}} \text{ sin } \Theta{} \text{ cos } \Theta{}= -r \text{ sin } \Theta{} \text{ cos } \Theta{}+a r^{3} {\text{ cos }}^{2} \Theta{}
 $$
 $$
-\overset{\bullet{}}{r} {\text{ sin }}^{2} \Theta{}+r \overset{\bullet{}}{\Theta{}} \text{ sin } \Theta{} \text{ cos } \Theta{}= r \text{ sin } \Theta{} \text{ cos } \Theta{}+a r^{3} {\text{ sin }}^{2} \Theta{}
+\dot{r} {\text{ sin }}^{2} \Theta{}+r \dot{\Theta{}} \text{ sin } \Theta{} \text{ cos } \Theta{}= r \text{ sin } \Theta{} \text{ cos } \Theta{}+a r^{3} {\text{ sin }}^{2} \Theta{}
 $$
 Adding the equations together gives:
 $$
-\overset{\bullet{}}{r} = a r^{3}
+\dot{r} = a r^{3}
 $$
 Plugging this back into either equation leaves us with:
 $$
-\overset{\bullet{}}{\Theta{}} =1
+\dot{\Theta{}} =1
 $$
 So, it would have been easier to start with this, wouldn’t it? Well, the reason that we didn’t was to show (as you ’ll see in a moment) that linearising doesn’t always work.
 So, we can solve this exactly and we get:
 $$
 r =\frac{r_{0}}{\sqrt{1-2 a {r_{0}}^{2} t}}, \Theta{}={\Theta{}}_{0}+t
 $$
-For $a=0, \text{ indeed } \text{ we } DO \text{ get } $a circle, as we would expect, because the $a$ is the coefficient of the non-linear element of the equations. However, for $a\neq{}0$ the behaviour is distinctly different. For positive $a$ we can see that as $t \text{ increases }$, $r$ is going to increase, and as $t->\frac{1}{2a {r_{0}}^{2}}$, $r->\infty{}$. Conversely, for negative a we see that as $t->\infty{}$, $r->0$. So we will have the following exact solutions:
+For $a=0, \text{ indeed we } DO \text{ get } $a circle, as we would expect, because the $a$ is the coefficient of the non-linear element of the equations. However, for $a\neq{}0$ the behaviour is distinctly different. For positive $a$ we can see that as $t \text{ increases }$, $r$ is going to increase, and as $t->\frac{1}{2a {r_{0}}^{2}}$, $r->\infty{}$. Conversely, for negative a we see that as $t->\infty{}$, $r->0$. So we will have the following exact solutions:
 ![Figure 13](/images/part13/output_013.png)
-So why is this system so sensitive to any change in $a? Well$, for $a=0 \text{ we } \text{ have } \text{ perfect } \text{ center } $solutions. A tiny tiny perturbation from a center solution is going to mean that after one orbit, if the path doesn’t close then we no longer have a center solution and we end up with either an inspiral or outspiral. The solutions would have to change in a very specific way to be perturbed away from centers, and yet to still come back to their starting places after one orbit. This isn’t impossible to imagine, but it’s clearly got to be a very special perturbation to do this.
+So why is this system so sensitive to any change in $a? Well$, for $a=0 \text{ we have } \text{ perfect center } $solutions. A tiny tiny perturbation from a center solution is going to mean that after one orbit, if the path doesn’t close then we no longer have a center solution and we end up with either an inspiral or outspiral. The solutions would have to change in a very specific way to be perturbed away from centers, and yet to still come back to their starting places after one orbit. This isn’t impossible to imagine, but it’s clearly got to be a very special perturbation to do this.
 One thing to note here is that for $a=0$, the fixed point is stable, whereas for $a>0$ it becomes unstable, so the non-linearity can not only change behaviour near the fixed point, it can even change the nature of the fixed point.
 So how about the other borderline behaviours, ie. the stars, degenerate nodes and the non-isolated fixed points?
 Well, one of the other types was a star, here is a stable and unstable star solution.
@@ -221,23 +221,23 @@ See here for a lovely discussion about these ideas:
 What if we can’t linearise?
 Remember in the first year course, where we looked at linearising systems, and found that for some, linearising didn’t work. For instance, if you try and linearise:
 $$
-\overset{\bullet{}}{x}=x^{2}
+\dot{x}=x^{2}
 $$
 Then naively you will simply find that close to the fixed point at $x=0:$
 $$
-\overset{\bullet{}}{x}=0
+\dot{x}=0
 $$
 But the solution to this is $x=x_{0}$ which clearly doesn’t make sense, as that says that close to the fixed point, solutions are all fixed points. The point is that with linearisation, we can only throw away higher order terms if they are less important than lower order terms. And here there are no lower order terms.
 In everything that we’ve spoken about above, it would seem that we can always linearise, but we can’t always trust the linearisation when we are on one of the boundary solutions. However, this isn ’t always true. For instance, given:
 $$
-\overset{\bullet{}}{x}=y-x
+\dot{x}=y-x
 $$
 $$
-\overset{\bullet{}}{y}=x^{2}
+\dot{y}=x^{2}
 $$
 If we naively try to linearise about the fixed point at $(x,y)=(0,0)$, we would find that the Jacobian is
 $$
-A|_{x^{*},y^{*}}=(\text{\textbackslash[NoBreak]}\begin{pmatrix} -1 & 1 \\ 0 & 0 \end{pmatrix}\text{\textbackslash[NoBreak]})
+A|_{x^{*},y^{*}}=(\begin{pmatrix} -1 & 1 \\ 0 & 0 \end{pmatrix})
 $$
 which has Δ=0, Τ=-1, and we would classify this as having non-isolated fixed points...which doesn’t make sense as we know that the fixed point is at (0,0). We’ve lost vital information by getting rid of the $x^{2} $part. The issue is that we simply can’t linearise this equation. It is what it is, and the fixed point doesn’t have any interpretation in terms of the linear fixed points.
 If we plot this vector field close to the fixed point we see:
@@ -248,10 +248,10 @@ Assignment
 OK, now it’s your turn!
 We’re going to look at a population of dassies (D, in units of 1000 dassies) and baboons (B, in units of 1000 baboons). Both of them feed on the same plants in the same area, so they are competing for resources. If we only had baboons, or only dassies, then the population could be modelled by the logistic equation. There would be some carrying capacity meaning that the environment could only sustain a certain sized population. Things change a bit when they are both in the same environment and they are both in competition for the same resource. We can write down the following non-linear model for the two populations:
 $$
-\overset{\bullet{}}{B}=B(2-B-D)
+\dot{B}=B(2-B-D)
 $$
 $$
-\overset{\bullet{}}{D}=D(3-2B-D)
+\dot{D}=D(3-2B-D)
 $$
 1) Explain why these equations seem reasonable. You don’t need to explain the numbers specifically, but give a general explanation for each term and the relative magnitude of the numbers.
 2) Now calculate the fixed points of this system. There should be four of them. Plot them in the (B,D) plane.

@@ -8,14 +8,14 @@ math: true
 We’re now going to introduce one of the key methods which will be needed for studying chaos later in the course. It’s a way to get a picture of what is happening in a phase portrait in potentially higher dimensional systems where just looking at the phase portrait as we have studied it so far is going to be too complicated.
 We’re going to start off with an example and see how we can generalise. We’re going to take a relatively simple system, of the form:
 $$
-\overset{   \bullet{}   }{r}=r(1-r^{2})
+\dot{r}=r(1-r^{2})
 $$
 $$
-\overset{   \bullet{}   }{\Theta{}}=5
+\dot{\Theta{}}=5
 $$
 and let’s start off with initial condition $\Theta{}(0)=0, r(0)=0.1$. We can easily plot the trajectory for this flow as we can actually solve this system analytically:
 $$
-\int{}\frac{1}{r(1-r^{2})}\mathrm{d}r =\int{}\mathrm{d}t   \text{\textbackslash[DoubleLongRightArrow]}    r(t)=\frac{0.1{\mathrm{e}}^{t}}{\sqrt{{0.1}^{2}({\mathrm{e}}^{2 t}-1)+1}}
+\int{}\frac{1}{r(1-r^{2})}\mathrm{d}r =\int{}\mathrm{d}t   \Longrightarrow{}    r(t)=\frac{0.1{\mathrm{e}}^{t}}{\sqrt{{0.1}^{2}({\mathrm{e}}^{2 t}-1)+1}}
 $$
 $$
 \overset{     }{\Theta{}}(t)=5t
@@ -53,14 +53,14 @@ We see here (although we knew it already) that there is a unique, globally stabl
 Let’s take a step back and think about what we ’ve got here. We took a system where we could define some surface (in this case actually a line) where the trajectories passed through. It happened to be in a relatively simple periodic way in this case, but it doesn’t have to be. We could then define something about the relative positions that the trajectory passed through the surface. This is the map from one pass through to the next, and is what we call the Poincar é map. Each point on the surface gets mapped to another point on the surface. We saw that there was a fixed point on the map, and this corresponds to the stable limit cycle.
 Let’s look at another example, this time of the driven system:
 $$
-\overset{   \bullet{}   }{x}+x=A \text{ sin } \Omega{} t
+\dot{x}+x=A \text{ sin } \Omega{} t
 $$
 for some positive driving frequency Ω. We can turn this into a two-dimensional autonomous system given by:
 $$
-\overset{   \bullet{}   }{x}+x=A \text{ sin } \Theta{}
+\dot{x}+x=A \text{ sin } \Theta{}
 $$
 $$
-\overset{   \bullet{}   }{\Theta{}}=\Omega{}
+\dot{\Theta{}}=\Omega{}
 $$
 where this system is periodic in Θ with period $\frac{2\Pi{}}{\Omega{}}$. Note that here we have $x $and Θ and not $r \text{ and }$ Θ. $r \text{ and }$ Θ corresponds to a parameterization of a two dimensional plane in polar coordinates, but $x $and Θ do not, because x isn’t constrained to be positive. A simple way to visualise such a phase space is a cylinder:
 ![Figure 4](/images/part36/output_004.png)
@@ -101,14 +101,14 @@ P(x^{*})=x^{*}
 $$
 The statement holds true whatever the dimension of the Surface of section, so we can make $x^{*}$ be a vector $x^{*}$ of any system
 $$
-\overset{   \bullet{}   }{x}=f(x)
+\dot{x}=f(x)
 $$
 To be a stable periodic orbit, we should be able to move a little way away from $x^{*} $and check the stability.
 If we start a little away from $x^{*}$, for instance at $x^{*}+v_{0}$, for some infinitesimal $v_{0}$, then under the Poincaré map we should have:
 $$
 x^{*}+v_{1}=P(x^{*}+v_{0})
 $$
-we know we won’t end up back at the same place, but we do expect to end up somewhere nearby, $v_{1}$ should also be small. For small $v_{0}$ we can expand P. However, we may be in a multi-dimensional space here and so our Taylor expansion will involve an $(n - 1)$ x $(n-1)$ matrix, where $n \text{ is } \text{ the } $dimension of the phase space. In the cases that we’ve been looking at here therefore this will just be a regular derivative along the surface of sections, as we were in 2d phase spaces. However, in general it will be some matrix of derivatives which we denote as $D P(x^{*})$ (this is just the Jacobian of $P $at the fixed point of the map) So we have:
+we know we won’t end up back at the same place, but we do expect to end up somewhere nearby, $v_{1}$ should also be small. For small $v_{0}$ we can expand P. However, we may be in a multi-dimensional space here and so our Taylor expansion will involve an $(n - 1)$ x $(n-1)$ matrix, where $n \text{ is the } $dimension of the phase space. In the cases that we’ve been looking at here therefore this will just be a regular derivative along the surface of sections, as we were in 2d phase spaces. However, in general it will be some matrix of derivatives which we denote as $D P(x^{*})$ (this is just the Jacobian of $P $at the fixed point of the map) So we have:
 $$
 x^{*}+v_{1}=P(x^{*})+D P(x^{*}).v_{0}+O(|v_{0}|^{2})
 $$
@@ -144,7 +144,7 @@ v_{k}= \underset{i=1}{\overset{n-1}{\sum{}}}{m_{i}({\Lambda{}}_{i})}^{k}e_{i}
 $$
 When is $v_{k}$ going to go to zero, proving that the fixed point is stable? Well, it will happen so long as all of the eigenvalues have magnitude less than one:
 $$
-|{\Lambda{}}_{i}|<1, \text{ for } \text{ all } i=1,..., n-1
+|{\Lambda{}}_{i}|<1, \text{ for all } i=1,..., n-1
 $$
 What happens when $|{\Lambda{}}_{i}|=1$ for some eigenvalue? Well, that is a borderline case, and this linear stability analysis fails in that case. In fact you will find that this takes place when there is a bifurcation in a limit cycle.
 The ${\Lambda{}}_{i}$ that we’ve been talking about are called **Floquet or Characteristic Multipliers.**

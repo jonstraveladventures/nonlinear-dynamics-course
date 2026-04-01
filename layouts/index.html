@@ -1,14 +1,45 @@
 {{ define "main" }}
 <div class="home">
   <h1>MAM2046W — Second Year Nonlinear Dynamics</h1>
-  <p class="lead">Course notes based on Strogatz's <em>Nonlinear Dynamics and Chaos</em>, UCT.</p>
+  <p class="lead">Course notes based on Strogatz's <em>Nonlinear Dynamics and Chaos</em>, University of Cape Town.</p>
+  <p class="lead">Textbook: <em>Nonlinear Dynamics and Chaos</em> by Steven H. Strogatz.</p>
 
   <nav class="toc">
-    <h2>Table of Contents</h2>
+    {{ $pages := .Site.RegularPages.ByWeight }}
+
+    <h2>Chapter 0: Introduction</h2>
     <ul>
-      {{ range .Site.RegularPages.ByWeight }}
-        <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
-      {{ end }}
+      {{ range $pages }}{{ if and (ge .Weight 0) (lt .Weight 10) }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}{{ end }}
+    </ul>
+
+    <h2>Chapter 1: Two-Dimensional Nonlinear Systems</h2>
+    <ul>
+      {{ range $pages }}{{ if and (ge .Weight 11) (lt .Weight 20) }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}{{ end }}
+    </ul>
+
+    <h2>Chapter 2: Limit Cycles</h2>
+    <ul>
+      {{ range $pages }}{{ if and (ge .Weight 21) (lt .Weight 30) }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}{{ end }}
+    </ul>
+
+    <h2>Chapter 3: Bifurcations</h2>
+    <ul>
+      {{ range $pages }}{{ if and (ge .Weight 31) (lt .Weight 40) }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}{{ end }}
+    </ul>
+
+    <h2>Chapter 4: Chaos</h2>
+    <ul>
+      {{ range $pages }}{{ if and (ge .Weight 41) (lt .Weight 50) }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}{{ end }}
     </ul>
   </nav>
 </div>
