@@ -287,7 +287,7 @@ ok, so this is pretty ugly! But you can figure out when you go from a stable nod
 
 Fixing $\sigma{}=10 \text{ and } b=\frac{8}{3}$ (values which are often used), we can numerically calculate the positions of the three roots as a function of $r$. The red line here just traces the history of the eigenvalues.
 
-![Figure 6](/images/part41/anim_001.png)
+![Figure 6](/images/part41/anim_001.gif)
 
 We see that we start off at the pitchfork bifurcation point (at $r=1\right)$ with all three eigenvalues being real and negative, or zero, corresponding to a stable node. As we increase $r$ we get one real negative eigenvalue and two complex ones (with negative real parts). This corresponds to having a stable direction, and a stable spiral plane.
 
@@ -389,7 +389,7 @@ So we have our pitchfork bifurcation at $r=1,$ and then our Hopf bifurcation at 
 
 It’s actually not easy to plot the limit cycles, but what we can do is to get an idea of where the homoclinic bifurcation is. We do this by looking at trajectories that start near the origin, and increasing r. You will see that they spiral into the two new fixed points, but at some point the spirals seem to somehow hit the origin. This is a pair of homoclinic orbits and corresponds to the homoclinic bifurcation where the limit cycles first appear. It happens at around $r=14$. In the animation you’ll see that we slow things down around $r=14$ and we’re going to stop just before $r=r_{H} $because we don’t want to spoil the surprise.
 
-![Figure 8](/images/part41/anim_002.png)
+![Figure 8](/images/part41/anim_002.gif)
 
 Note that at the point of the homoclinic bifurcation, we seem to swap which fixed point each of the trajectories is being attracted to.
 

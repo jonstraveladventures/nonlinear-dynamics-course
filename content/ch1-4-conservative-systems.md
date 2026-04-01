@@ -209,7 +209,7 @@ Looking at our potential again:
 
 This is a trajectory that looks like:
 
-![Figure 7](/images/part14-2/anim_001.png)
+![Figure 7](/images/part14-2/anim_001.gif)
 
 Where we are thinking of the potential as a gravitational potential being proportional to the height. Because there is no friction in the system, the particle will roll about forever exchanging potential energy for kinetic energy and back again.
 
@@ -223,7 +223,7 @@ What is going on here? Well, again we can calculate the direction of the arrows.
 
 This corresponds to trajectories which are stuck in one of the wells - either the left well or the right well. They can never escape.
 
-![Figure 10](/images/part14-2/anim_002.png)
+![Figure 10](/images/part14-2/anim_002.gif)
 
 It definitely looks here like the energy of this solution is less than that of the one that goes between both wells.
 
@@ -233,7 +233,7 @@ So let’s stop dilly-dallying about and put in a load of different trajectories
 
 We see one trajectory which ‘crosses through’ the saddlepoint (it never actually crosses it, because you can’t pass over a saddlepoint). In fact this is the zero energy trajectory. It has just enough energy to get to the top of the peak in the middle, but it takes forever to get there. Plotting one of the very very nearby trajectories looks like this:
 
-![Figure 12](/images/part14-2/anim_003.png)
+![Figure 12](/images/part14-2/anim_003.gif)
 
 Now putting everything together with all the appropriate arrows we end up with the same plot that we had back in section 1.1:
 

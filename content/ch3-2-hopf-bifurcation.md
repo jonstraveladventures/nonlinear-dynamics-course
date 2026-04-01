@@ -27,7 +27,7 @@ We see here three parameters, but let’s set two of them to fixed values. Playi
 
 In the following animation, I let μ vary from -0.4 to 0.2. You will see circles appear. The dashed circle is an unstable limit cycle and the undashed circle is a stable limit cycle. We’ll explore this below.
 
-![Figure 1](/images/part32/anim_001.png)
+![Figure 1](/images/part32/anim_001.gif)
 
 What’s happening here?
 
@@ -65,7 +65,7 @@ The part of this where the unstable limit cycle shrinks to zero size and engulfs
 
 Let’s look at some trajectories, not in phase space but just in terms of $x\left(t\right) \text{ for certain } \text{ initial conditions } \text{ in this } \text{ system at }$ different values of μ.
 
-![Figure 4](/images/part32/anim_002.png)
+![Figure 4](/images/part32/anim_002.gif)
 
 Taking some snapshots of this we have:
 
@@ -169,7 +169,7 @@ There is no value for which there is an unstable limit cycle, and so here, when 
 
 Here everything happens smoothly, and is reversible. That is that as you increase and decrease μ, you can smoothly go from the limit cycle to the fixed point limit. In the subcritical case there is a sudden change which can ’t be reversed. This is hysteresis, and essentially corresponds to following the following trajectory:
 
-![Figure 8](/images/part32/anim_003.png)
+![Figure 8](/images/part32/anim_003.gif)
 
 |The subcritical Hopf bifurcation is a dangerous thing to find, and can occur in engineering situations where vibrations suddenly occur, and are very hard to get rid of without a large change in the parameters of your system. They also occur in neurons.
 
@@ -187,7 +187,7 @@ $$
 
 We have the following:
 
-![Figure 9](/images/part32/anim_004.png)
+![Figure 9](/images/part32/anim_004.gif)
 
 For $\mu{}<0 \text{ we have } \text{ an } $unstable spiral, and for $\mu{}>0 \text{ we have }$ a stable spiral. There’s no limit cycle to be found, but the nature of the fixed point is changing. Instead, at $\mu{}=0$, we have not a limit cycle, but that there are whole bands of periodic solutions. These are not limit cycles as limit cycles have to be isolated:
 

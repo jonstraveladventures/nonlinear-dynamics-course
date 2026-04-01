@@ -67,7 +67,7 @@ This is the case for $0\leq \mu{}<1$. For $\mu{}>1$, we just have a regular limi
 
 So what happens as we get to $\mu{}=1 \text{ from } $above? Well, just plotting the vector field we see:
 
-![Figure 7](/images/part34/anim_001.png)
+![Figure 7](/images/part34/anim_001.gif)
 
 which doesn’t look terribly interesting...however, for $\mu{} \text{ just above }$ 1, we see that while there isn’t a fixed point, there will be a point where $\mu{}-\text{ sin }\left(\theta{}\right)$ gets very very small (just never hitting zero). That means that if we are on the limit cycle, as we get close to $\theta{}=\frac{\pi{}}{2}, $$\dot{\theta{}}$ will get very very small, and so we will slow down enormously as we get to this point. This looks like:
 
