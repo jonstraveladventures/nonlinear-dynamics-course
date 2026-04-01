@@ -295,10 +295,8 @@ def cell_to_md(cell: list, image_counter: list[int], images_dir: str) -> str | N
     if cell_type == "Section":
         text = clean_text_whitespace(extract_text(content))
         # Skip author/contact info sections
-        if text and ("@" in text or "University of Cape Town" in text
-                     or "notebook was" in text.lower()
-                     or "put together by" in text.lower()
-                     or "Michigan State" in text):
+        # Filter author/contact sections (text may have \text{} artifacts)
+        if text and ("@" in text and "Cape Town" in text):
             return None
         return f"## {text}" if text else None
 
