@@ -220,10 +220,11 @@ def box_to_latex(node) -> str:
         if s.startswith("\\") or s in ("+", "-", "=", ",", ".", ";", ":", "!", "?",
                                         "(", ")", "[", "]", "|", "/", "*", "'", "^", "_"):
             return s
-        # Multi-character alphabetic strings that look like English words → \text{...}
+        # Multi-character alphabetic strings that look like English words → \text{ ... }
+        # Include surrounding spaces so TeX renders visible word spacing
         # Single chars (a, x, f) stay as math variables
         if len(s) > 1 and s.isalpha() and s.isascii() and s[0].islower():
-            return rf"\text{{{s}}}"
+            return rf"\text{{ {s} }}"
         # Escape common LaTeX specials in plain identifiers
         s = s.replace("%", r"\%").replace("&", r"\&").replace("#", r"\#")
         return s

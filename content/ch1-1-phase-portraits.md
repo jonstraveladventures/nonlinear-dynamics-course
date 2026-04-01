@@ -48,7 +48,7 @@ $$
 $$
 0=x_{1}-{x_{1}}^{3}
 $$
-which is solved by $(x_{1},x_{2})=(-1,0), (1,0) \text{and} (0,0). $And indeed this does correspond to the fixed points.
+which is solved by $(x_{1},x_{2})=(-1,0), (1,0) \text{ and } (0,0). $And indeed this does correspond to the fixed points.
 How about the closed cycles? Well, these ones must be periodic - ie. $(x_{1}(t+T),x_{2}(t+T))=(x_{1}(t),x_{2}(t)) $for some period $T$. This means that a time $T$ after any given time $t$ you will find yourself back where you were at time $t$.
 We are also going to want to study about what is happening close to the fixed points. Are the lines flowing in or out? In what direction are they headed, or are you purely orbiting the fixed points? And in a similar vein, what are the types of fixed points that we can have?
 We are going to have a new feature as well - closed cycles, which are kind of like fixed points, but they aren’t points - they are periodic orbits...we can either have stable, or unstable, or indeed semi-stable ones.
@@ -65,14 +65,14 @@ $$
 $$
 {\overset{\bullet{}}{x}}_{2}=x_{1}-{x_{1}}^{3}
 $$
-We could ask what is happening at the point $(2,2) \text{and} \text{we}$’d find that:
+We could ask what is happening at the point $(2,2) \text{ and } \text{ we }$’d find that:
 $$
 {\overset{\bullet{}}{x}}_{1}=2
 $$
 $$
 {\overset{\bullet{}}{x}}_{2}=2-8=-6
 $$
-So we would put an arrow pointing in the $(2,-6) \text{direction}.$ Doing this over a region of the phase plane we would get:
+So we would put an arrow pointing in the $(2,-6) \text{ direction }.$ Doing this over a region of the phase plane we would get:
 ![Figure 2](/images/part11/output_002.png)
 Which, when we put the trajectories on top seem to match up nicely:
 ![Figure 3](/images/part11/output_003.png)
@@ -91,7 +91,7 @@ where we are splitting up time into discrete moments and $x_{n}$ corresponds to 
 $$
 \frac{x_{n+1}-x_{n}}{\Delta{}t}=f(x_{n})
 $$
-the choice here to make the function be evaluated at $x_{n}$ is actually where we lose a bit of accuracy. In some senses, we could have chosen to evaluate it at $x_{n} \text{or} x_{n+1}$ or perhaps an average of the two: $\frac{x_{n}+x_{n+1}}{2}$. We will see below how to improve this.
+the choice here to make the function be evaluated at $x_{n}$ is actually where we lose a bit of accuracy. In some senses, we could have chosen to evaluate it at $x_{n} \text{ or } x_{n+1}$ or perhaps an average of the two: $\frac{x_{n}+x_{n+1}}{2}$. We will see below how to improve this.
 Taking the naive approach we can write:
 $$
 x_{n+1}=f(x_{n})\Delta{}t+x_{n}
@@ -124,16 +124,16 @@ $$
 $$
 \overset{\bullet{}}{y}=-y
 $$
-(where here we have used $x \text{and} y \text{instead} \text{of} x_{1} \text{and} x_{2}$).
-0) Draw the $x$ and $y$ axes for (-2,2) in the $x$ direction and (-1,1) in the $y$ direction.
+(where here we have used $x \text{ and } y \text{ instead } \text{ of } x_{1} \text{ and } x_{2}$).
+0. Draw the $x$ and $y$ axes for (-2,2) in the $x$ direction and (-1,1) in the $y$ direction.
 1) Find the fixed point of this system of equations. Plot this point in the phase diagram.
-2) a) Find the general exact solution to the second equation and see what happens to $y$ as $t->\infty{}$.
+2. a) Find the general exact solution to the second equation and see what happens to $y$ as $t->\infty{}$.
 b) What happens to $e^{-y}?$
 c) What does the first equation look like as $t->\infty{}$?
 d) What is the solution to the first equation in this limit?
 e) What does the above information tell you about the flow in the phase diagram
-3) Note that $y=0$ solves the second equation exactly. Find a solution with $y=0$ which solves both equations. What does this say about the stability of the fixed point? See how to notate this in the phase diagram.
-4) **Null-clines** are defined as solutions for which either $\overset{\bullet{}}{x}=0$ or $\overset{\bullet{}}{y}=0$. That is, at those points, the flow is either completely vertical, or completely horizontal.
+3. Note that $y=0$ solves the second equation exactly. Find a solution with $y=0$ which solves both equations. What does this say about the stability of the fixed point? See how to notate this in the phase diagram.
+4. **Null-clines** are defined as solutions for which either $\overset{\bullet{}}{x}=0$ or $\overset{\bullet{}}{y}=0$. That is, at those points, the flow is either completely vertical, or completely horizontal.
 a) Find the general family of solutions for which $\overset{\bullet{}}{x}=0$.
 b) Find the general family of solutions for which $\overset{\bullet{}}{y}=0$.
 c) Plot some of these as short arrows in the phase diagram.

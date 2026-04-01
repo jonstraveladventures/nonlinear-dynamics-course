@@ -139,6 +139,16 @@ def clean_text_whitespace(s: str) -> str:
     """Collapse runs of whitespace in plain prose (not math)."""
     s = re.sub(r'[ \t]+', ' ', s)
     s = re.sub(r'\n{3,}', '\n\n', s)
+    # Convert N) enumeration to Markdown numbered lists
+    s = re.sub(r'(?m)^(\d+)\)\s*', r'\1. ', s)
+    # Convert a), b), c) sub-enumeration to indented sub-items
+    s = re.sub(r'(?m)^([a-z])\)\s*', r'   - \1) ', s)
+    # Also handle indented sub-items: "   a) text" → "   - a) text"
+    s = re.sub(r'(?m)^ {2,}([a-z])\)\s*', r'   - \1) ', s)
+    # Convert bullet-style items: "• item" or "∘ item" → "- item"
+    s = re.sub(r'(?m)^[•∘]\s*', '- ', s)
+    # Merge continuation lines (indented, NOT starting with a list marker) into prev line
+    s = re.sub(r'\n {2,}(?![-\d])', ' ', s)
     return s.strip()
 
 
