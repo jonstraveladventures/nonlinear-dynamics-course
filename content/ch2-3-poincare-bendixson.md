@@ -81,7 +81,7 @@ $$
 0.9\sqrt{1-\mu{}}< r<1.1\sqrt{1+\mu{}}
 $$
 
-![Figure 2](/images/part23/output_002.png)
+![Figure 2](/images/part23/anim_001.png)
 
 Indeed we can see that the trajectory is always within the annulus that we have created, and that there does appear to be a limit cycle.
 
@@ -111,7 +111,7 @@ I’m actually just going to give you the outer trapping region, as the argument
 
 It turns out that the following region is a reasonable trapping region:
 
-![Figure 3](/images/part23/output_003.png)
+![Figure 3](/images/part23/anim_002.png)
 
 It might not look like the arrows along the bottom are all pointing into the region, but this is an artifact of where the vectors are sampled. If you look along the x-axis you see that
 
@@ -123,7 +123,7 @@ and with positive $b$ these vectors are bound to point up from the axis, and int
 
 So is that enough to prove that we have a closed orbit? Not yet, we have to have a trapping region with no fixed points, but there is a fixed point in this system at:
 
-![Figure 4](/images/part23/output_004.png)
+![Figure 4](/images/part23/anim_003.png)
 
 It looks like we might be in trouble. If this is an attractor then we are in trouble, and it looks in this example with $a=\frac{1}{5},b=1 \text{ that it } \text{ might be }$. If that’s the case, then we can’t form cut out a region around the fixed point with a boundary such that the arrows are pointing into the trapping region.
 

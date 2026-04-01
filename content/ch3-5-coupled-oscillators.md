@@ -11,7 +11,7 @@ When we discussed the phase space of the pendulum in first year, we said that we
 
 (where here $x_{1} \text{ is } \theta{}$ and $x_{2} \text{ is }$ $\dot{\theta{}}$). We never took into account the fact that θ is periodic (though $\dot{\theta{}}$ is of course not) - ie $\theta{}+2\pi{} \text{ is identified } \text{ with } \theta{}$. The way we should do this is to acknowledge that the phase plane shouldn ’t be ${\mathbb{R}}^{2}$ but it should be ${\mathbb{R}}^{1}\times{}S^{1}$ - ie a cylinder.
 
-![Figure 2](/images/part35/output_002.png)
+![Figure 2](/images/part35/anim_001.png)
 
 Imagine taking the first plot and pasting it around a cylinder of circumference 2π.
 
@@ -37,7 +37,7 @@ $$
 
 Where ${\omega{}}_{1}\text{ and } {\omega{}}_{2} \text{ are } $the natural frequencies of the motion (ie. without the $K_{i} \text{ terms }$ we would just have ${\theta{}}_{i} \text{ going }$ around a circle at frequency ${\omega{}}_{i}$), and $K_{i} \text{ are }$ coupling constants. We see then that when ${\theta{}}_{1} \text{ and } {\theta{}}_{2}$ are very close to each other, or differ by π, the couplings are small, and when they differ by $\frac{\pi{}}{2} \text{ or } \frac{3\pi{}}{2}$ the couplings are large. This system wants to keep the ${\theta{}}_{i} \text{ close to } $each other, or exactly out of phase. Both the ${\theta{}}_{i} \text{ live }$ on a circle. We can plot them on the same circle and see their trajectory. For instance if we start with ${\omega{}}_{1}=1$, ${\omega{}}_{2}=5$ and both $K_{i}=1 $we get:
 
-![Figure 3](/images/part35/output_003.png)
+![Figure 3](/images/part35/anim_002.png)
 
 Is there a simpler way that we could illustrate this? We normally like to think about the state of a system as a single point in phase space. The problem with the above is that we have a single state as being given by two points on the circle. The issue is that we have a two dimensional phase space and we are trying to represent it on a one dimensional space. So what we really need is a space with two compact directions. Such a space is the torus. In the above, we have a state given by two points $\left({\theta{}}_{1}\left(t\right),{\theta{}}_{2}\left(t\right)\right).$ The torus is a surface which is parameterised by $\left({\theta{}}_{1}\left(t\right),{\theta{}}_{2}\left(t\right)\right). $So for two points on the circle corresponds to a single point on the surface of the torus.
 
@@ -45,7 +45,7 @@ The torus is actually given by the product space $S^{1}\times{}S^{1}$, which is 
 
 Taking the above system of two positions on the circle $\left({\theta{}}_{1},{\theta{}}_{2}\right) \text{ and }$ converting them to one position on the torus, we get the following trajectory:
 
-![Figure 4](/images/part35/output_004.png)
+![Figure 4](/images/part35/anim_003.png)
 
 Where the trajectory through phase space maps out a line on the surface of the torus. One could imagine unfolding the square, and just plotting positions in the $\left({\theta{}}_{1},{\theta{}}_{2}\right)$ square. Try it for yourself...
 

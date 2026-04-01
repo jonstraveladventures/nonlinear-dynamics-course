@@ -171,4 +171,4 @@ Let's just plot the trajectories on the vector field animated over changing $b, 
 
 Here we have two starting points. For small $b \text{ we }$ see that both are attracted to the limit cycle, for which one starting point is inside, and the other is outside. Then as $b $increases, the limit cycle shrinks down to the fixed point:
 
-![Figure 6](/images/part33/output_006.png)
+![Figure 6](/images/part33/anim_001.png)

@@ -115,7 +115,7 @@ Can we actually calculate the period in the limit of large μ for the Van der Po
 
 We know that there is a fast phase, and there is a slow phase...the fast phase is when we are not on the curve $y=\frac{x^{3}}{3}-x$ and the slow phase is when we are very close to it. If we want to calculate the period, then the slow phase is the most important part. So, we need to figure out how long we are on the curve for. To calculate how long something takes, you need to divide the distance by the velocity, but of course the velocity changes, so we do this as an integral.
 
-![Figure 7](/images/part25/output_007.png)
+![Figure 7](/images/part25/anim_001.png)
 
 $$
 \text{ time to } \text{ go down } \text{ red arrow } = {\int{}}_{x_{a}}^{x_{b}}\frac{1}{\dot{x}}\mathrm{d}x

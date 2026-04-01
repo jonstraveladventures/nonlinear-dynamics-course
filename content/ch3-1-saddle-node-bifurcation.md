@@ -131,7 +131,7 @@ $$
 
 and the fixed points would be the intersection with the x-axis. It ’s the same thing - the intersection of two curves...it ’s just that in the one-dimensional case, one of the curves is just the x-axis. Let’s look at a simple example in one dimension:
 
-![Figure 5](/images/part31/output_005.png)
+![Figure 5](/images/part31/anim_streamplot.gif)
 
 So it’s not that surprising that nothing much more interesting can happen in two-dimensions. It’s still about lines intersecting, it just so happens that rather than the $\dot{x}$=0 null-cline intersecting with the $\dot{x}$=f(x) line, it’s the $\dot{x}=0$ and $\dot{y}=0$ lines intersecting.
 

@@ -65,7 +65,7 @@ Keep track of φ as you start at one point and return to the original point. Cle
 
 Let's have a look at that as we traverse the loop above. On the right we have just plotted the vector on its own. We can see here that as we go around the closed loop, the vector does one full rotation.
 
-![Figure 6](/images/part16/output_006.png)
+![Figure 6](/images/part16/anim_001.png)
 
 Let’s think about plotting φ as we move around the curve. Let’s parameterise the curve by the angle θ as we move around it in a counterclockwise direction.
 
@@ -83,7 +83,7 @@ The important point is just the total change in φ as we move around the contour
 
 Was that necessarily the case? Well, how about we try the same thing but this time a loop in a different position.
 
-![Figure 10](/images/part16/output_010.png)
+![Figure 10](/images/part16/anim_002.png)
 
 Well, in this case we see that as it goes around, the arrow doesn ’t do a full rotation at all - it certainly moves about, but it doesn’t ever point to the left.
 
