@@ -4,3 +4,4 @@ resources/
 *.nb
 __pycache__/
 *.pyc
+.DS_Store
