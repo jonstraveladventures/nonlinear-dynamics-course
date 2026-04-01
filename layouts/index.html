@@ -1,0 +1,15 @@
+{{ define "main" }}
+<div class="home">
+  <h1>MAM2046W — Second Year Nonlinear Dynamics</h1>
+  <p class="lead">Course notes based on Strogatz's <em>Nonlinear Dynamics and Chaos</em>, UCT.</p>
+
+  <nav class="toc">
+    <h2>Table of Contents</h2>
+    <ul>
+      {{ range .Site.RegularPages.ByWeight }}
+        <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+      {{ end }}
+    </ul>
+  </nav>
+</div>
+{{ end }}

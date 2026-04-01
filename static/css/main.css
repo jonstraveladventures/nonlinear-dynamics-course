@@ -1,0 +1,164 @@
+/* MAM2046W — main stylesheet */
+
+:root {
+  --accent: #1a5fa8;
+  --text: #222;
+  --bg: #fff;
+  --border: #ddd;
+  --nav-bg: #f5f5f5;
+  --max-width: 860px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Georgia", serif;
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--bg);
+}
+
+/* ── Navigation ── */
+.site-nav {
+  background: var(--nav-bg);
+  border-bottom: 1px solid var(--border);
+  padding: 0.6rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.site-title {
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--accent);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 0.85rem;
+}
+
+.nav-links a {
+  color: var(--text);
+  text-decoration: none;
+  padding: 0.15rem 0.4rem;
+  border-radius: 3px;
+}
+
+.nav-links a:hover, .nav-links a.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* ── Main content ── */
+main.content {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+/* ── Home ── */
+.home h1 { font-size: 1.9rem; margin-bottom: 0.3rem; }
+.home .lead { color: #555; margin-top: 0; }
+.toc { margin-top: 2.5rem; }
+.toc h2 { font-size: 1.2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+.toc ul { padding-left: 1.2rem; }
+.toc li { margin: 0.35rem 0; }
+.toc a { color: var(--accent); text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+
+/* ── Notebook page ── */
+.page-header h1 {
+  font-size: 1.7rem;
+  margin-bottom: 0.2rem;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.4rem;
+}
+
+.subtitle { color: #555; font-style: italic; margin-top: 0; }
+
+.page-nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 1.2rem 0;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 0.9rem;
+}
+
+.page-nav.bottom { margin-top: 3rem; }
+
+a.prev-next {
+  color: var(--accent);
+  text-decoration: none;
+  border: 1px solid var(--accent);
+  padding: 0.25rem 0.7rem;
+  border-radius: 4px;
+}
+
+a.prev-next:hover { background: var(--accent); color: #fff; }
+a.prev-next.next { margin-left: auto; }
+
+/* ── Notebook content typography ── */
+.notebook-content h2 { font-size: 1.35rem; margin-top: 2.5rem; color: var(--accent); }
+.notebook-content h3 { font-size: 1.1rem; margin-top: 2rem; }
+.notebook-content p { margin: 0.8rem 0; }
+.notebook-content img { max-width: 100%; height: auto; display: block; margin: 1.5rem auto; }
+
+/* ── Frame-swapping slider widget ── */
+.frame-widget {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem 1.2rem;
+  margin: 2rem 0;
+  background: #fafafa;
+}
+
+.frame-widget img { margin: 0 auto 0.8rem; }
+
+.frame-widget input[type=range] {
+  width: 100%;
+  cursor: pointer;
+}
+
+.frame-widget .param-label {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #555;
+}
+
+/* ── JSXGraph board ── */
+.jxgbox {
+  border: 1px solid var(--border) !important;
+  border-radius: 4px;
+  margin: 1.5rem auto;
+}
+
+/* ── GIF animations ── */
+.anim-gif {
+  display: block;
+  margin: 1.5rem auto;
+  max-width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+/* ── Footer ── */
+footer {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #888;
+  border-top: 1px solid var(--border);
+  padding: 1.5rem;
+  font-family: "Helvetica Neue", sans-serif;
+}

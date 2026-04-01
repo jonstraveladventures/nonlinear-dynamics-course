@@ -1,0 +1,12 @@
+baseURL = "https://jonstraveladventures.github.io/nonlinear-dynamics-course/"
+languageCode = "en-gb"
+title = "MAM2046W — Nonlinear Dynamics"
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[markup.highlight]
+  noClasses = false
+
+[params]
+  description = "Second Year Nonlinear Dynamics course notes, UCT"
