@@ -11,12 +11,12 @@ The textbook that I will be following is: Nonlinear Dynamics and Chaos, by Steve
 You do not need to get it. I will aim for this all to be self-contained. However, it is a beautifully written book, and almost certainly
 the best introduction to the subject.
 $$
-Steven Strogatz actually has some of the material that we will be covering on Youtube:$ here.$
+Steven Strogatz actually has some of the material that we will be covering on Youtube:$ \text{here}.$
 
 He has in the past tweeted to this link which has some Python code for some of the examples in the book.
 Here are some more links to online courses which you may want to browse.
 ∘ Complexity Explorer course on intro to dynamical systems and chaos
-∘ $Complexity Explorer course on introduction-to-differential-equations$
+∘ $Complexity Explorer \text{course} \text{on} \text{introduction}-\text{to}-\text{differential}-\text{equations}$
 Please note, that I will often put in links to Wikipedia articles. One has to be careful about how accurate Wikipedia pages are, and in general if you are writing a scientific research paper, Wikipedia articles are not good to reference. However, for an educational set of notes like this, where I think that it will add useful content, I will be doing so. Wikipedia articles should be read with a critical hat on, and if you want to dig further, look at the references in the articles themselves.
 **What is this course about?**
 

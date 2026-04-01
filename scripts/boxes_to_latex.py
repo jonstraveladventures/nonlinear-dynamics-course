@@ -59,6 +59,24 @@ MATH_CHARS: dict[str, str] = {
     "DifferentialD": r"\mathrm{d}",
     "ExponentialE": r"\mathrm{e}",
     "ImaginaryI": r"\mathrm{i}",
+    "TildeTilde": r"\approx",
+    "Tilde": r"\sim",
+    "CapitalDelta": r"\Delta",
+    "CapitalGamma": r"\Gamma",
+    "CapitalTheta": r"\Theta",
+    "CapitalLambda": r"\Lambda",
+    "CapitalPi": r"\Pi",
+    "CapitalSigma": r"\Sigma",
+    "CapitalPhi": r"\Phi",
+    "CapitalOmega": r"\Omega",
+    "CenterDot": r"\cdot",
+    "Cross": r"\times",
+    "Star": r"\star",
+    "Proportional": r"\propto",
+    "Therefore": r"\therefore",
+    "Because": r"\because",
+    "Congruent": r"\cong",
+    "SmallCircle": r"\circ",
 }
 
 # Characters that appear in text contexts → Unicode
@@ -166,7 +184,12 @@ def replace_wolfram_chars(s: str, math: bool = False) -> str:
     def replace(m):
         name = m.group(1)
         if math:
-            return table.get(name, f"\\text{{\\textbackslash[{name}]}}")
+            repl = table.get(name, f"\\text{{\\textbackslash[{name}]}}")
+            # Append {} after \command-style replacements to prevent merging
+            # with following letters (e.g. \Delta t, not \Deltat)
+            if re.match(r"\\[a-zA-Z]+$", repl):
+                repl += "{}"
+            return repl
         else:
             return table.get(name, f"[{name}]")
 
@@ -197,6 +220,10 @@ def box_to_latex(node) -> str:
         if s.startswith("\\") or s in ("+", "-", "=", ",", ".", ";", ":", "!", "?",
                                         "(", ")", "[", "]", "|", "/", "*", "'", "^", "_"):
             return s
+        # Multi-character alphabetic strings that look like English words → \text{...}
+        # Single chars (a, x, f) stay as math variables
+        if len(s) > 1 and s.isalpha() and s.isascii() and s[0].islower():
+            return rf"\text{{{s}}}"
         # Escape common LaTeX specials in plain identifiers
         s = s.replace("%", r"\%").replace("&", r"\&").replace("#", r"\#")
         return s
