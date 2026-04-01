@@ -11,62 +11,62 @@ It’s going to turn out that most of the time, the ideas about being able to li
 But we’re getting ahead of ourselves here. Let ’s just see how we can extend the ideas of linearising a one-dimensional system to linearising a two-dimensional one.
 We start, as always these days, with our system looking like:
 $$
-\dot{x}=f(x,y)
+\dot{x}=f\left(x,y\right)
 $$
 $$
-\dot{y}=g(x,y)
+\dot{y}=g\left(x,y\right)
 $$
-where $f \text{ and } g \text{ are } $any non-linear functions, although we will require them to be differentiable at the fixed points. We will also presume that we have found a fixed point, at $(x^{*},y^{*})$ in the phase plane. Similar to the one-dimensional case, we will write our functions $x \text{ and } y$ as:
+where $f \text{ and } g \text{ are } $any non-linear functions, although we will require them to be differentiable at the fixed points. We will also presume that we have found a fixed point, at $\left(x^{*},y^{*}\right)$ in the phase plane. Similar to the one-dimensional case, we will write our functions $x \text{ and } y$ as:
 $$
-x(t)=x^{*}+u(t)
+x\left(t\right)=x^{*}+u\left(t\right)
 $$
 $$
-y(t)=y^{*}+v(t)
+y\left(t\right)=y^{*}+v\left(t\right)
 $$
 where now $u \text{ and } v \text{ are the } \text{ dynamical parts }$ which are essentially telling us about movement around the fixed point. The idea is going to be that we will ask what happens when $u \text{ and } v \text{ are }$ both small, ie. when $x \text{ and } y \text{ are }$ close to their fixed point values. We will call $u \text{ and } v $the components of a **disturbance** from the fixed point. Let’s just look at an intuitive example of this.
 Let’s say that we have a particle moving about in a bowl, where the bowl is given by the equations
 $$
-h={(x-2)}^{2}+{(y+3)}^{2}
+h={\left(x-2\right)}^{2}+{\left(y+3\right)}^{2}
 $$
 This looks like
 ![Figure 2](/images/part13/output_002.png)
-We could describe the position of the particle in terms of $x$ and $y_{ } \text{ positions }$, but we know that in this case the ‘fixed point ’ is at $(2,-3), \text{ so if } \text{ we define } x=2+u, y=-3+v, $then we can describe the movement in terms of $(u,v) \text{ coordinates }$, and now if $u \text{ and } v \text{ are both } \text{ small }, \text{ then we } \text{ are close } \text{ to the } \text{ fixed point } \text{ of this } \text{ system }, \text{ and }$ could study these small perturbations if we wished.
+We could describe the position of the particle in terms of $x$ and $y_{ } \text{ positions }$, but we know that in this case the ‘fixed point ’ is at $\left(2,-3\right), \text{ so if } \text{ we define } x=2+u, y=-3+v, $then we can describe the movement in terms of $\left(u,v\right) \text{ coordinates }$, and now if $u \text{ and } v \text{ are both } \text{ small }, \text{ then we } \text{ are close } \text{ to the } \text{ fixed point } \text{ of this } \text{ system }, \text{ and }$ could study these small perturbations if we wished.
 Anyway, this is just a toy example. Let’s think about things more generally.
-Remember that in the one dimensional example, we were able to write $\dot{x}=f(x) \text{ as } \dot{u}=f(x^{*}+u)=f(x^{*})+u\frac{d f(x)}{\text{ dx }}|_{x^{*}}+...$ Well, now we are going to do the same thing, but this time in two variables. We start by writing:
+Remember that in the one dimensional example, we were able to write $\dot{x}=f\left(x\right) \text{ as } \dot{u}=f\left(x^{*}+u\right)=f\left(x^{*}\right)+u\frac{d f\left(x\right)}{\text{ dx }}|_{x^{*}}+...$ Well, now we are going to do the same thing, but this time in two variables. We start by writing:
 $$
-\dot{u}=f(x^{*}+u,y^{*}+v)
-$$
-$$
-\dot{v}=g(x^{*}+u,y^{*}+v)
-$$
-where we have been able to write $\dot{x}={\dot{x}}^{*}+\dot{u}=\dot{u}$ because $x^{*} \text{ is } $a constant and therefore its time derivative is zero...and similarly for $v$. Now let’s take the first of these expressions and perform a Taylor expansion about $(x^{*},y^{*})$:
-$$
-\dot{u}=f(x^{*}+u,y^{*}+v)
+\dot{u}=f\left(x^{*}+u,y^{*}+v\right)
 $$
 $$
-=f(x^{*},y^{*})+u{\partial{}}_{x}f(x,y)|_{x^{*},y^{*}}+v{\partial{}}_{y}f(x,y)|_{x^{*},y^{*}}+\mathcal{O}(u^{2},v^{2},u v)
+\dot{v}=g\left(x^{*}+u,y^{*}+v\right)
 $$
-ok, so some notation here ${\partial{}}_{x}f(x,y)$ is just the partial derivative of $f$ with respect to $x$ and we are then evaluating this at the fixed point. $\mathcal{O}(u^{2},v^{2},u v)$ says that we are neglecting terms of order $u^{2},v^{2} \text{ and } u v$ and of course higher order in $u \text{ and } v$. However, because we have said that we are looking at behaviour close to the fixed point, $u^{ }\text{ and } v $are both small, so the higher order terms can be neglected. Performing the same expansion for the second equation we end up with the following two linearised equations (neglecting quadratic terms) in the “disturbance”:
+where we have been able to write $\dot{x}={\dot{x}}^{*}+\dot{u}=\dot{u}$ because $x^{*} \text{ is } $a constant and therefore its time derivative is zero...and similarly for $v$. Now let’s take the first of these expressions and perform a Taylor expansion about $\left(x^{*},y^{*}\right)$:
 $$
-\dot{u}=f(x^{*},y^{*})+u{\partial{}}_{x}f(x,y)|_{x^{*},y^{*}}+v{\partial{}}_{y}f(x,y)|_{x^{*},y^{*}}
+\dot{u}=f\left(x^{*}+u,y^{*}+v\right)
 $$
 $$
-\dot{v}=g(x^{*},y^{*})+u{\partial{}}_{x}g(x,y)|_{x^{*},y^{*}}+v{\partial{}}_{y}g(x,y)|_{x^{*},y^{*}}
+=f\left(x^{*},y^{*}\right)+u{\partial{}}_{x}f\left(x,y\right)|_{x^{*},y^{*}}+v{\partial{}}_{y}f\left(x,y\right)|_{x^{*},y^{*}}+\mathcal{O}\left(u^{2},v^{2},u v\right)
+$$
+ok, so some notation here ${\partial{}}_{x}f\left(x,y\right)$ is just the partial derivative of $f$ with respect to $x$ and we are then evaluating this at the fixed point. $\mathcal{O}\left(u^{2},v^{2},u v\right)$ says that we are neglecting terms of order $u^{2},v^{2} \text{ and } u v$ and of course higher order in $u \text{ and } v$. However, because we have said that we are looking at behaviour close to the fixed point, $u^{ }\text{ and } v $are both small, so the higher order terms can be neglected. Performing the same expansion for the second equation we end up with the following two linearised equations (neglecting quadratic terms) in the “disturbance”:
+$$
+\dot{u}=f\left(x^{*},y^{*}\right)+u{\partial{}}_{x}f\left(x,y\right)|_{x^{*},y^{*}}+v{\partial{}}_{y}f\left(x,y\right)|_{x^{*},y^{*}}
+$$
+$$
+\dot{v}=g\left(x^{*},y^{*}\right)+u{\partial{}}_{x}g\left(x,y\right)|_{x^{*},y^{*}}+v{\partial{}}_{y}g\left(x,y\right)|_{x^{*},y^{*}}
 $$
 Actually, we can simplify this because we know that at the fixed point, $f \text{ and } g$ both evaluate to zero by definition, so we really have:
 $$
-\dot{u}=u{\partial{}}_{x}f(x,y)|_{x^{*},y^{*}}+v{\partial{}}_{y}f(x,y)|_{x^{*},y^{*}}
+\dot{u}=u{\partial{}}_{x}f\left(x,y\right)|_{x^{*},y^{*}}+v{\partial{}}_{y}f\left(x,y\right)|_{x^{*},y^{*}}
 $$
 $$
-\dot{v}=u{\partial{}}_{x}g(x,y)|_{x^{*},y^{*}}+v{\partial{}}_{y}g(x,y)|_{x^{*},y^{*}}
+\dot{v}=u{\partial{}}_{x}g\left(x,y\right)|_{x^{*},y^{*}}+v{\partial{}}_{y}g\left(x,y\right)|_{x^{*},y^{*}}
 $$
 We can actually write this whole thing in matrix form as
 $$
-(\begin{matrix} \dot{u} \\ \dot{v} \end{matrix})=(\begin{matrix} {\partial{}}_{x}f & {\partial{}}_{y}f \\ {\partial{}}_{x}g & {\partial{}}_{y}g \end{matrix})|_{x^{*},y^{*}}(\begin{matrix} u \\ v \end{matrix})
+\left(\begin{matrix} \dot{u} \\ \dot{v} \end{matrix}\right)=\left(\begin{matrix} {\partial{}}_{x}f & {\partial{}}_{y}f \\ {\partial{}}_{x}g & {\partial{}}_{y}g \end{matrix}\right)|_{x^{*},y^{*}}\left(\begin{matrix} u \\ v \end{matrix}\right)
 $$
 The matrix:
 $$
-A=(\begin{matrix} {\partial{}}_{x}f & {\partial{}}_{y}f \\ {\partial{}}_{x}g & {\partial{}}_{y}g \end{matrix})|_{x^{*},y^{*}}
+A=\left(\begin{matrix} {\partial{}}_{x}f & {\partial{}}_{y}f \\ {\partial{}}_{x}g & {\partial{}}_{y}g \end{matrix}\right)|_{x^{*},y^{*}}
 $$
 Is known as the Jacobian matrix at the fixed point. Jacobians show up all over applied mathematics, and you can see a nice Khan academy video about it here.
 This all feels a bit abstract at the moment. Let’s look at a particular example. Taking the two-dimensional non-linear system given by
@@ -77,25 +77,25 @@ $$
 \dot{y}=-2y
 $$
 The first thing that we see is that this system is **decoupled**. This means that the dynamics in the $x \text{ direction is } \text{ not dependent } \text{ on the } y \text{ position }, \text{ and vice } \text{ versa }. $We could actually find the solutions for $x$ and $y$ separately, but let’s go through the analysis above.
-First we want to find the fixed points. These are given by solving $\dot{x}$=$\dot{y}=0.$ and we get three fixed points, at coordinate $(-1,0),(0,0) \text{ and } (1,0)$. We we are trying to do with the linearisation analysis is to get an idea of the nature of these fixed points.
+First we want to find the fixed points. These are given by solving $\dot{x}$=$\dot{y}=0.$ and we get three fixed points, at coordinate $\left(-1,0\right),\left(0,0\right) \text{ and } \left(1,0\right)$. We we are trying to do with the linearisation analysis is to get an idea of the nature of these fixed points.
 Next we want to find the Jacobian matrix which is the matrix of partial derivatives. Then we will find the Jacobian matrix at the fixed points. This gives us
 $$
-A=(\begin{matrix} -1+3x^{2} & 0 \\ 0 & -2 \end{matrix})|_{x^{*},y^{*}}
+A=\left(\begin{matrix} -1+3x^{2} & 0 \\ 0 & -2 \end{matrix}\right)|_{x^{*},y^{*}}
 $$
 which, when evaluated at the three fixed points is:
 $$
-A_{1}=(\begin{matrix} 2 & 0 \\ 0 & -2 \end{matrix}), A_{2}=(\begin{matrix} -1 & 0 \\ 0 & -2 \end{matrix}), A_{3}=(\begin{matrix} 2 & 0 \\ 0 & -2 \end{matrix})
+A_{1}=\left(\begin{matrix} 2 & 0 \\ 0 & -2 \end{matrix}\right), A_{2}=\left(\begin{matrix} -1 & 0 \\ 0 & -2 \end{matrix}\right), A_{3}=\left(\begin{matrix} 2 & 0 \\ 0 & -2 \end{matrix}\right)
 $$
 where we have written $A_{i}, i=1,2,3$ for the three fixed points listed above. Now we have the linearised dynamical system where the equations are just:
 $$
-(\begin{matrix} \dot{u} \\ \dot{v} \end{matrix})=(\begin{matrix} 2 & 0 \\ 0 & -2 \end{matrix})(\begin{matrix} u \\ v \end{matrix})   (\text{ for the } \text{ first and } \text{ last fixed } \text{ points }) \text{ and }    (\begin{matrix} \dot{u} \\ \dot{v} \end{matrix})=(\begin{matrix} -1 & 0 \\ 0 & -2 \end{matrix})(\begin{matrix} u \\ v \end{matrix})  \text{ for the } \text{ middle one }.
+\left(\begin{matrix} \dot{u} \\ \dot{v} \end{matrix}\right)=\left(\begin{matrix} 2 & 0 \\ 0 & -2 \end{matrix}\right)\left(\begin{matrix} u \\ v \end{matrix}\right)   \left(\text{ for the } \text{ first and } \text{ last fixed } \text{ points }\right) \text{ and }    \left(\begin{matrix} \dot{u} \\ \dot{v} \end{matrix}\right)=\left(\begin{matrix} -1 & 0 \\ 0 & -2 \end{matrix}\right)\left(\begin{matrix} u \\ v \end{matrix}\right)  \text{ for the } \text{ middle one }.
 $$
 ok, so now we can deal with these in the same way as we did for any linear second order system. We calculate the trace and determinant and figure out where these lie in the family of different linear second order systems. Make sure that you can see why they sit at the red points in the plot below:
 ![Figure 3](/images/part13/output_003.png)
-We see here that we have two saddle points (both at the same position in the $(\Delta{},\tau{}) \text{ plane },$ and one stable node (although it’s close to being a star or degenerate node). Both of these are not the borderline cases that we hinted about above, so we can believe that the linearised system does give us useful information about the full non-linear system in the region close to the fixed points.
+We see here that we have two saddle points (both at the same position in the $\left(\Delta{},\tau{}\right) \text{ plane },$ and one stable node (although it’s close to being a star or degenerate node). Both of these are not the borderline cases that we hinted about above, so we can believe that the linearised system does give us useful information about the full non-linear system in the region close to the fixed points.
 Let’s solve the linearised system exactly for the case of
 $$
-(\begin{matrix} \dot{u} \\ \dot{v} \end{matrix})=(\begin{matrix} 2 & 0 \\ 0 & -2 \end{matrix})(\begin{matrix} u \\ v \end{matrix})
+\left(\begin{matrix} \dot{u} \\ \dot{v} \end{matrix}\right)=\left(\begin{matrix} 2 & 0 \\ 0 & -2 \end{matrix}\right)\left(\begin{matrix} u \\ v \end{matrix}\right)
 $$
 This solution to this is:
 $$
@@ -105,7 +105,7 @@ So we can write that close to the fixed point at (-1,0) we have:
 $$
 x=-1+u_{0}e^{2t}, y=v_{0}e^{-2t}
 $$
-Plotting some characteristic flows near the fixed point (ie. for small $u \text{ and } v)$ we have:
+Plotting some characteristic flows near the fixed point (ie. for small $u \text{ and } v\right)$ we have:
 ![Figure 4](/images/part13/output_004.png)
 Now doing the same thing for the other fixed points and including the nature of the fixed points we have:
 ![Figure 5](/images/part13/output_005.png)
@@ -133,12 +133,12 @@ OK, let’s take stock of what we did here. We started off by finding the fixed 
 Next we are going to look at an example where, naively we would have a “Center” solution, but in fact even a tiny non-linearity changes this. Let’s see...
 This is actually a carefully chosen example because it can be solved exactly by performing a change of coordinates. We will study the system given by:
 $$
-\dot{x}=-y+a x (x^{2}+y^{2})
+\dot{x}=-y+a x \left(x^{2}+y^{2}\right)
 $$
 $$
-\dot{y}=x+a y (x^{2}+y^{2})
+\dot{y}=x+a y \left(x^{2}+y^{2}\right)
 $$
-There is only one fixed point for this system at $(x^{*},y^{*})=(0,0)$. Because of this, dealing with small perturbations is equivalent to dealing with small $x$ and $y$.
+There is only one fixed point for this system at $\left(x^{*},y^{*}\right)=\left(0,0\right)$. Because of this, dealing with small perturbations is equivalent to dealing with small $x$ and $y$.
 I leave it as an exercise for you to see that you can linearise this system about the fixed point as:
 $$
 \dot{x}=-y
@@ -148,7 +148,7 @@ $$
 $$
 Which can be written as:
 $$
-(\begin{matrix} \dot{x} \\ \dot{y} \end{matrix})=(\begin{matrix} 0 & -1 \\ 1 & 0 \end{matrix})(\begin{matrix} x \\ y \end{matrix})
+\left(\begin{matrix} \dot{x} \\ \dot{y} \end{matrix}\right)=\left(\begin{matrix} 0 & -1 \\ 1 & 0 \end{matrix}\right)\left(\begin{matrix} x \\ y \end{matrix}\right)
 $$
 Which sits here (the red spot) in the space of possible linear systems:
 ![Figure 11](/images/part13/output_011.png)
@@ -159,15 +159,15 @@ $$
 $$
 y=x_{0}\text{ sin } t+y_{0} \text{ cos } t
 $$
-which are indeed spirals. For $a=0, \text{ these }$ solutions are exact, and we might imagine that for small $a \text{ they would }$ also be good approximations of the true solutions for small values of $(x,y)$ and therefore that all solutions would look something like:
+which are indeed spirals. For $a=0, \text{ these }$ solutions are exact, and we might imagine that for small $a \text{ they would }$ also be good approximations of the true solutions for small values of $\left(x,y\right)$ and therefore that all solutions would look something like:
 ![Figure 12](/images/part13/output_012.png)
 In this small region. However, we can show that this isn’t the case by making a change of coordinates and solving the system exactly.
 Let’s go from Cartesian to Polar coordinates by letting $x=r \text{ cos } \theta{}, y=r \text{ sin } \theta{}$ which means that:
 $$
-\dot{x}=\frac{d (r \text{ cos } \theta{})}{\text{ dt }}=\dot{r} \text{ cos } \theta{}-r \dot{\theta{}} \text{ sin } \theta{}
+\dot{x}=\frac{d \left(r \text{ cos } \theta{}\right)}{\text{ dt }}=\dot{r} \text{ cos } \theta{}-r \dot{\theta{}} \text{ sin } \theta{}
 $$
 $$
-\dot{y}=\frac{d (r \text{ sin } \theta{})}{\text{ dt }}=\dot{r} \text{ sin } \theta{}+r \dot{\theta{}} \text{ cos } \theta{}
+\dot{y}=\frac{d \left(r \text{ sin } \theta{}\right)}{\text{ dt }}=\dot{r} \text{ sin } \theta{}+r \dot{\theta{}} \text{ cos } \theta{}
 $$
 So we have:
 $$
@@ -235,9 +235,9 @@ $$
 $$
 \dot{y}=x^{2}
 $$
-If we naively try to linearise about the fixed point at $(x,y)=(0,0)$, we would find that the Jacobian is
+If we naively try to linearise about the fixed point at $\left(x,y\right)=\left(0,0\right)$, we would find that the Jacobian is
 $$
-A|_{x^{*},y^{*}}=(\begin{matrix} -1 & 1 \\ 0 & 0 \end{matrix})
+A|_{x^{*},y^{*}}=\left(\begin{matrix} -1 & 1 \\ 0 & 0 \end{matrix}\right)
 $$
 which has Δ=0, τ=-1, and we would classify this as having non-isolated fixed points...which doesn’t make sense as we know that the fixed point is at (0,0). We’ve lost vital information by getting rid of the $x^{2} $part. The issue is that we simply can’t linearise this equation. It is what it is, and the fixed point doesn’t have any interpretation in terms of the linear fixed points.
 If we plot this vector field close to the fixed point we see:
@@ -248,10 +248,10 @@ Assignment
 OK, now it’s your turn!
 We’re going to look at a population of dassies (D, in units of 1000 dassies) and baboons (B, in units of 1000 baboons). Both of them feed on the same plants in the same area, so they are competing for resources. If we only had baboons, or only dassies, then the population could be modelled by the logistic equation. There would be some carrying capacity meaning that the environment could only sustain a certain sized population. Things change a bit when they are both in the same environment and they are both in competition for the same resource. We can write down the following non-linear model for the two populations:
 $$
-\dot{B}=B(2-B-D)
+\dot{B}=B\left(2-B-D\right)
 $$
 $$
-\dot{D}=D(3-2B-D)
+\dot{D}=D\left(3-2B-D\right)
 $$
 1) Explain why these equations seem reasonable. You don’t need to explain the numbers specifically, but give a general explanation for each term and the relative magnitude of the numbers.
 2) Now calculate the fixed points of this system. There should be four of them. Plot them in the (B,D) plane.
@@ -262,4 +262,4 @@ $$
 7. For a saddle-point, the incoming flows correspond to a **stable manifold.**Label this in the figure.
 8) Interpret what this phase diagram is telling you about the ecological system.
 9. Assuming that you don’t start off exactly at any of the fixed points, what are the possible long-term situations in this environment. Why do you think that this might be called **The Principle of Competitive Exclusion**?
-10. Shade in the region in the plot from which you will end up with only dassies as $t\to \infty{}.$ This region is known as a **Basin of Attraction**for the point $(0,N_{D}$) where $N_{D}$ is whatever the non-zero stable fixed point for dassies is. Note that the stable manifold separates the two basins of attraction in this model. The trajectories of the stable manifold are called the **Separatrices**.
+10. Shade in the region in the plot from which you will end up with only dassies as $t\to \infty{}.$ This region is known as a **Basin of Attraction**for the point $\left(0,N_{D}$) where $N_{D}$ is whatever the non-zero stable fixed point for dassies is. Note that the stable manifold separates the two basins of attraction in this model. The trajectories of the stable manifold are called the **Separatrices**.

@@ -9,7 +9,7 @@ The moment is here...chaos has arrived...finally. Actually, in Greek mythology, 
 Here we are going to introduce a set of equations which encompass many of the phenomena that we have been speaking about in this course...and more...
 We are going to study the famous Lorenz equations:
 $$
-\dot{x}=\sigma{}(y-x)
+\dot{x}=\sigma{}\left(y-x\right)
 $$
 $$
 \dot{y}=r x-y-x z
@@ -20,69 +20,69 @@ $$
 where $\sigma{}, r \text{ and } b$ are positive real parameters. These equations look pretty innocuous...they are almost linear, and the non-linearities are just quadratic in the three variables $x, y \text{ and } z$. Ay, there’s the rub...we have three variables, and that is key. We hand-waved our way into believing (correctly), that for non-pathological two-dimensional continuous time systems we can ’t have chaos. But now we have three dimensions, and the cat is well and truly out of the bag and can dart and weave and pirouette in ways that it simply couldn’t in flatland.
 These equations came about from a simplified model of how air moves in the atmosphere, but it turns out that this system of equations can be used to describe quite a range of different processes. That’s part of the beauty of mathematical modeling. Often you will find that two systems, when looked at under a slightly blurry microscope, look remarkably similar, and results from one can be ported to the other. In Strogatz he discusses how this system of equations can be used to describe a chaotic waterwheel, and while the example is interesting, I don’t think that it leads to sufficient additional insight that we will use it here. Take a look in his book though for the full exposition.
 In fact, the original paper by Lorenz (Lorenz 1963) is surprisingly clear, and you may want to take this as a direction for your review paper project.
-Let’s look at the equations and ask about what we might be able to find out about the phase space without solving anything at all (remember...as lazy as possible, but no lazier...). The first equation is linear in $x \text{ and } y$ and is symmetric under $(x,y)\to (-x,-y)$. Checking the other equations we see that this symmetry actually holds for all of them. This tells us something about trajectories in the $(x,y,z) \text{ phase space }$. It says that if there exists some solution $(x(t),y(t),z(t))$ for some functions $x, y \text{ and } z, $then there must also be a solution $(-x(t),-y(t),z(t))$. This says then that all solutions must either have this as a symmetry, or the solution must have a twin with the $x \text{ and } y$ coordinates replaced by their negatives.
+Let’s look at the equations and ask about what we might be able to find out about the phase space without solving anything at all (remember...as lazy as possible, but no lazier...). The first equation is linear in $x \text{ and } y$ and is symmetric under $\left(x,y\right)\to \left(-x,-y\right)$. Checking the other equations we see that this symmetry actually holds for all of them. This tells us something about trajectories in the $\left(x,y,z\right) \text{ phase space }$. It says that if there exists some solution $\left(x\left(t\right),y\left(t\right),z\left(t\right)\right)$ for some functions $x, y \text{ and } z, $then there must also be a solution $\left(-x\left(t\right),-y\left(t\right),z\left(t\right)\right)$. This says then that all solutions must either have this as a symmetry, or the solution must have a twin with the $x \text{ and } y$ coordinates replaced by their negatives.
 The next property that we can find is that this system is **dissipative**. This tells us that if we take some region in phase space and evolve it, then over time it will contract. If you know anything about chaos, and the Lorenz equations (and it’s fine if you don’t), this may seem very surprising...but we will see how it reconciles with the ideas of chaos later.
-Take some compact region in phase space, inside some closed surface at time $t: $$S(t)$. Inside this surface is some volume of phase space $V(t). $After some small amount of time, the points on the surface have all moved, and are making up some new surface $S(t+d t)$ and of course inside this is a new volume $V(t+d t).$
+Take some compact region in phase space, inside some closed surface at time $t: $$S\left(t\right)$. Inside this surface is some volume of phase space $V\left(t\right). $After some small amount of time, the points on the surface have all moved, and are making up some new surface $S\left(t+d t\right)$ and of course inside this is a new volume $V\left(t+d t\right).$
 Let’s take a one dimensional example. In this case the surface is actually the endpoints of an interval, and the volume is just an interval. Let’s look at the equation:
 $$
 \dot{x}=x^{2}-1
 $$
-And let’s ask what happens to the interval $[-1.5,-0.5]$ under the dynamics of the system. We have that:
+And let’s ask what happens to the interval $\left[-1.5,-0.5\right]$ under the dynamics of the system. We have that:
 $$
-\frac{d x}{d t}=x^{2}-1 \Longrightarrow{} d x=(x^{2}-1) d t
+\frac{d x}{d t}=x^{2}-1 \Longrightarrow{} d x=\left(x^{2}-1\right) d t
 $$
 So after time $d t$, a point $x \text{ moves to }:$
 $$
-x+d x=x+(x^{2}-1) d t
+x+d x=x+\left(x^{2}-1\right) d t
 $$
-and so the interval $[-1.5,-0.5]$ becomes the interval:
+and so the interval $\left[-1.5,-0.5\right]$ becomes the interval:
 $$
-[-1.5+({(-1.5)}^{2}-1) d t,-0.5+({(-0.5)}^{2}-1)d t]=[-1.5+1.25 d t,-0.5-0.75 d t]
+\left[-1.5+\left({\left(-1.5\right)}^{2}-1\right) d t,-0.5+\left({\left(-0.5\right)}^{2}-1\right)d t\right]=\left[-1.5+1.25 d t,-0.5-0.75 d t\right]
 $$
 Which looks like:
 ![Figure 1](/images/part41/output_001.png)
 So this particular ‘volume’ shrinks in this case. This isn’t surprising because of the fixed point at $x=1$. Note that we have been a bit sloppy with what we’ve done here in taking some finite value for $d t$. Remember that what we have said is really only true in the limit as $d t\to 0$.
 In higher dimensions we need to be more careful because things can shrink and grow in different directions. Let’s say we start off by defining some volume in our phase space as such:
 ![Figure 2](/images/part41/output_002.png)
-The surface of this shape, $S(t)$ has, at each point on it a unit normal vector $n$, such as:
+The surface of this shape, $S\left(t\right)$ has, at each point on it a unit normal vector $n$, such as:
 ![Figure 3](/images/part41/output_003.png)
 The differential equation of our system can in general be written as a vector field:
 $$
-\dot{x}=f(x)
+\dot{x}=f\left(x\right)
 $$
 which tells us the direction and magnitude of movement of a given point in phase space. In particular, this means that it tells us where points on the sphere move to. $f $defines for us a set of vectors at every point on the surface. Here we just put that vector at one particular point..
 ![Figure 4](/images/part41/output_004.png)
-What is actually important in terms of the change of volume is only the component of $f$ in the direction of the normal $n$: $n (f.n)$. We can think about taking some infinitesimal patch of the surface $d A$, which will move some small distance in time $d t$.
+What is actually important in terms of the change of volume is only the component of $f$ in the direction of the normal $n$: $n \left(f.n\right)$. We can think about taking some infinitesimal patch of the surface $d A$, which will move some small distance in time $d t$.
 ![Figure 5](/images/part41/output_005.png)
 Where the labels correspond to the vectors themselves, not the points at the end of the vectors.
 The total volume of this region swept out is:
 $$
-(f.n d t)d A
+\left(f.n d t\right)d A
 $$
 And so if we take this and we integrate it over the whole of the surface we get:
 $$
-V(t+d t)=V(t)+{\int{}}_{S(t)}(f.n \text{ dt })\mathrm{d}A
+V\left(t+d t\right)=V\left(t\right)+{\int{}}_{S\left(t\right)}\left(f.n \text{ dt }\right)\mathrm{d}A
 $$
 and so:
 $$
-\frac{V(t+d t)-V(t)}{\text{ dt }}=\dot{V}={\int{}}_{S(t)}(f.n)\mathrm{d}A
+\frac{V\left(t+d t\right)-V\left(t\right)}{\text{ dt }}=\dot{V}={\int{}}_{S\left(t\right)}\left(f.n\right)\mathrm{d}A
 $$
 Then we can use the divergence theorem to get:
 $$
-\dot{V}={\int{}}_{V}(\nabla{}.f)\mathrm{d}V
+\dot{V}={\int{}}_{V}\left(\nabla{}.f\right)\mathrm{d}V
 $$
-where we dropped the $t$ in $V(t)$ though we know that this is integrated over the volume at time $t $to find the rate of change of the volume at that time.
+where we dropped the $t$ in $V\left(t\right)$ though we know that this is integrated over the volume at time $t $to find the rate of change of the volume at that time.
 So for the Lorenz system,
 $$
-\nabla{}.f={\partial{}}_{x}(\sigma{}(y-x))+{\partial{}}_{y}(r x-y-x z)+{\partial{}}_{z}(x y-b z)=-\sigma{}-1-b
+\nabla{}.f={\partial{}}_{x}\left(\sigma{}\left(y-x\right)\right)+{\partial{}}_{y}\left(r x-y-x z\right)+{\partial{}}_{z}\left(x y-b z\right)=-\sigma{}-1-b
 $$
 Which is therefore less than zero. Indeed it is also a constant, so the rate of change in any volume is always negative and is simply proportional to the volume:
 $$
-\dot{V}=-(\sigma{}+1+b)V
+\dot{V}=-\left(\sigma{}+1+b\right)V
 $$
 which we can solve to get:
 $$
-\overset{  }{V}=V_{0}e^{-(\sigma{}+1+b)t}
+\overset{  }{V}=V_{0}e^{-\left(\sigma{}+1+b\right)t}
 $$
 If you take any volume in phase space, then over time it will shrink exponentially quickly.
 Again, doesn’t this sound like exactly the opposite to what you thought chaos was about? Trajectories starting very close together move apart exponentially fast? This sounds like the opposite of that...what is going on?
@@ -100,7 +100,7 @@ Note that this does not preclude saddles. In a saddle there is a repelling direc
 Indeed we can see that there can only be sinks and saddles, and if there are any closed orbits, they must also be either attractive, or semi-stable.
 As usual, we can find the fixed points for this system by setting:
 $$
-\sigma{}(y-x)=0
+\sigma{}\left(y-x\right)=0
 $$
 $$
 r x-y-x z=0
@@ -110,71 +110,71 @@ x y-b z=0
 $$
 Solving these gives:
 $$
-(x^{*},y^{*},z^{*})=(0,0,0), (\pm{}\sqrt{b(r-1)},\pm{}\sqrt{b(r-1)},r-1)
+\left(x^{*},y^{*},z^{*}\right)=\left(0,0,0\right), \left(\pm{}\sqrt{b\left(r-1\right)},\pm{}\sqrt{b\left(r-1\right)},r-1\right)
 $$
 Clearly the last two points only exist for $r>1$. They are called $C^{+}$ and $C^{-}$ and appear from the origin at $r=1$. Three fixed points appearing from one sounds a lot like a pitchfork bifurcation, and indeed that’s precisely what happens.
 Let’s look at the stability of the fixed points. The Jacobian for the system is our first three dimensional Jacobian:
 $$
-A=(\begin{matrix} -\sigma{} & \sigma{} & 0 \\ r-z & -1 & -x \\ y & x & -b \end{matrix})
+A=\left(\begin{matrix} -\sigma{} & \sigma{} & 0 \\ r-z & -1 & -x \\ y & x & -b \end{matrix}\right)
 $$
 and thus:
 $$
-A_{\text{ origin }}=(\begin{matrix} -\sigma{} & \sigma{} & 0 \\ r & -1 & 0 \\ 0 & 0 & -b \end{matrix})
+A_{\text{ origin }}=\left(\begin{matrix} -\sigma{} & \sigma{} & 0 \\ r & -1 & 0 \\ 0 & 0 & -b \end{matrix}\right)
 $$
 We see here that the z-direction decouples, and indeed we can see from the equations that close to the origin:
 $$
-z(t)=z_{0}e^{-b t}
+z\left(t\right)=z_{0}e^{-b t}
 $$
-For the $(x,y)$ plane we have:
+For the $\left(x,y\right)$ plane we have:
 $$
-\Delta{}=\sigma{}(1-r), \tau{}=-(\sigma{}+1)
+\Delta{}=\sigma{}\left(1-r\right), \tau{}=-\left(\sigma{}+1\right)
 $$
-For $r<1$ this is clearly in the $(+,-) \text{ quadrant }$, so is stable, but we also have that
+For $r<1$ this is clearly in the $\left(+,-\right) \text{ quadrant }$, so is stable, but we also have that
 $$
-{\tau{}}^{2}-4\Delta{}={(\sigma{}+1)}^{2}-4\sigma{}(1-r)={(\sigma{}-1)}^{2}+4\sigma{} r>0
+{\tau{}}^{2}-4\Delta{}={\left(\sigma{}+1\right)}^{2}-4\sigma{}\left(1-r\right)={\left(\sigma{}-1\right)}^{2}+4\sigma{} r>0
 $$
 so this is a stable node.
 For $r<1, $we can actually show that the origin is not only locally stable, but globally so, but using a Lyapunov function
 $$
-V=x^{2}+\sigma{}(y^{2}+z^{2})
+V=x^{2}+\sigma{}\left(y^{2}+z^{2}\right)
 $$
-Remember, this is not a volume, but a quantity (a bit like a potential) which takes on a value at every point in space. We need to show that for all trajectories (for $r<1)$ $V \text{ always }$ decreases. We calculate the time derivative, and plug in the equations of motion:
+Remember, this is not a volume, but a quantity (a bit like a potential) which takes on a value at every point in space. We need to show that for all trajectories (for $r<1\right)$ $V \text{ always }$ decreases. We calculate the time derivative, and plug in the equations of motion:
 $$
-\dot{V}= \dot{x}2x+\sigma{}( \dot{y}2y+ \dot{z}2z)
-$$
-$$
-=2(x \sigma{}(y-x)+\sigma{} y ( r x-y-x z)+\sigma{} z (x y-b z))
+\dot{V}= \dot{x}2x+\sigma{}\left( \dot{y}2y+ \dot{z}2z\right)
 $$
 $$
-= 2\sigma{}( x y-x^{2}+y r x-y^{2}-y x z+z x y-z^{2}b)
+=2\left(x \sigma{}\left(y-x\right)+\sigma{} y \left( r x-y-x z\right)+\sigma{} z \left(x y-b z\right)\right)
 $$
 $$
-= 2\sigma{}( x y(1+r)-x^{2}-y^{2}-z^{2}b)
+= 2\sigma{}\left( x y-x^{2}+y r x-y^{2}-y x z+z x y-z^{2}b\right)
 $$
 $$
-= 2\sigma{}(- {(x-\frac{y}{2}(1+r))}^{2}-y^{2}(1-{(\frac{1+r}{2})}^{2})-x^{2}-z^{2}b)
+= 2\sigma{}\left( x y\left(1+r\right)-x^{2}-y^{2}-z^{2}b\right)
 $$
-which, so long as $r-1<0$ is necessarily negative. So all trajectories must decrease in their value of $V$...but V is itself like a three dimensional parabola, and so we just roll down it all the way to $(0,0,0)$ where out V is at a minimum. This proves that the origin is indeed globally stable in this parameter range.
-Let’s now look at the system for $r>1$. The origin is now a saddle in the $(x,y)$ plane and attractive in the $z$ direction. But how about the other fixed points?
+$$
+= 2\sigma{}\left(- {\left(x-\frac{y}{2}\left(1+r\right)\right)}^{2}-y^{2}\left(1-{\left(\frac{1+r}{2}\right)}^{2}\right)-x^{2}-z^{2}b\right)
+$$
+which, so long as $r-1<0$ is necessarily negative. So all trajectories must decrease in their value of $V$...but V is itself like a three dimensional parabola, and so we just roll down it all the way to $\left(0,0,0\right)$ where out V is at a minimum. This proves that the origin is indeed globally stable in this parameter range.
+Let’s now look at the system for $r>1$. The origin is now a saddle in the $\left(x,y\right)$ plane and attractive in the $z$ direction. But how about the other fixed points?
 The Jacobian at the $C^{\pm{}}$ fixed points is:
 $$
-A_{C^{\pm{}}}=(\begin{matrix} -\sigma{} & \sigma{} & 0 \\ 1 & -1 & \mp{}\sqrt{b(r-1)} \\ \pm{}\sqrt{b(r-1)} & \pm{}\sqrt{b(r-1)} & -b \end{matrix})
+A_{C^{\pm{}}}=\left(\begin{matrix} -\sigma{} & \sigma{} & 0 \\ 1 & -1 & \mp{}\sqrt{b\left(r-1\right)} \\ \pm{}\sqrt{b\left(r-1\right)} & \pm{}\sqrt{b\left(r-1\right)} & -b \end{matrix}\right)
 $$
 To understand the nature of these fixed points, let’s solve the eigenvalue system numerically. We have:
 $$
-\text{ det }(\begin{matrix} -\sigma{}-\lambda{} & \sigma{} & 0 \\ 1 & -1-\lambda{} & \mp{}\sqrt{b(r-1)} \\ \pm{}\sqrt{b(r-1)} & \pm{}\sqrt{b(r-1)} & -b-\lambda{} \end{matrix})=0
+\text{ det }\left(\begin{matrix} -\sigma{}-\lambda{} & \sigma{} & 0 \\ 1 & -1-\lambda{} & \mp{}\sqrt{b\left(r-1\right)} \\ \pm{}\sqrt{b\left(r-1\right)} & \pm{}\sqrt{b\left(r-1\right)} & -b-\lambda{} \end{matrix}\right)=0
 $$
 which gives:
 $$
--(\sigma{}+\lambda{})((1+\lambda{})(b+\lambda{})+b(r-1))-\sigma{}((-(b+\lambda{}))+b(r-1))=0
+-\left(\sigma{}+\lambda{}\right)\left(\left(1+\lambda{}\right)\left(b+\lambda{}\right)+b\left(r-1\right)\right)-\sigma{}\left(\left(-\left(b+\lambda{}\right)\right)+b\left(r-1\right)\right)=0
 $$
 Expanding this out, we have:
 $$
-{\lambda{}}^{3}+{\lambda{}}^{2} (1+b+\sigma{})+\lambda{} (b(r+\sigma{}))+2b \sigma{}(r -1)=0
+{\lambda{}}^{3}+{\lambda{}}^{2} \left(1+b+\sigma{}\right)+\lambda{} \left(b\left(r+\sigma{}\right)\right)+2b \sigma{}\left(r -1\right)=0
 $$
 We can ask what happens for $r=1$ and we have:
 $$
-{\lambda{}}^{3}+{\lambda{}}^{2} (1+b+\sigma{})+\lambda{} (b(1+\sigma{}))=0
+{\lambda{}}^{3}+{\lambda{}}^{2} \left(1+b+\sigma{}\right)+\lambda{} \left(b\left(1+\sigma{}\right)\right)=0
 $$
 Which gives:
 $$
@@ -184,11 +184,11 @@ So at least at this point the eigenvalues are all real. In fact if we increase $
 ok, so this is pretty ugly! But you can figure out when you go from a stable node to a stable spiral-type solution by plugging in values for σ and $b$.
 Fixing $\sigma{}=10 \text{ and } b=\frac{8}{3}$ (values which are often used), we can numerically calculate the positions of the three roots as a function of $r$. The red line here just traces the history of the eigenvalues.
 ![Figure 6](/images/part41/output_006.png)
-We see that we start off at the pitchfork bifurcation point (at $r=1)$ with all three eigenvalues being real and negative, or zero, corresponding to a stable node. As we increase $r$ we get one real negative eigenvalue and two complex ones (with negative real parts). This corresponds to having a stable direction, and a stable spiral plane.
+We see that we start off at the pitchfork bifurcation point (at $r=1\right)$ with all three eigenvalues being real and negative, or zero, corresponding to a stable node. As we increase $r$ we get one real negative eigenvalue and two complex ones (with negative real parts). This corresponds to having a stable direction, and a stable spiral plane.
 We then see that at some value of $r$ the sign of the real part of two of the eigenvalues goes from negative to positive, meaning that we now have a stable direction (the negative real eigenvalue) and an unstable spiral plane. The nature of the fixed points has changed, and this can happen via an unstable limit cycle enclosing the previously stable fixed point. This is a Hopf bifurcation and we denote the value of $r $that it happens at as $r_{H}$. Can we calculate this point analytically? Indeed we can. At the Hopf bifurcation point, we know that we have a purely imaginary eigenvalue (and its conjugate):
 Remember, our eigenvalue equation is:
 $$
-{\lambda{}}^{3}+{\lambda{}}^{2} (1+b+\sigma{})+\lambda{} (b(r+\sigma{}))+2b \sigma{}(r -1)=0
+{\lambda{}}^{3}+{\lambda{}}^{2} \left(1+b+\sigma{}\right)+\lambda{} \left(b\left(r+\sigma{}\right)\right)+2b \sigma{}\left(r -1\right)=0
 $$
 Making an ansatz that we have a purely imaginary eigenvalue is equivalent to saying that
 $$
@@ -197,53 +197,53 @@ $$
 For some real ω.
 Substituting this we get:
 $$
--i {\omega{}}^{3}-{\omega{}}^{2} (1+b+\sigma{})+i \omega{} (b(r+\sigma{}))+2b \sigma{}(r -1)=0
+-i {\omega{}}^{3}-{\omega{}}^{2} \left(1+b+\sigma{}\right)+i \omega{} \left(b\left(r+\sigma{}\right)\right)+2b \sigma{}\left(r -1\right)=0
 $$
 This is a nice trick because we can separate out the real and imaginary parts:
 $$
-- {\omega{}}^{3}+ \omega{} (b(r+\sigma{}))=0
+- {\omega{}}^{3}+ \omega{} \left(b\left(r+\sigma{}\right)\right)=0
 $$
 $$
--{\omega{}}^{2} (1+b+\sigma{})+2b \sigma{}(r -1)=0
+-{\omega{}}^{2} \left(1+b+\sigma{}\right)+2b \sigma{}\left(r -1\right)=0
 $$
 These can be solved separately to give, for the first:
 $$
-\omega{}=0, \pm{}\sqrt{b(r+\sigma{})}
+\omega{}=0, \pm{}\sqrt{b\left(r+\sigma{}\right)}
 $$
 and for the second:
 $$
-\omega{}=\pm{}\sqrt{\frac{2b \sigma{}(r-1)}{1+b+\sigma{}}}
+\omega{}=\pm{}\sqrt{\frac{2b \sigma{}\left(r-1\right)}{1+b+\sigma{}}}
 $$
 These of course have to be the same ω. For positive $b \text{ and } \sigma{}$ and $r>1$, the second set of solutions cannot be 0, so we can discard that solution. For the other, we can equate the ω:
 $$
-\sqrt{b(r+\sigma{})}=\sqrt{\frac{2b \sigma{}(r-1)}{1+b+\sigma{}}}
+\sqrt{b\left(r+\sigma{}\right)}=\sqrt{\frac{2b \sigma{}\left(r-1\right)}{1+b+\sigma{}}}
 $$
 Solving for $r \text{ we have }$:
 $$
-r_{H} =\sigma{}\frac{(3+b +\sigma{})}{(\sigma{}-b-1)}
+r_{H} =\sigma{}\frac{\left(3+b +\sigma{}\right)}{\left(\sigma{}-b-1\right)}
 $$
 So now we have that for:
 $$
-1<r<r_{H} =\sigma{}\frac{(3+b +\sigma{})}{(\sigma{}-b-1)}
+1<r<r_{H} =\sigma{}\frac{\left(3+b +\sigma{}\right)}{\left(\sigma{}-b-1\right)}
 $$
 we have linear stability. Note that this also requires that $\sigma{}>b+1$ otherwise the denominator is negative and we can’t have negative $r.$
 Let’s just look at the other eigenvalue at this point. We must have that
 $$
-{\lambda{}}^{3}+{\lambda{}}^{2} (1+b+\sigma{})+\lambda{} (b(r+\sigma{}))+2b \sigma{}(r -1)=(\lambda{}-{\lambda{}}_{1})(\lambda{}-{\lambda{}}_{2})(\lambda{}-{\lambda{}}_{3})
+{\lambda{}}^{3}+{\lambda{}}^{2} \left(1+b+\sigma{}\right)+\lambda{} \left(b\left(r+\sigma{}\right)\right)+2b \sigma{}\left(r -1\right)=\left(\lambda{}-{\lambda{}}_{1}\right)\left(\lambda{}-{\lambda{}}_{2}\right)\left(\lambda{}-{\lambda{}}_{3}\right)
 $$
 We have found two of the eigenvalues:
 $$
-\lambda{}=\pm{}i\sqrt{b(r+\sigma{})}
+\lambda{}=\pm{}i\sqrt{b\left(r+\sigma{}\right)}
 $$
 So substituting this in, we get:
 $$
-{\lambda{}}^{3}+{\lambda{}}^{2} (1+b+\sigma{})+\lambda{} (b(r+\sigma{}))+2b \sigma{}(r -1)=(\lambda{}-i\sqrt{b(r+\sigma{})})(\lambda{}+i\sqrt{b(r+\sigma{})})(\lambda{}-{\lambda{}}_{3})
+{\lambda{}}^{3}+{\lambda{}}^{2} \left(1+b+\sigma{}\right)+\lambda{} \left(b\left(r+\sigma{}\right)\right)+2b \sigma{}\left(r -1\right)=\left(\lambda{}-i\sqrt{b\left(r+\sigma{}\right)}\right)\left(\lambda{}+i\sqrt{b\left(r+\sigma{}\right)}\right)\left(\lambda{}-{\lambda{}}_{3}\right)
 $$
 Expanding out in λ and solving for ${\lambda{}}_{3}$ we have:
 $$
-{\lambda{}}_{3}=-(\sigma{}+b+1)
+{\lambda{}}_{3}=-\left(\sigma{}+b+1\right)
 $$
-Let’s just look at our bifurcation diagram (in the $(r,x) \text{ plane }$), again for $b=\frac{8}{3},\sigma{}=10$:
+Let’s just look at our bifurcation diagram (in the $\left(r,x\right) \text{ plane }$), again for $b=\frac{8}{3},\sigma{}=10$:
 ![Figure 7](/images/part41/output_007.png)
 Here the red line denotes where the two fixed points go from being stable nodes to stable spirals.
 So we have our pitchfork bifurcation at $r=1,$ and then our Hopf bifurcation at $r_{H}$...but we should really include the limit cycle positions on the above graph. But what does it mean to take an $x$ position of a limit cycle? A limit cycle is a one dimensional ring in the three dimensional space, and so really we should be plotting the positions of the fixed points, and the limit cycles in the full phase plane and see what happens as $r$ changes.
@@ -260,7 +260,7 @@ What is a bit different is that we have a new type of limit cycle in three dimen
 In this case we have an unstable limit cycle, and a stable direction. It ’s like a cross between a saddle and an unstable limit cycle and is actually a little unintuitive, but is important for understanding what ’s happening in the system as we go towards the chaotic regime, though we are not there yet.
 In Strogatz an analogue of the following picture is presented
 ![Figure 11](/images/part41/output_011.png)
-Where there is a plane with an unstable limit cycle (in red) and then a perpendicular stable direction. This is a partial picture, but it doesn ’t quite give an intuition about what happens off the plane. The limit cycle only exists in the plane itself (and in the Lorenz case the plane isn’t even flat), and so we have this sort of tube above and below of regions which will be attracted to the fixed point...but what happens to flows which start outside of the limit cycle and above the plane? Well, these may be attracted to the other fixed point $(C^{-} $if this one is $C^{+}$).
+Where there is a plane with an unstable limit cycle (in red) and then a perpendicular stable direction. This is a partial picture, but it doesn ’t quite give an intuition about what happens off the plane. The limit cycle only exists in the plane itself (and in the Lorenz case the plane isn’t even flat), and so we have this sort of tube above and below of regions which will be attracted to the fixed point...but what happens to flows which start outside of the limit cycle and above the plane? Well, these may be attracted to the other fixed point $\left(C^{-} $if this one is $C^{+}$).
 Here we plot the $x, y \text{ and } z $values as a function of time for different starting points in the plane. We see that solutions are attracted to the two fixed points at $C^{\pm{}}.$
 ![Figure 12](/images/part41/output_012.png)
 Plotting a few of these in three dimensions we see:
@@ -287,11 +287,11 @@ The trajectory here starts off outside of the Strange Attractor at the position 
 If we take the above single trajectory and run it again far into the future we see:
 ![Figure 19](/images/part41/output_019.png)
 Again, we have settled into the strange attractor, and always stay away from those central regions, which now contain unstable fixed points.
-Let’s look a little more at the transition into chaos by looking at $x(t)$ for starting positions $(0,1,0)$ and $(0,1.01,0)$ as $r$ increases:
+Let’s look a little more at the transition into chaos by looking at $x\left(t\right)$ for starting positions $\left(0,1,0\right)$ and $\left(0,1.01,0\right)$ as $r$ increases:
 ![Figure 20](/images/part41/output_020.png)
 We see clearly the incredible sensitivity to initial conditions once we reach the chaotic regime. Just a tiny difference in the starting position leads to completely different behaviours after a relatively short time.
 Another thing that we see is that in the chaotic regime, there is still some seemingly periodic behaviour. In fact this is so-called transient behaviour and it happens on the approach to the strange attractor. Once we get close to the strange attractor itself, then the chaos really begins. The transient behaviour is actually observable in the early time trajectory with the arrow pointing to it here:
-The above trajectories of $x(t) $for different values of $r$ do not quite tell the whole story. We’ve actually lied a little...we have essentially said that chaos only appears after $r_{H}$. This isn’t quite true. This is just the point at which the fixed points $C^{\pm{}}$ become unstable. Before that we can still have extreme sensitivity to initial conditions, and the limit cycles which are very close to one another can still mean that we go around the orbits in chaotic ways...but we will still end up at one of the fixed points. Just as we can have **transient quasiperiodicity**so we can have **transient chaos.**Let’s see if we can spot this transient chaos by starting in the region close to the limit cycles. Here, starting close to $(17.4,11.6,10)$ we find some transient chaos.
+The above trajectories of $x\left(t\right) $for different values of $r$ do not quite tell the whole story. We’ve actually lied a little...we have essentially said that chaos only appears after $r_{H}$. This isn’t quite true. This is just the point at which the fixed points $C^{\pm{}}$ become unstable. Before that we can still have extreme sensitivity to initial conditions, and the limit cycles which are very close to one another can still mean that we go around the orbits in chaotic ways...but we will still end up at one of the fixed points. Just as we can have **transient quasiperiodicity**so we can have **transient chaos.**Let’s see if we can spot this transient chaos by starting in the region close to the limit cycles. Here, starting close to $\left(17.4,11.6,10\right)$ we find some transient chaos.
 ![Figure 21](/images/part41/output_021.png)
 Here the initial conditions differ by just 0.0001, and while they both settle down to the fixed points, they end up at different ones because of the initial region of transient chaos caused by being close to the unstable limit cycles. As we will see, while this is in some colloquial sense chaotic, by the definition that we’ll write down shortly, because you end up at the fixed points in the long time limit, it’s not strictly chaos. It is however very sensitive to initial conditions.
 There is one more (actually there are a lot more) subtlety related to the strange attractor. It didn’t actually suddenly appear at the Hopf Bifurcation point. It had been there for a while. In fact it appears at around $r=24.06$ in for the value of $b$ and σ that we’ve been playing with. The transient chaos that occurs takes longer and longer to die down to the fixed points, and at $r=24.06, $the time it takes to die down goes to ∞ and this is when the strange attractor appears. Between $24.06<r<r_{H}$ we actually have a region where there is both the strange attractor as well as the stable fixed points $C^{\pm{}}$. You might end up on the strange attractor, or, you might end up at the fixed points. It is only after the Hopf Bifurcation that you are guaranteed to end up on the strange attractor.

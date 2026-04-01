@@ -34,12 +34,12 @@ r_{\text{ limit cycle }}={\frac{\sqrt{1-\sqrt{1+4 \mu{}}}}{\sqrt{2}},\frac{\sqrt
 $$
 but in fact these are only real for certain values of μ. Plotting these along with the nature of the fixed point at zero we see:
 ![Figure 2](/images/part32/output_002.png)
-Where as usual dashed lines correspond to instability, though we have to be careful here about the limit cycles (blue), for $r>0,\text{ and the } \text{ fixed point } (\text{ red }) \text{ at } r=0$.
+Where as usual dashed lines correspond to instability, though we have to be careful here about the limit cycles (blue), for $r>0,\text{ and the } \text{ fixed point } \left(\text{ red }\right) \text{ at } r=0$.
 Note that we have what is a bifurcation happening at $\mu{}=-\frac{1}{4}$, where suddenly the radius of the limit cycle becomes real and a stable and unstable limit cycle appear. Note that this point is NOT the Hopf bifurcation. That happens at μ=0. We also have a rather interesting thing happening as the unstable limit cycle collapses in to the origin and changes the nature of the fixed point from stable to unstable. We’ve never seen that before.
 ![Figure 3](/images/part32/output_003.png)
 In the first we have no limit cycle and a stable fixed point at 0. In the second we have a stable and unstable limit cycle and a stable fixed point at 0, and in the third we have a stable limit cycle and an unstable fixed point.
 The part of this where the unstable limit cycle shrinks to zero size and engulfs the stable fixed point, turning it into an unstable fixed point is called a **Hopf Bifurcation**. Actually, this is a **Subcritical Hopf bifurcation**. We will look at the supercritical one in a bit. Note again that the sudden appearance of the stable and unstable limit cycles is not the Hopf bifurcation. That is a saddle bifurcation of limit cycles.
-Let’s look at some trajectories, not in phase space but just in terms of $x(t) \text{ for certain } \text{ initial conditions } \text{ in this } \text{ system at }$ different values of μ.
+Let’s look at some trajectories, not in phase space but just in terms of $x\left(t\right) \text{ for certain } \text{ initial conditions } \text{ in this } \text{ system at }$ different values of μ.
 ![Figure 4](/images/part32/output_004.png)
 Taking some snapshots of this we have:
 ![Figure 5](/images/part32/output_005.png)
@@ -56,17 +56,17 @@ $$
 $$
 Plugging in the equations of motion for this system we get:
 $$
-\dot{x}=(\mu{} r+r^{3}-r^{5}) \text{ cos } \theta{}-r \text{ sin } \theta{} (\omega{}+b r^{2})=(\mu{} +r^{2}-r^{4})r \text{ cos } \theta{}-r \text{ sin } \theta{} (\omega{}+b r^{2})
+\dot{x}=\left(\mu{} r+r^{3}-r^{5}\right) \text{ cos } \theta{}-r \text{ sin } \theta{} \left(\omega{}+b r^{2}\right)=\left(\mu{} +r^{2}-r^{4}\right)r \text{ cos } \theta{}-r \text{ sin } \theta{} \left(\omega{}+b r^{2}\right)
 $$
 $$
-\dot{y}=(\mu{} r+r^{3}-r^{5}) \text{ sin } \theta{}+r \text{ cos } \theta{} (\omega{}+b r^{2})=(\mu{} +r^{2}-r^{4}) r \text{ sin } \theta{}+r \text{ cos } \theta{} (\omega{}+b r^{2})
+\dot{y}=\left(\mu{} r+r^{3}-r^{5}\right) \text{ sin } \theta{}+r \text{ cos } \theta{} \left(\omega{}+b r^{2}\right)=\left(\mu{} +r^{2}-r^{4}\right) r \text{ sin } \theta{}+r \text{ cos } \theta{} \left(\omega{}+b r^{2}\right)
 $$
 and converting the right hand side back to Cartesian coordinates we have:
 $$
-\dot{x}=(\mu{} +(x^{2}+y^{2})-{(x^{2}+y^{2})}^{2})x-y (\omega{}+b (x^{2}+y^{2}))
+\dot{x}=\left(\mu{} +\left(x^{2}+y^{2}\right)-{\left(x^{2}+y^{2}\right)}^{2}\right)x-y \left(\omega{}+b \left(x^{2}+y^{2}\right)\right)
 $$
 $$
-\dot{y}=(\mu{} +(x^{2}+y^{2})-{(x^{2}+y^{2})}^{2}) y+x (\omega{}+b (x^{2}+y^{2}))
+\dot{y}=\left(\mu{} +\left(x^{2}+y^{2}\right)-{\left(x^{2}+y^{2}\right)}^{2}\right) y+x \left(\omega{}+b \left(x^{2}+y^{2}\right)\right)
 $$
 This is a fairly unpleasant expression, but note that at the fixed point at 0, we are not going to need any more than the linear terms here. All other terms, when we take the derivative and plug in $x=0, y=0$ will vanish. So linearising the above we get:
 $$
@@ -77,7 +77,7 @@ $$
 $$
 The Jacobian for this is
 $$
-A=(\begin{matrix} \mu{} & -\omega{} \\ \omega{} & \mu{} \end{matrix})
+A=\left(\begin{matrix} \mu{} & -\omega{} \\ \omega{} & \mu{} \end{matrix}\right)
 $$
 Rather than studying this in terms of the determinant and trace, let ’s actually find the eigenvalues. Well, you should be able to show that these are:
 $$

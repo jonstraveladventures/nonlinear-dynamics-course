@@ -15,13 +15,13 @@ However, if you closed all the doors and put blinds on the windows then maybe yo
 Anyway, we will not worry about the details of this too much now, but that ’s just a quick taster as to the importance of symmetries. For now, we are going to be interested in particular types of **conservative systems**.
 Let’s start off with a second order system given by Newton ’s law
 $$
-m \ddot{x}=F(x)
+m \ddot{x}=F\left(x\right)
 $$
 You can also write this as $F=m a. $Here $m \text{ is the } \text{ mass }$ of some object and it says that the acceleration of the object is equal to the force applied to it divided by the mass. Small masses accelerate faster under a given force than do large masses.
 Note that we have written here that the force can be a function of the position, but not of time (corresponding to a driving force), or of the velocity of the object (corresponding to a damping force)
-We can rewrite the above by defining a potential energy $V(x)$ whose derivative is the negative of the force:
+We can rewrite the above by defining a potential energy $V\left(x\right)$ whose derivative is the negative of the force:
 $$
-F(x)=-\frac{d V}{d x}
+F\left(x\right)=-\frac{d V}{d x}
 $$
 This says that the force comes from a difference in the potential energy between two points. The reason you accelerate under gravity is because the potential energy at different vertical heights is different, and so there is a gradient in the potential energy which means that there is a force on you which means that you accelerate.
 It turns out that for all systems for which $F \text{ is } $a function only of $x$ you can write the force in terms of this gradient.
@@ -35,9 +35,9 @@ $$
 $$
 Show that this is the same as writing
 $$
-\frac{d}{d t}(\frac{1}{2}m{\dot{x}}^{2}+V)=0
+\frac{d}{d t}\left(\frac{1}{2}m{\dot{x}}^{2}+V\right)=0
 $$
-where we have used the chain rule, noting that really $V=V(x(t))$.
+where we have used the chain rule, noting that really $V=V\left(x\left(t\right)\right)$.
 We say that the left hand side is an **exact**time-derivative. Exact here meaning that the terms on the left can be written as the time derivative of the simple expression in brackets.
 In fact the thing in brackets is the kinetic energy plus the potential energy, which generically is the total energy, which we can call $E:$
 $$
@@ -68,7 +68,7 @@ looks like:
 Remember that the force is equal to the negative of the gradient, so where there is a steep gradient, the force is larger and at the bottom of the two wells there is zero gradient so no force and the particle just sits there.
 Writing Newton’s law for this system and fixing $m=1$) gives:
 $$
-\ddot{x}+\frac{d (-\frac{1}{2}x^{2}+\frac{1}{4}x^{4})}{d x}=0
+\ddot{x}+\frac{d \left(-\frac{1}{2}x^{2}+\frac{1}{4}x^{4}\right)}{d x}=0
 $$
 $$
 \ddot{x}=x-x^{3}
@@ -80,24 +80,24 @@ $$
 $$
 \dot{y}=x-x^{3}
 $$
-Make sure that you can show that there are three fixed points: ${\text{ fp }}_{1}\text{ at }$ $(-1,0), {\text{ fp }}_{2}\text{ at } (0,0), {\text{ fp }}_{3} \text{ at } (1,0).$
+Make sure that you can show that there are three fixed points: ${\text{ fp }}_{1}\text{ at }$ $\left(-1,0\right), {\text{ fp }}_{2}\text{ at } \left(0,0\right), {\text{ fp }}_{3} \text{ at } \left(1,0\right).$
 The Jacobian of this system is:
 $$
-A=(\begin{matrix} 0 & 1 \\ 1-3x^{2} & 0 \end{matrix})
+A=\left(\begin{matrix} 0 & 1 \\ 1-3x^{2} & 0 \end{matrix}\right)
 $$
 Which at the three fixed points gives
 $$
-A_{1}=(\begin{matrix} 0 & 1 \\ -2 & 0 \end{matrix}), A_{2}=(\begin{matrix} 0 & 1 \\ 1 & 0 \end{matrix}), A_{3}=(\begin{matrix} 0 & 1 \\ -2 & 0 \end{matrix})
+A_{1}=\left(\begin{matrix} 0 & 1 \\ -2 & 0 \end{matrix}\right), A_{2}=\left(\begin{matrix} 0 & 1 \\ 1 & 0 \end{matrix}\right), A_{3}=\left(\begin{matrix} 0 & 1 \\ -2 & 0 \end{matrix}\right)
 $$
 Leading to:
 $$
-({\Delta{}}_{1},{\tau{}}_{1})=(2,0),   ({\Delta{}}_{1},{\tau{}}_{1})=(-1,0),   ({\Delta{}}_{1},{\tau{}}_{1})=(2,0)
+\left({\Delta{}}_{1},{\tau{}}_{1}\right)=\left(2,0\right),   \left({\Delta{}}_{1},{\tau{}}_{1}\right)=\left(-1,0\right),   \left({\Delta{}}_{1},{\tau{}}_{1}\right)=\left(2,0\right)
 $$
 ![Figure 3](/images/part14-2/output_003.png)
 So we have two centers and one saddle point.
 What do we remember from the section about linearisation? That centers are very very sensitive to non-linearities, and what might look like a center when we linearise might become either an attracting or repelling fixed point when we include non-linearities. So perhaps those centers are just a linearised dream and if you looked at the whole system they would disappear.
 However, we also know that our system is conservative and so there can ’t be any stable or unstable spirals or stars or degenerate nodes (attracting or repelling fixed points), so somehow the center may still remain.
-In fact we can find the trajectories by finding the paths for which $E$ is a constant. $E \text{ in this } \text{ case }$ is just (remembering that $m=1)$:
+In fact we can find the trajectories by finding the paths for which $E$ is a constant. $E \text{ in this } \text{ case }$ is just (remembering that $m=1\right)$:
 $$
 E=\frac{1}{2}{\dot{x}}^{2}+V
 $$
@@ -118,7 +118,7 @@ y=\pm{}\sqrt{2E+x^{2}-\frac{1}{2}x^{4}}
 $$
 Let’s first look at a large positive value of $E$, say $E=1$.
 ![Figure 4](/images/part14-2/output_004.png)
-What do we have here? Well, first of all we should figure out what direction we would travel around the trajectory. Well, let’s look at the point around $(0,1.42)$, right at the top. If we plug that into the equations then we get:
+What do we have here? Well, first of all we should figure out what direction we would travel around the trajectory. Well, let’s look at the point around $\left(0,1.42\right)$, right at the top. If we plug that into the equations then we get:
 $$
 \dot{x}=1
 $$
@@ -156,12 +156,12 @@ $$
 ![Figure 15](/images/part14-2/output_015.png)
 This is a plot of the **energy function**of this system. Keep in mind as always that y is really the velocity. So we take the system at any position and any velocity and it will tell us the energy of the system for all time to come after that as it traces one of the contours on the energy surface.
 One important thing to note here is that the dynamics of this system shouldn ’t be confused with the dynamics of the particle rolling about in the double well. Dynamics here all happens along horizontal cross-sections corresponding to energy contours.
-A projection of these contours into the $(x,y) \text{ plane simply } \text{ gives the } \text{ trajectories in } \text{ the phase } \text{ space }.$
+A projection of these contours into the $\left(x,y\right) \text{ plane simply } \text{ gives the } \text{ trajectories in } \text{ the phase } \text{ space }.$
 ![Figure 16](/images/part14-2/output_016.png)
 Note that in this case the centers correspond to the minimal energy solutions and are stable fixed points. This won’t always be the case, but you would have to come up with non-differentiable potentials to find such scenarios, so we won’t worry about them here.
 Remember that we performed our fixed point analysis by looking at the Jacobian at the fixed points. This is equivalent to linearising the system, and we said that centers are very unstable to non-linearities...but it looks like the old centers are still centers, even if they don’t correspond to perfect circles, or ellipses. Why is this?
 Well, this is a special feature of conservative systems and corresponds to a general theorem about such systems:
-Given a general two-dimensional dynamical system, where the dynamics is governed by a continuously differentiable set of functions, the variables $(x,y)\in{}$ $R^{2}$, and there exists a conserved quantity $E(x,y)$. If there is an isolated fixed point which is a local minimum (or maximum) of $E(x,y) \text{ then }$ all trajectories sufficiently close to the fixed point must be closed cycles.
+Given a general two-dimensional dynamical system, where the dynamics is governed by a continuously differentiable set of functions, the variables $\left(x,y\right)\in{}$ $R^{2}$, and there exists a conserved quantity $E\left(x,y\right)$. If there is an isolated fixed point which is a local minimum (or maximum) of $E\left(x,y\right) \text{ then }$ all trajectories sufficiently close to the fixed point must be closed cycles.
 We won’t prove this theorem, but you should think about why this might be by looking at the energy surface, the centers and the local minima in the example we’ve been going through here.
 Try and think what happens also if the fixed point is not isolated - for instance if we had a line of fixed points...would this hold?
 Hang on, but I thought that conservative vector fields were curl free?
@@ -173,15 +173,15 @@ Which is a conservative vector field, which is indeed curl free.
 Essentially “conservative” here has two different meanings. In our case, there can be curl in the vector field in the phase plane.
 Assignment 2
 We’re going to look here at an equation which comes from general relativity. It’s going to be a bit strange to start with, as where we normally expect time, we’re actually going to see a different variable.
-Let’s imagine that we have a planet orbiting a star. We can write the coordinates in polar coordinates and we could think of writing $r(t) \text{ and } \theta{}(t)$ as the positions in the plane of motion. However, it’s possible to do a change of variable which allows us to think not about the motion through time, but the trajectory in a sort of parametric way, where we have r(θ). As an example, if you wrote an equation
+Let’s imagine that we have a planet orbiting a star. We can write the coordinates in polar coordinates and we could think of writing $r\left(t\right) \text{ and } \theta{}\left(t\right)$ as the positions in the plane of motion. However, it’s possible to do a change of variable which allows us to think not about the motion through time, but the trajectory in a sort of parametric way, where we have r(θ). As an example, if you wrote an equation
 $$
-r(\theta{})=\theta{}
+r\left(\theta{}\right)=\theta{}
 $$
 This would correspond to a spiral. as θ increases, so $r$ increases.
 ![Figure 17](/images/part14-2/output_017.png)
 We could plot something more complicated, like
 $$
-r(\theta{})=\text{ sin }({\theta{}}^{2})+\frac{1}{1+{\theta{}}^{2}}
+r\left(\theta{}\right)=\text{ sin }\left({\theta{}}^{2}\right)+\frac{1}{1+{\theta{}}^{2}}
 $$
 I’ve no idea what this looks like...let ’s see...
 ![Figure 18](/images/part14-2/output_018.png)
@@ -196,22 +196,22 @@ $$
 \frac{d^{2}x}{d t^{2}}=\frac{-d V}{d x}
 $$
 OK, so we can also take the equation for u(θ) and do our usual trick to turn it into two first order equations...actually, that’s a lie...you can!
-1. Letting $v=\frac{d u}{d \theta{}}$ write the equation as a system in the $(u,v) \text{ plane }.$
+1. Letting $v=\frac{d u}{d \theta{}}$ write the equation as a system in the $\left(u,v\right) \text{ plane }.$
 2) Find the equilibrium points of the system and classify them using linear stability analysis.
-3. If you found a center, you now want to show that this is in fact a non-linear center. How would we do this? Well, we know that if there is a conserved quantity in the system, then a linear center will remain a center. We have to be a bit careful here as we’re not looking for some quantity $E(u,v)$ for which:
+3. If you found a center, you now want to show that this is in fact a non-linear center. How would we do this? Well, we know that if there is a conserved quantity in the system, then a linear center will remain a center. We have to be a bit careful here as we’re not looking for some quantity $E\left(u,v\right)$ for which:
 $$
-\frac{d E(u,v)}{d t}=0
+\frac{d E\left(u,v\right)}{d t}=0
 $$
 there’s no $t$ floating about. You need to find a quantity for which
 $$
-\frac{d E(u,v)}{d \theta{}}=0
+\frac{d E\left(u,v\right)}{d \theta{}}=0
 $$
 where remember $u \text{ and } v \text{ are functions } \text{ of } \theta{}.$
 a) Use the lessons learned in this chapter to find such a quantity.
 - b) Show that it is indeed conserved.
 - c) Show that the linear center you found (which you now know is a non-linear center) is a minimum of $E \text{ and not } $a maximum. To do this, you need to do the equivalent of calculating the second derivative and showing that it’s positive for it to be a local minimum. This is done using the Jacobian, but not the same Jacobian that you’ve been looking at so far in this course. Calculate:
 $$
-(\begin{matrix} \frac{{\partial{}}^{2}E}{\partial{}u^{2}} & \frac{{\partial{}}^{2}E}{\partial{}v\partial{}u} \\ \frac{{\partial{}}^{2}E}{\partial{}u\partial{}v} & \frac{{\partial{}}^{2}E}{\partial{}v^{2}} \end{matrix})
+\left(\begin{matrix} \frac{{\partial{}}^{2}E}{\partial{}u^{2}} & \frac{{\partial{}}^{2}E}{\partial{}v\partial{}u} \\ \frac{{\partial{}}^{2}E}{\partial{}u\partial{}v} & \frac{{\partial{}}^{2}E}{\partial{}v^{2}} \end{matrix}\right)
 $$
 And calculating the determinant of this. So long as $\frac{\partial{}E}{\partial{}u} \text{ and } \frac{\partial{}E}{\partial{}v} $are both zero, if the determinant of the Jacobian is positive then you are at a local minimum.
 4) This equilibrium point corresponds to a circular orbit. Show this, and find what its radius is.

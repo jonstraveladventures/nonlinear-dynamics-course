@@ -14,35 +14,35 @@ Let’s say we just take the pendulum starting on the left and swing it one half
 Swapping the direction of time is the same as swapping $t<-> -t$. Let’s look at this more generally, and in terms of the equations themselves.
 Let’s go back to our Newton’s law for a conservative system:
 $$
-m \ddot{x}=F(x)
+m \ddot{x}=F\left(x\right)
 $$
 which is equivalent to:
 $$
-m \frac{d^{2} x}{d t^{2}}=F(x)
+m \frac{d^{2} x}{d t^{2}}=F\left(x\right)
 $$
 which is really
 $$
-m \frac{d}{d t}\frac{d}{d t}x=F(x)
+m \frac{d}{d t}\frac{d}{d t}x=F\left(x\right)
 $$
-The first thing that we see here is that if we let $t\to -t, $then $\frac{d}{d t}\to $ $\frac{d}{d (-t)}=-\frac{d}{d t}$, and so $\frac{d^{2}}{d t^{2}}\to \frac{d^{2}}{d t^{2}} $ie. it doesn’t change.
+The first thing that we see here is that if we let $t\to -t, $then $\frac{d}{d t}\to $ $\frac{d}{d \left(-t\right)}=-\frac{d}{d t}$, and so $\frac{d^{2}}{d t^{2}}\to \frac{d^{2}}{d t^{2}} $ie. it doesn’t change.
 So that under the transformation of $t\to -t $the equation of motion remains the same.
-Actually we have to be slightly more careful here because we would like to know what’s happening in the phase plane (labeling the phase plane directions $(x,v)$). So let’s go to the coupled first order system:
+Actually we have to be slightly more careful here because we would like to know what’s happening in the phase plane (labeling the phase plane directions $\left(x,v\right)$). So let’s go to the coupled first order system:
 $$
-\dot{v}=\frac{F(x)}{m}
+\dot{v}=\frac{F\left(x\right)}{m}
 $$
 $$
 \dot{x}=v
 $$
 Now, if we just let $t\to -t, $then the system doesn’t remain the same. If we just did this then we’d end up with:
 $$
--\dot{v}=\frac{F(x)}{m}
+-\dot{v}=\frac{F\left(x\right)}{m}
 $$
 $$
 - \dot{x}=v
 $$
 which is a different set of equations. If however we **also** let $v\to -v$ then all of a sudden we get back to
 $$
-\dot{v}=\frac{F(x)}{m}
+\dot{v}=\frac{F\left(x\right)}{m}
 $$
 $$
 \dot{x}=v
@@ -56,18 +56,18 @@ The system is reversible, if the red curve is **also** a trajectory of the origi
 In terms of the equations, any system for which $t\to -t$ and $v\to -v$ is a symmetry is reversible.
 Given a more general system:
 $$
-\dot{x}=f(x,y)
+\dot{x}=f\left(x,y\right)
 $$
 $$
-\dot{y}=g(x,y)
+\dot{y}=g\left(x,y\right)
 $$
 what constraints are there on $f$ and $g$ such that the system is reversible under $t\to -t$ and $y\to -y$ (note that we have written $y \text{ now instead } \text{ of } v \text{ to be } a \text{ bit more } \text{ general }.$
 Well, first of all performing the transformations we get:
 $$
-- \dot{x}=f(x,-y)
+- \dot{x}=f\left(x,-y\right)
 $$
 $$
-\dot{y}=g(x,-y)
+\dot{y}=g\left(x,-y\right)
 $$
 where the $\dot{y}$ has not changed sign because both $t \text{ and } y $have changed.
 So for this to be invariant under the change, we need that $f$ is odd in $y$ and $g \text{ is even } \text{ in } y$ which will give us back our original system.
@@ -97,17 +97,17 @@ $$
 $$
 Which has solutions at:
 $$
-(0,0), (-1,1) \text{ and } (-1,-1)
+\left(0,0\right), \left(-1,1\right) \text{ and } \left(-1,-1\right)
 $$
 Let’s focus on the fixed point at the origin. The Jacobian of this system is
 $$
-A=(\begin{matrix} 0 & 1-3y^{2} \\ -1 & -2 y \end{matrix})
+A=\left(\begin{matrix} 0 & 1-3y^{2} \\ -1 & -2 y \end{matrix}\right)
 $$
 which for the origin is
 $$
-A_{\text{ origin }}=(\begin{matrix} 0 & 1 \\ -1 & 0 \end{matrix})
+A_{\text{ origin }}=\left(\begin{matrix} 0 & 1 \\ -1 & 0 \end{matrix}\right)
 $$
-Which sits at the point (1,0) in the $(\Delta{},\tau{}) \text{ plane and } $so is indeed a center. We can also see that close to the origin, our system linearises to:
+Which sits at the point (1,0) in the $\left(\Delta{},\tau{}\right) \text{ plane and } $so is indeed a center. We can also see that close to the origin, our system linearises to:
 $$
 \dot{x}=y
 $$
@@ -118,22 +118,22 @@ which tells us that the center is moving in the clockwise direction (for $x=0 \t
 OK, so we have a reversible system, with a center at the origin, so we know that we must have closed cycles around the fixed point at the origin.
 For the other fixed points we have
 $$
-A_{(-1,1)}=(\begin{matrix} 0 & -2 \\ -1 & -2 \end{matrix}) , A_{(-1,-1)}=(\begin{matrix} 0 & -2 \\ -1 & 2 \end{matrix})
+A_{\left(-1,1\right)}=\left(\begin{matrix} 0 & -2 \\ -1 & -2 \end{matrix}\right) , A_{\left(-1,-1\right)}=\left(\begin{matrix} 0 & -2 \\ -1 & 2 \end{matrix}\right)
 $$
 Which are at
 $$
-(-2,-2) \text{ and } (-2,2)
+\left(-2,-2\right) \text{ and } \left(-2,2\right)
 $$
 respectively. ie. they are both saddle points. We can calculate the eigenvalues and eigenvectors of these Jacobians and we get:
 ![Figure 5](/images/part15/output_005.png)
 ![Figure 6](/images/part15/output_006.png)
-which corresponds to one positive and one negative eigenvalue ($(1+\sqrt{3}) \text{ is positive }, (1-\sqrt{3}) \text{ is negative }) $in both cases (unsurprisingly), and we have the associated flow directions for each.
+which corresponds to one positive and one negative eigenvalue ($\left(1+\sqrt{3}\right) \text{ is positive }, \left(1-\sqrt{3}\right) \text{ is negative }\right) $in both cases (unsurprisingly), and we have the associated flow directions for each.
 Let’s just focus on the first fixed point’s the eigenvalues and eigenvectors. At (-1,1) we have
 $$
-{\lambda{}}_{1}=-1-\sqrt{3}, v_{1}=(\begin{matrix} -1+\sqrt{3} \\ 1 \end{matrix})
+{\lambda{}}_{1}=-1-\sqrt{3}, v_{1}=\left(\begin{matrix} -1+\sqrt{3} \\ 1 \end{matrix}\right)
 $$
 $$
-{\lambda{}}_{2}=-1+\sqrt{3}, v_{2}=(\begin{matrix} -1-\sqrt{3} \\ 1 \end{matrix})
+{\lambda{}}_{2}=-1+\sqrt{3}, v_{2}=\left(\begin{matrix} -1-\sqrt{3} \\ 1 \end{matrix}\right)
 $$
 ${\lambda{}}_{1}$ is negative, so this corresponds to the inflowing eigenvector. ${\lambda{}}_{2} \text{ is positive }$ so this corresponds to the outflowing eigenvector.
 We can look at the same thing for the fixed point at (-1,-1)
@@ -156,7 +156,7 @@ Note that there are two trajectories joining the two saddlepoints, one going to 
 Here are plots of the homoclinic (the orange paths on the left) and heteroclinic trajectories (the black paths on the right) for comparison:
 $$
 An important generalisation
-We have spoken about the particular time-reversal symmetry of $t\to -t$ along with the equivalent of the reversal in the velocity, but we can actually find systems which are time reversal invariant when we make some other transformation in the (x,y) plane. The only constraint is that whatever the transformation $(x,y)\to R(x,y)$, the application of this transformation again has to take us back to (x,y), i.e $R^{2}(x,y)=(x,y)$. An example of this used below is of $(x,y)\to (-x,-y).$
+We have spoken about the particular time-reversal symmetry of $t\to -t$ along with the equivalent of the reversal in the velocity, but we can actually find systems which are time reversal invariant when we make some other transformation in the (x,y) plane. The only constraint is that whatever the transformation $\left(x,y\right)\to R\left(x,y\right)$, the application of this transformation again has to take us back to (x,y), i.e $R^{2}\left(x,y\right)=\left(x,y\right)$. An example of this used below is of $\left(x,y\right)\to \left(-x,-y\right).$
 Are all conservative systems reversible, and vice versa?
 For the case of a reversible system which is not conservative. See exercise 2 below.
 For the case of conservative systems which are not reversible, I was able to find a couple of papers which discuss this in the literature, though the systems are a lot more complicated than we cover in this course. These papers are:
@@ -169,23 +169,23 @@ $$
 $$
 \dot{y}=x-x^{2}
 $$
-We can see that a) this system has the right symmetries to be reversible $(f(x,y) \text{ is odd } \text{ in } y \text{ and } g(x,y) \text{ is even } \text{ in } y$). We can see that there are two fixed points in this system, at (0,0) and (0,1). We can show that these correspond in the linearisation to a saddle, and a center. Saddles are robust to nonlinearities, and so it will still be a saddle. The centre will also be robust, because this system is reversible. We can get a good picture of what is going on simply by plotting the flows at the null-clines, and plotting the direction of flow as well as the eigenvector directions for the saddle (in red):
+We can see that a) this system has the right symmetries to be reversible $\left(f\left(x,y\right) \text{ is odd } \text{ in } y \text{ and } g\left(x,y\right) \text{ is even } \text{ in } y$). We can see that there are two fixed points in this system, at (0,0) and (0,1). We can show that these correspond in the linearisation to a saddle, and a center. Saddles are robust to nonlinearities, and so it will still be a saddle. The centre will also be robust, because this system is reversible. We can get a good picture of what is going on simply by plotting the flows at the null-clines, and plotting the direction of flow as well as the eigenvector directions for the saddle (in red):
 ![Figure 12](/images/part15/output_012.png)
 Taking the red arrows, there’s only really one thing that they can do:
 ![Figure 13](/images/part15/output_013.png)
 Plotting the flow lines on top of this we get:
-So we see that we have a homoclinic orbit. OK, but we just have a system which is reversible and has a center on the x-axis. How could we turn this into something with a center away from the x-axis. Well, remember that for a reversible system, actually we just need that we have a symmetry such that under some $R$, we have that $R^{2}(x,y)=(x,y)$ and $t\to -t$. This is any reflection, and so we can actually rotate the whole plane, and there will still be a reflection symmetry.
+So we see that we have a homoclinic orbit. OK, but we just have a system which is reversible and has a center on the x-axis. How could we turn this into something with a center away from the x-axis. Well, remember that for a reversible system, actually we just need that we have a symmetry such that under some $R$, we have that $R^{2}\left(x,y\right)=\left(x,y\right)$ and $t\to -t$. This is any reflection, and so we can actually rotate the whole plane, and there will still be a reflection symmetry.
 ![Figure 14](/images/part15/output_014.png)
-Let’s rotate the coordinate system by -$\frac{\pi{}}{4} \text{ radians in } \text{ the anticlockwise } \text{ direction } $which will be equivalent to rotating the system by $\frac{\pi{}}{4}$ anticlockwise. To do this we can perform a rotation on our $(x,y) $coordinates as:
+Let’s rotate the coordinate system by -$\frac{\pi{}}{4} \text{ radians in } \text{ the anticlockwise } \text{ direction } $which will be equivalent to rotating the system by $\frac{\pi{}}{4}$ anticlockwise. To do this we can perform a rotation on our $\left(x,y\right) $coordinates as:
 $$
-(\begin{matrix} x' \\ y' \end{matrix})=(\begin{matrix} \text{ cos }(-\frac{\pi{}}{4}) & -\text{ sin }(-\frac{\pi{}}{4}) \\ \text{ sin }(-\frac{\pi{}}{4}) & \text{ cos }(-\frac{\pi{}}{4}) \end{matrix}) (\begin{matrix} x \\ y \end{matrix})=\frac{1}{\sqrt{2}}(\begin{matrix} 1 & 1 \\ -1 & 1 \end{matrix}) (\begin{matrix} x \\ y \end{matrix})
+\left(\begin{matrix} x' \\ y' \end{matrix}\right)=\left(\begin{matrix} \text{ cos }\left(-\frac{\pi{}}{4}\right) & -\text{ sin }\left(-\frac{\pi{}}{4}\right) \\ \text{ sin }\left(-\frac{\pi{}}{4}\right) & \text{ cos }\left(-\frac{\pi{}}{4}\right) \end{matrix}\right) \left(\begin{matrix} x \\ y \end{matrix}\right)=\frac{1}{\sqrt{2}}\left(\begin{matrix} 1 & 1 \\ -1 & 1 \end{matrix}\right) \left(\begin{matrix} x \\ y \end{matrix}\right)
 $$
 Performing this change of variables and then just relabelling the new $x'$ and $y'$ to $x \text{ and } y$ gives:
 $$
-\dot{x}=\frac{1}{4}(-4 x+\sqrt{2} x^{2}+2 \sqrt{2} x y+\sqrt{2} y^{2})
+\dot{x}=\frac{1}{4}\left(-4 x+\sqrt{2} x^{2}+2 \sqrt{2} x y+\sqrt{2} y^{2}\right)
 $$
 $$
-\dot{y}=\frac{1}{4} (-\sqrt{2} x^{2}+4 y-2 \sqrt{2} x y-\sqrt{2} y^{2})
+\dot{y}=\frac{1}{4} \left(-\sqrt{2} x^{2}+4 y-2 \sqrt{2} x y-\sqrt{2} y^{2}\right)
 $$
 This looks like a hell of a mess, but if you now plot the flow lines in this new system we see:
 ![Figure 15](/images/part15/output_015.png)

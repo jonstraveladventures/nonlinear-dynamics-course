@@ -297,8 +297,13 @@ def box_to_latex(node) -> str:
                         "<<": r"\ll ", ">>": r"\gg ", "<>": r"\neq "}
         if s in OPERATOR_MAP:
             return OPERATOR_MAP[s]
+        # Auto-scaling delimiters
+        DELIM_MAP = {"(": r"\left(", ")": r"\right)",
+                     "[": r"\left[", "]": r"\right]"}
+        if s in DELIM_MAP:
+            return DELIM_MAP[s]
         if s.startswith("\\") or s in ("+", "-", "=", ",", ".", ";", ":", "!", "?",
-                                        "(", ")", "[", "]", "|", "/", "*", "'", "^", "_"):
+                                        "|", "/", "*", "'", "^", "_"):
             return s
         # Multi-character alphabetic strings that look like English words → \text{ ... }
         # Include surrounding spaces so TeX renders visible word spacing

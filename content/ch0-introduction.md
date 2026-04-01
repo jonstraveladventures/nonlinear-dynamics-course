@@ -79,24 +79,24 @@ This way you are slowly but surely moving towards a more and more accurate pictu
  
 When we are talking about differential equations, we can completely generally write down a first order coupled system of two variables as follows:
 $$
-x'(t)=f(x(t),y(t))
+x'\left(t\right)=f\left(x\left(t\right),y\left(t\right)\right)
 $$
 $$
-y'(t)=g(x(t),y(t))
+y'\left(t\right)=g\left(x\left(t\right),y\left(t\right)\right)
 $$
 where $f$ and $g$ are some specified functions of $x$ and $y$.
 We started off last year talking about differential equations where we had a single function, of the form:
 $$
-x'(t)=f(x(t))
+x'\left(t\right)=f\left(x\left(t\right)\right)
 $$
 and we found that there was some interesting phenomena to discover even in this very simple setting. However, there were a number of things which we proved could not happen, for instance you can’t have oscillations in a one dimensional system (remembering that if we add in time dependence this is equivalent to looking at a two dimensional system).
 In the last part of MAM1043H we looked at two dimensional systems, but ones where $f$ and $g$ were linear functions. This allowed us to write the equation as a matrix equation of the form.
 $$
-x'(t)=A x(t)
+x'\left(t\right)=A x\left(t\right)
 $$
 Where
 $$
-x=(\begin{matrix} x \\ y \end{matrix}) ,  A=(\begin{matrix} a & b \\ c & d \end{matrix})
+x=\left(\begin{matrix} x \\ y \end{matrix}\right) ,  A=\left(\begin{matrix} a & b \\ c & d \end{matrix}\right)
 $$
 We are actually going to be able to use lots of the machinery that we developed in the first year, so remind yourselves of this here. There is also a very nice set of lecture notes here\ which gives a detailed overview of such systems. I’d definitely recommend using this as a resource.
 The main thing to remember about this is that to find the different types of behaviour, you need to calculate the determinant (Δ) and trace (τ) of the matrix $A$. We could then plot the different types of behaviour in a two dimensional space like this:

@@ -19,22 +19,22 @@ This is the vector field:
 ![Figure 1](/images/part16/output_001.png)
 and let’s draw on some random closed curve, as shown:
 ![Figure 2](/images/part16/output_002.png)
-and some point on the curve, say at $(1.2,\sqrt{{0.5}^{2}-2{(1.2-1)}^{2}}-0.25)=(1.2,0.1623)$:
+and some point on the curve, say at $\left(1.2,\sqrt{{0.5}^{2}-2{\left(1.2-1\right)}^{2}}-0.25\right)=\left(1.2,0.1623\right)$:
 ![Figure 3](/images/part16/output_003.png)
 and the vector at that point which is:
 $$
-(\begin{matrix} x_{2} \\ x_{1}-{x_{1}}^{3} \end{matrix})=(\begin{matrix} 0.1623 \\ -0.528 \end{matrix})
+\left(\begin{matrix} x_{2} \\ x_{1}-{x_{1}}^{3} \end{matrix}\right)=\left(\begin{matrix} 0.1623 \\ -0.528 \end{matrix}\right)
 $$
 ![Figure 4](/images/part16/output_004.png)
 Now take that vector and calculate the angle with the positive x-axis (we ’ve written here -φ because we measure in the counterclockwise direction):
 ![Figure 5](/images/part16/output_005.png)
 OK, so that seemed like quite a lot of work for one point, but actually we could have calculated that angle just from
 $$
-\phi{}={\text{ tan }}^{-1}  \frac{{\dot{x}}_{2}(x_{1},x_{2})}{  {\dot{x}}_{1}(x_{1},x_{2})}
+\phi{}={\text{ tan }}^{-1}  \frac{{\dot{x}}_{2}\left(x_{1},x_{2}\right)}{  {\dot{x}}_{1}\left(x_{1},x_{2}\right)}
 $$
 or in the more usual language of $x \text{ and } y:$
 $$
-\phi{}={\text{ tan }}^{-1}  \frac{\dot{y}(x,y)}{  \dot{x} (x,y)}
+\phi{}={\text{ tan }}^{-1}  \frac{\dot{y}\left(x,y\right)}{  \dot{x} \left(x,y\right)}
 $$
 where $x^{ } \text{ and } y $are the coordinates on the curve.
 OK, so now imagine doing that as you walk counterclockwise around the whole curve...calculate this value φ as you do so.
@@ -67,9 +67,9 @@ So we’ve seen in the above example that with the first loop, the vector with a
 The difference between the two is that the first loop encircled a center fixed point, and the second one didn’t encircle any fixed point at all...hmmm...I smell a clue...
 We denote the **Index** of the closed curve, C, with respect to a vector field as:
 $$
-I_{C}={\frac{1}{2\pi{}}[\phi{}]}_{C}
+I_{C}={\frac{1}{2\pi{}}\left[\phi{}\right]}_{C}
 $$
-Where ${[\phi{}]}_{C}$ is the total change in φ as you go around the closed curve.
+Where ${\left[\phi{}\right]}_{C}$ is the total change in φ as you go around the closed curve.
 The index counts the number of times the vector rotates as you follow the closed curve. In the first example about $I_{C}$ = 1 and in the second example $I_{C}=0.$
 Exercise
 1) Try and imagine what the index of the curve that just goes around the saddle point. How about something that goes around the saddle point and one of the centers? How about all the fixed points?
@@ -105,7 +105,7 @@ $$
 $$
 For integer $n\in{}\mathbb{Z}$, and $z\in{} \mathbb{C}$ has index $n$. Letting $z=x+i y$, then for, say $n=2, \text{ we have }:$
 $$
-\dot{x}+i \dot{y}={(x+i y)}^{n}=x^{2}-y^{2}+2i x y
+\dot{x}+i \dot{y}={\left(x+i y\right)}^{n}=x^{2}-y^{2}+2i x y
 $$
 and taking the real and imaginary parts of this gives us the system
 $$
@@ -130,15 +130,15 @@ $$
 $$
 So we have that
 $$
-\phi{}=\text{ arctan }(\frac{2x y}{x^{2}-y^{2}})
+\phi{}=\text{ arctan }\left(\frac{2x y}{x^{2}-y^{2}}\right)
 $$
 Let’s convert this to polar coordinates:
 $$
-\phi{}=\text{ arctan }(\frac{2 r \text{ cos }(\theta{}) r \text{ sin }(\theta{})}{r^{2}{\text{ cos }}^{2}(\theta{})-r^{2}{\text{ sin }}^{2}(\theta{})})=\text{ arctan }(\frac{2 \text{ cos }(\theta{}) \text{ sin }(\theta{})}{{\text{ cos }}^{2}(\theta{})-{\text{ sin }}^{2}(\theta{})})=\text{ arctan }( \text{ tan }(2\theta{}))=2\theta{}
+\phi{}=\text{ arctan }\left(\frac{2 r \text{ cos }\left(\theta{}\right) r \text{ sin }\left(\theta{}\right)}{r^{2}{\text{ cos }}^{2}\left(\theta{}\right)-r^{2}{\text{ sin }}^{2}\left(\theta{}\right)}\right)=\text{ arctan }\left(\frac{2 \text{ cos }\left(\theta{}\right) \text{ sin }\left(\theta{}\right)}{{\text{ cos }}^{2}\left(\theta{}\right)-{\text{ sin }}^{2}\left(\theta{}\right)}\right)=\text{ arctan }\left( \text{ tan }\left(2\theta{}\right)\right)=2\theta{}
 $$
 Integrating this over θ from 0 to 2π tells us that:
 $$
-I_{C}={\frac{1}{2\pi{}}[\phi{}]}_{C}=\frac{1}{2\pi{}}{\int{}}_{0}^{2\pi{}}2\theta{}\mathrm{d}\theta{}=2
+I_{C}={\frac{1}{2\pi{}}\left[\phi{}\right]}_{C}=\frac{1}{2\pi{}}{\int{}}_{0}^{2\pi{}}2\theta{}\mathrm{d}\theta{}=2
 $$
 Can we generalise this? Given:
 $$
@@ -146,9 +146,9 @@ $$
 $$
 We have:
 $$
-\phi{}=\text{ arctan }(\frac{\dot{y}}{\dot{x}})=\text{ arctan }(\frac{Im(\dot{z})}{Re(\dot{z})})=\text{ arctan }(\frac{Im(z^{n})}{Re(z^{n})})=\text{ arctan }(\frac{Im(r^{n} e^{i n \theta{}})}{Re(r^{n} e^{i n \theta{}})})=\text{ arctan }(\frac{\text{ sin }(n \theta{})}{\text{ cos }(n \theta{})})=n \theta{}
+\phi{}=\text{ arctan }\left(\frac{\dot{y}}{\dot{x}}\right)=\text{ arctan }\left(\frac{Im\left(\dot{z}\right)}{Re\left(\dot{z}\right)}\right)=\text{ arctan }\left(\frac{Im\left(z^{n}\right)}{Re\left(z^{n}\right)}\right)=\text{ arctan }\left(\frac{Im\left(r^{n} e^{i n \theta{}}\right)}{Re\left(r^{n} e^{i n \theta{}}\right)}\right)=\text{ arctan }\left(\frac{\text{ sin }\left(n \theta{}\right)}{\text{ cos }\left(n \theta{}\right)}\right)=n \theta{}
 $$
 So
 $$
-I_{C}={\frac{1}{2\pi{}}[\phi{}]}_{C}=\frac{1}{2\pi{}}{\int{}}_{0}^{2\pi{}}n \theta{}\mathrm{d}\theta{}=n
+I_{C}={\frac{1}{2\pi{}}\left[\phi{}\right]}_{C}=\frac{1}{2\pi{}}{\int{}}_{0}^{2\pi{}}n \theta{}\mathrm{d}\theta{}=n
 $$

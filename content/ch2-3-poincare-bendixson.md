@@ -16,7 +16,7 @@ So long as we can find a trapping region, and we can make sure that there are no
 Example
 Here we will be able to find a trapping region by looking carefully at the vector field. The equation in question is similar to the previous one, but with an extra term, parameterised by a constant μ. Again we are looking at polar coordinates:
 $$
-\dot{r}=r (1-r^{2})+r \mu{} \text{ cos } \theta{}
+\dot{r}=r \left(1-r^{2}\right)+r \mu{} \text{ cos } \theta{}
 $$
 $$
 \dot{\theta{}}=1
@@ -25,7 +25,7 @@ $$
 The question is whether we can find some region with an inner radius for which $\dot{r}$ is always positive, and an outer radius where $\dot{r}$ is always negative. Note that here we are just trying to find a perfect annulus. The bounding region doesn't have to be, but we will look for such a region here.
 We want to find $r_{\text{ min }}$ for which:
 $$
-r_{\text{ min }} (1-{r_{\text{ min }}}^{2})+r_{\text{ min }} \mu{} \text{ cos } \theta{}>0
+r_{\text{ min }} \left(1-{r_{\text{ min }}}^{2}\right)+r_{\text{ min }} \mu{} \text{ cos } \theta{}>0
 $$
 For all values of θ. Solving for $r_{\text{ min } }\text{ gives }$:
 $$
@@ -65,7 +65,7 @@ $$
 \dot{y}=b-a y-x^{2}y
 $$
 These are well and truly non-linearly coupled. $a \text{ and } b $are parameters related to the reaction and are both taken to be greater than 0. We are going to choose $a=\frac{1}{5},b=1$ for this example to see what happens with these values
-We can also take $x \text{ and } y \text{ as both } \text{ being positive } (\text{ they are } \text{ chemical concentrations }, \text{ remember }).$
+We can also take $x \text{ and } y \text{ as both } \text{ being positive } \left(\text{ they are } \text{ chemical concentrations }, \text{ remember }\right).$
 So, the question is whether we can find a trapping region in the phase space which does not contain any fixed point.
 I’m actually just going to give you the outer trapping region, as the argument for why it is a reasonable trapping reason is a little naunced, and not very enlightening.
 It turns out that the following region is a reasonable trapping region:
@@ -81,26 +81,26 @@ It looks like we might be in trouble. If this is an attractor then we are in tro
 Can we figure out for which values of $a$ and $b$ this fixed point is an attractor and when it’s a repeller? Sure, we can use linearisation to do this.
 We first have to find the Jacobian of our system:
 $$
-A=(\begin{matrix} -1+2 x y & a+x^{2} \\ -2 x y & -(a+x^{2}) \end{matrix})
+A=\left(\begin{matrix} -1+2 x y & a+x^{2} \\ -2 x y & -\left(a+x^{2}\right) \end{matrix}\right)
 $$
 The fixed point is at
 $$
-(x^{*},y^{*})=(b,\frac{b}{a+b^{2}})
+\left(x^{*},y^{*}\right)=\left(b,\frac{b}{a+b^{2}}\right)
 $$
 So the Jacobian at this point is:
 $$
-A=(\begin{matrix} -1+2 \frac{b^{2}}{a+b^{2}} & a+b^{2} \\ -2 \frac{b^{2}}{a+b^{2}} & -(a+b^{2}) \end{matrix})
+A=\left(\begin{matrix} -1+2 \frac{b^{2}}{a+b^{2}} & a+b^{2} \\ -2 \frac{b^{2}}{a+b^{2}} & -\left(a+b^{2}\right) \end{matrix}\right)
 $$
 The determinant and trace of this are:
 $$
-\Delta{}=a+b^{2},       \tau{}=-1+2\frac{b^{2}}{a+b^{2}}-(a+b^{2})
+\Delta{}=a+b^{2},       \tau{}=-1+2\frac{b^{2}}{a+b^{2}}-\left(a+b^{2}\right)
 $$
 Let’s remind ourselves once more of the possible behaviours in 2d linear systems:
 ![Figure 5](/images/part23/output_005.png)
 Well $\Delta{}>0$ in this case as $a \text{ and } b \text{ are both } \text{ positive }.$
 It actually doesn’t matter whether the fixed point is a node or a spiral, just whether or not it’s stable or unstable, so we only need to know whether τ is greater than or less than 0. The dividing line between the two is going to be when
 $$
--1+2\frac{b^{2}}{a+b^{2}}-(a+b^{2})=0   \Longrightarrow{}   b=\sqrt{\frac{1}{2}(1-2a\pm{}\sqrt{1-8a})}
+-1+2\frac{b^{2}}{a+b^{2}}-\left(a+b^{2}\right)=0   \Longrightarrow{}   b=\sqrt{\frac{1}{2}\left(1-2a\pm{}\sqrt{1-8a}\right)}
 $$
 Which is given by
 ![Figure 6](/images/part23/output_006.png)
@@ -127,24 +127,24 @@ Other ways of finding limit cycles
 This is an example taken from the exercises of section 7.3 of Strogatz, and it gives a nice alternative way of showing that there is a limit cycle.
 Given the vector field given by
 $$
-\dot{x}=x (1-4x^{2}-y^{2})-\frac{1}{2}y (1+x)
+\dot{x}=x \left(1-4x^{2}-y^{2}\right)-\frac{1}{2}y \left(1+x\right)
 $$
 $$
-\dot{y}=y (1-4x^{2}-y^{2})+2x (1+x)
+\dot{y}=y \left(1-4x^{2}-y^{2}\right)+2x \left(1+x\right)
 $$
 How can we show that there is a limit cycle here? Well, we can do this by constructing a function given by:
 $$
-V={(1-4x^{2}-y^{2})}^{2}
+V={\left(1-4x^{2}-y^{2}\right)}^{2}
 $$
 whose time derivative is:
 $$
-\dot{V}=-4V(4x^{2}+y^{2})
+\dot{V}=-4V\left(4x^{2}+y^{2}\right)
 $$
 This helps us because it tells us that for trajectories of this system, this quantity $V $always decreases (or stays the same). It only ever stays the same though when $V=0$ and this only ever happens when
 $$
-{(1-4x^{2}-y^{2})}^{2}=0
+{\left(1-4x^{2}-y^{2}\right)}^{2}=0
 $$
-Which is an ellipse in the $(x,y) $plane, or when $x=y=0$. So let’s take a look first of all at the origin.
+Which is an ellipse in the $\left(x,y\right) $plane, or when $x=y=0$. So let’s take a look first of all at the origin.
 We can easily linearise our system at the origin and it gives us:
 $$
 \dot{x}=x-\frac{1}{2}y

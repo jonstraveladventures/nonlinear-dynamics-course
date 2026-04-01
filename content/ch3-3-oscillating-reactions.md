@@ -7,12 +7,12 @@ math: true
 ## Section 3.3: Oscillating chemical reactions
 In this section we’re going to look at a model for a complex chemical reaction, which involves chlorine dioxide, iodine and malonic acid:
 ![Figure 1](/images/part33/output_001.png)
-The chemical details don’t matter at all here, but it turns out that a dynamical model of the concentrations of iodine $(x)$ and chlorine dioxide $(y) \text{ can be } \text{ given } $by
+The chemical details don’t matter at all here, but it turns out that a dynamical model of the concentrations of iodine $\left(x\right)$ and chlorine dioxide $\left(y\right) \text{ can be } \text{ given } $by
 $$
 \dot{x}=a-x-\frac{4x y}{1+x^{2}}
 $$
 $$
-\dot{y}=b x (1-\frac{y}{1+x^{2}})
+\dot{y}=b x \left(1-\frac{y}{1+x^{2}}\right)
 $$
 The parameters $a \text{ and } b$ are related to chemical properties set outside of the concentration of these two chemicals (ie. these are constants within this system), and are both greater than 0.
 We might look at this and be at a bit of a loss to know how to analyse it. The first thing that would seem sensible to look at would be the fixed points, and the null-clines.
@@ -21,15 +21,15 @@ $$
 0=a-x-\frac{4x y}{1+x^{2}}
 $$
 $$
-0=b x (1-\frac{y}{1+x^{2}})
+0=b x \left(1-\frac{y}{1+x^{2}}\right)
 $$
 we can see that the second equation has a zero when $x=0, \text{ but plugging }$ that into the first gives $0=a$, and because we know that the constants are both positive, $x=0 $can’t be a fixed point. So we look at the second term in the second equation:
 $$
-(1-\frac{y}{1+x^{2}})=0    \Longrightarrow{} y=1+x^{2}
+\left(1-\frac{y}{1+x^{2}}\right)=0    \Longrightarrow{} y=1+x^{2}
 $$
 Plugging this into the first equation gives us
 $$
-0=a-x-\frac{4x (1+x^{2})}{(1+x^{2})}   \Longrightarrow{} a-5x=0 \Longrightarrow{} x^{*}=\frac{a}{5}, y^{*}=1+\frac{a^{2}}{25}
+0=a-x-\frac{4x \left(1+x^{2}\right)}{\left(1+x^{2}\right)}   \Longrightarrow{} a-5x=0 \Longrightarrow{} x^{*}=\frac{a}{5}, y^{*}=1+\frac{a^{2}}{25}
 $$
 So the fixed point is dependent on $a \text{ only }.$ Now finding the null-clines just means plotting for
 $$
@@ -38,11 +38,11 @@ $$
 separately.
 The first of these is given by:
 $$
-0=a-x-\frac{4x y}{1+x^{2}}  \Longrightarrow{} y=\frac{(1+x^{2})(a-x)}{4x} \text{ for }  \dot{x}=0
+0=a-x-\frac{4x y}{1+x^{2}}  \Longrightarrow{} y=\frac{\left(1+x^{2}\right)\left(a-x\right)}{4x} \text{ for }  \dot{x}=0
 $$
 and the second:
 $$
-0=b x (1-\frac{y}{1+x^{2}}) \Longrightarrow{} x=0 \text{ or } y=1+x^{2} \text{ for }  \dot{y}=0
+0=b x \left(1-\frac{y}{1+x^{2}}\right) \Longrightarrow{} x=0 \text{ or } y=1+x^{2} \text{ for }  \dot{y}=0
 $$
 We can plot these curves and put on characteristic arrows corresponding to the lack of $x \text{ or } y $flow along them. Let’s choose a=5 so that the fixed point is at (1,2):
 ![Figure 2](/images/part33/output_002.png)
@@ -52,11 +52,11 @@ At this stage we should think about Poincaré-Bendixson, and for that we need to
 Let’s also add on the vectors on the axes (at least their direction, if not magnitude.
 Well, along the x-axis, we have
 $$
-(\dot{x},\dot{y})=(a-x,b x)
+\left(\dot{x},\dot{y}\right)=\left(a-x,b x\right)
 $$
 So these are always pointing up for positive $x \text{ though }$ they will have a component pointing to the right or left depending on where $x \text{ is } $in relation to $a$. And along the y-axis we have:
 $$
-(\dot{x},\dot{y})=(a,0)
+\left(\dot{x},\dot{y}\right)=\left(a,0\right)
 $$
 so always pointing right. Putting this together, with a bit of artistic license, we have:
 ![Figure 3](/images/part33/output_003.png)
@@ -71,7 +71,7 @@ a-x<\frac{4x y}{1+x^{2}}
 $$
 If we choose $x=a$ then this will necessarily be fulfilled for positive $x \text{ and } y$. So the right side of our trapping region is just the line $x=a$. How about the top? Well, we want some value of $y$ for which, for $0<x<a$, $\dot{y}<0$:
 $$
-\dot{y}=b x (1-\frac{y}{1+x^{2}})<0
+\dot{y}=b x \left(1-\frac{y}{1+x^{2}}\right)<0
 $$
 which implies:
 $$
@@ -82,16 +82,16 @@ $$
 y>1+a^{2}
 $$
 So we can choose the top of our box to be infinitesimally above this value of y:
-Now we can form a trapping region as follows (with $b=1)$:
+Now we can form a trapping region as follows (with $b=1\right)$:
 ![Figure 4](/images/part33/output_004.png)
 OK, so we have a trapping region apart from the fixed point. If we can excise the fixed point and show that it is a repeller, then we are done and we have a stable limit cycle. So when is this fixed point a repeller?
-Well, let’s calculate the Jacobian at the fixed point. We could calculate it at $(x^{*},y^{*})=(\frac{a}{5},1+\frac{a^{2}}{25})$ but it’s actually easier to note that at the fixed point $y^{*}=1+x^{*2}$:
+Well, let’s calculate the Jacobian at the fixed point. We could calculate it at $\left(x^{*},y^{*}\right)=\left(\frac{a}{5},1+\frac{a^{2}}{25}\right)$ but it’s actually easier to note that at the fixed point $y^{*}=1+x^{*2}$:
 $$
-A_{(x^{*},1+x^{*2})}=\frac{1}{1+x^{*2}}(\begin{matrix} 3x^{*2}-5 & -4 x^{*} \\ 2b x^{*^{2}} & -b x^{*} \end{matrix})
+A_{\left(x^{*},1+x^{*2}\right)}=\frac{1}{1+x^{*2}}\left(\begin{matrix} 3x^{*2}-5 & -4 x^{*} \\ 2b x^{*^{2}} & -b x^{*} \end{matrix}\right)
 $$
 and plugging in $x^{*}=\frac{a}{5} \text{ we have }:$
 $$
-A_{(\frac{a}{5},1+\frac{a^{2}}{25})}=\frac{1}{1+\frac{a^{2}}{25}}(\begin{matrix} 3\frac{a^{2}}{25}-5 & -4 \frac{a}{5} \\ 2b \frac{a^{2}}{25} & -b \frac{a}{5} \end{matrix})
+A_{\left(\frac{a}{5},1+\frac{a^{2}}{25}\right)}=\frac{1}{1+\frac{a^{2}}{25}}\left(\begin{matrix} 3\frac{a^{2}}{25}-5 & -4 \frac{a}{5} \\ 2b \frac{a^{2}}{25} & -b \frac{a}{5} \end{matrix}\right)
 $$
 which has trace and determinant:
 $$
@@ -104,8 +104,8 @@ $$
 Which, given that a and b are positive gives:
 ![Figure 5](/images/part33/output_005.png)
 What happens at the boundary in between? Well, a limit cycle appears from the fixed point, so this is a Hopf Bifurcation.
-We should also just make sure that the fixed point is always inside the box bounded by $x=a \text{ and } y=1+a^{2}. $ Because the fixed point is at $(\frac{a}{5},1+\frac{a^{2}}{25})$, the answer is that yes, it will always be in the box.
-Let’s step back and think about what we’ve found. Well, we have shown that in some region of $(a,b) $parameter space there is a fixed point for the reaction and that you will end up with a steady state with just the two concentrations sitting there in perfect equilibrium. On the other hand, for another region of the parameter space you will have a stable limit cycle where the concentrations keep altering in a cyclic fashion.
+We should also just make sure that the fixed point is always inside the box bounded by $x=a \text{ and } y=1+a^{2}. $ Because the fixed point is at $\left(\frac{a}{5},1+\frac{a^{2}}{25}\right)$, the answer is that yes, it will always be in the box.
+Let’s step back and think about what we’ve found. Well, we have shown that in some region of $\left(a,b\right) $parameter space there is a fixed point for the reaction and that you will end up with a steady state with just the two concentrations sitting there in perfect equilibrium. On the other hand, for another region of the parameter space you will have a stable limit cycle where the concentrations keep altering in a cyclic fashion.
 Let's just plot the trajectories on the vector field animated over changing $b, \text{ with } a=20.$ The transition happens when $b=$$\frac{3a}{5}-\frac{25}{a}=\frac{3 20}{5}-\frac{25}{20}=10.75.$
 Here we have two starting points. For small $b \text{ we }$ see that both are attracted to the limit cycle, for which one starting point is inside, and the other is outside. Then as $b $increases, the limit cycle shrinks down to the fixed point:
 ![Figure 6](/images/part33/output_006.png)
