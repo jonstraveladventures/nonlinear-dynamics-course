@@ -15,19 +15,21 @@ set -euo pipefail
 CLOUD_BASE="https://www.wolframcloud.com/obj/jon.shock/MAM20462ND"
 IMAGES_DIR="static/images"
 
-# Map notebook part names to their cloud URL suffixes and output dirs
+# Map: cloud_url_suffix:local_dir (if different from URL suffix)
 PARTS=(
   "part0"
-  "part11" "part12" "part13" "part14-2" "part15" "part16"
+  "part11" "part12" "part13" "part14:part14-2" "part15" "part16"
   "part21" "part22" "part23" "part24" "part25" "part26"
   "part31" "part32" "part33" "part34" "part35" "part36"
   "part41" "part41b" "part42"
 )
 
 download_images_for_part() {
-  local part="$1"
-  local url="${CLOUD_BASE}${part}"
-  local out_dir="${IMAGES_DIR}/${part}"
+  local spec="$1"
+  local cloud_part="${spec%%:*}"
+  local local_dir="${spec##*:}"
+  local url="${CLOUD_BASE}${cloud_part}"
+  local out_dir="${IMAGES_DIR}/${local_dir}"
 
   echo "=== ${part} ==="
   echo "  Fetching ${url} ..."

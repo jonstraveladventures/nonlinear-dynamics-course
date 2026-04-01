@@ -511,7 +511,7 @@ def main():
         title = args.title
 
     md = make_frontmatter(title, args.weight)
-    md += "\n".join(blocks)
+    md += "\n\n".join(blocks)
 
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(md, encoding="utf-8")
