@@ -119,7 +119,37 @@ $$
 
 Fixing $b=1 $we have the following, with $a$ varying, and the vector field plotted over the top:
 
-![Figure 4](/images/part31/output_004.png)
+<div class="frame-widget" id="manip-saddle-node">
+  <img id="manip-sn-img" src="" alt="Phase portrait">
+  <input type="range" id="manip-sn-slider" min="0" max="20" value="10" step="1">
+  <p class="param-label">a = <span id="manip-sn-val">0.500</span></p>
+</div>
+<script>
+(function() {
+  const slider = document.getElementById('manip-sn-slider');
+  const img = document.getElementById('manip-sn-img');
+  const label = document.getElementById('manip-sn-val');
+  const aValues = [];
+  for (let i = 0; i <= 20; i++) aValues.push((0.45 + i * 0.005).toFixed(3));
+
+  // Detect base URL from any existing image on the page
+  const existingImg = document.querySelector('.notebook-content img[src*="images/"]');
+  let baseUrl = '';
+  if (existingImg) {
+    baseUrl = existingImg.src.replace(/images\/.*/, '');
+  }
+
+  function update() {
+    const i = parseInt(slider.value);
+    const pad = String(i).padStart(3, '0');
+    img.src = baseUrl + 'images/part31/manip_001/frame_' + pad + '.png';
+    label.textContent = aValues[i];
+  }
+
+  slider.addEventListener('input', update);
+  update();
+})();
+</script>
 
 What do we see? We see two fixed points coming together as the parameter changes, and annihilating.
 
