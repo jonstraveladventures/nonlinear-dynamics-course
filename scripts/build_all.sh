@@ -22,7 +22,7 @@ echo ""
 # Map of notebook files → content filenames, weights, and image dirs
 # Format: nb_file:output_md:weight:images_dir
 NOTEBOOKS=(
-  "MAM20462NDpart0.nb:ch0-introduction.md:0:part0"
+  "MAM20462NDpart0.nb:ch0-introduction.md:1:part0"
   "MAM20462NDpart11.nb:ch1-1-phase-portraits.md:11:part11"
   "MAM20462NDpart12.nb:ch1-2-existence-uniqueness.md:12:part12"
   "MAM20462NDpart13.nb:ch1-3-fixed-points.md:13:part13"
