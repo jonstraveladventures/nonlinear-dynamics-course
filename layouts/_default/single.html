@@ -1,14 +1,28 @@
 {{ define "main" }}
+{{ $currentWeight := .Weight }}
+{{ $sortedPages := .Site.RegularPages.ByWeight }}
+{{ $prevPage := false }}
+{{ $nextPage := false }}
+{{ range $idx, $page := $sortedPages }}
+  {{ if eq $page.Weight $currentWeight }}
+    {{ if gt $idx 0 }}
+      {{ $prevPage = index $sortedPages (sub $idx 1) }}
+    {{ end }}
+    {{ if lt (add $idx 1) (len $sortedPages) }}
+      {{ $nextPage = index $sortedPages (add $idx 1) }}
+    {{ end }}
+  {{ end }}
+{{ end }}
 <article class="notebook-page">
   <header class="page-header">
     <h1>{{ .Title }}</h1>
   </header>
 
   <div class="page-nav">
-    {{ with .NextInSection }}
+    {{ with $prevPage }}
       <a class="prev-next" href="{{ .RelPermalink }}">← {{ .LinkTitle }}</a>
     {{ end }}
-    {{ with .PrevInSection }}
+    {{ with $nextPage }}
       <a class="prev-next next" href="{{ .RelPermalink }}">{{ .LinkTitle }} →</a>
     {{ end }}
   </div>
@@ -18,10 +32,10 @@
   </div>
 
   <div class="page-nav bottom">
-    {{ with .NextInSection }}
+    {{ with $prevPage }}
       <a class="prev-next" href="{{ .RelPermalink }}">← {{ .LinkTitle }}</a>
     {{ end }}
-    {{ with .PrevInSection }}
+    {{ with $nextPage }}
       <a class="prev-next next" href="{{ .RelPermalink }}">{{ .LinkTitle }} →</a>
     {{ end }}
   </div>

@@ -9,7 +9,7 @@
 
     <h2>Chapter 0: Introduction</h2>
     <ul>
-      {{ range $pages }}{{ if and (ge .Weight 0) (lt .Weight 10) }}
+      {{ range $pages }}{{ if and (ge .Weight 1) (lt .Weight 10) }}
         <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
       {{ end }}{{ end }}
     </ul>

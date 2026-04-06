@@ -1,6 +1,6 @@
 ---
 title: "Section 0.0: Course Introduction"
-weight: 0
+weight: 1
 math: true
 ---
 ## Section 0.0: Course Introduction
