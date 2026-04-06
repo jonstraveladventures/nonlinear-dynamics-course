@@ -197,11 +197,27 @@ $$
 
 respectively. ie. they are both saddle points. We can calculate the eigenvalues and eigenvectors of these Jacobians and we get:
 
-![Figure 5](/images/part15/output_005.png)
+At $\left(-1,1\right)$:
 
-![Figure 6](/images/part15/output_006.png)
+$$
+\lambda = -1 - \sqrt{3},\quad \mathbf{v} = \left(-1 + \sqrt{3},\; 1\right)
+$$
 
-which corresponds to one positive and one negative eigenvalue ($\left(1+\sqrt{3}\right) \text{ is positive }, \left(1-\sqrt{3}\right) \text{ is negative }\right) $in both cases (unsurprisingly), and we have the associated flow directions for each.
+$$
+\lambda = -1 + \sqrt{3},\quad \mathbf{v} = \left(-1 - \sqrt{3},\; 1\right)
+$$
+
+At $\left(-1,-1\right)$:
+
+$$
+\lambda = 1 + \sqrt{3},\quad \mathbf{v} = \left(1 - \sqrt{3},\; 1\right)
+$$
+
+$$
+\lambda = 1 - \sqrt{3},\quad \mathbf{v} = \left(1 + \sqrt{3},\; 1\right)
+$$
+
+which corresponds to one positive and one negative eigenvalue ($1+\sqrt{3}$ is positive, $1-\sqrt{3}$ is negative) in both cases (unsurprisingly), and we have the associated flow directions for each.
 
 Let’s just focus on the first fixed point’s the eigenvalues and eigenvectors. At (-1,1) we have
 
