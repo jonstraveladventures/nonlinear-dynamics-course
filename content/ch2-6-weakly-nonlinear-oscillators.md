@@ -643,7 +643,7 @@ we see:
 
 where the blue line is being driven at the natural frequency of the system, and the red line is being driven at twice the natural frequency and is thus only perturbed slightly away from the natural rhythm (in green).
 
-**How could we have known from the start that**$ \epsilon{} t \text{ was } $**the right combination?**
+**How could we have known from the start that $\epsilon t$ was the right combination?**
 
 Could we have known that the right second time quantity was $\epsilon{} t$? Let’s look again at the original equation:
 

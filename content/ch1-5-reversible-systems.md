@@ -121,7 +121,7 @@ Essentially this says that if you know that you have the following linear center
 
 ![Figure 3](/images/part15/output_003.png)
 
-If there system is reversible, then whatever happens near the linear center must form a closed orbit, and must be reflectively symmetric about the x-axis. For instance:
+If the system is reversible, then whatever happens near the linear center must form a closed orbit, and must be reflectively symmetric about the x-axis. For instance:
 
 ![Figure 4](/images/part15/output_004.png)
 
@@ -276,7 +276,7 @@ $$
 \dot{y}=x-x^{2}
 $$
 
-We can see that a) this system has the right symmetries to be reversible $\left(f\left(x,y\right) \text{ is odd } \text{ in } y \text{ and } g\left(x,y\right) \text{ is even } \text{ in } y$). We can see that there are two fixed points in this system, at (0,0) and (0,1). We can show that these correspond in the linearisation to a saddle, and a center. Saddles are robust to nonlinearities, and so it will still be a saddle. The centre will also be robust, because this system is reversible. We can get a good picture of what is going on simply by plotting the flows at the null-clines, and plotting the direction of flow as well as the eigenvector directions for the saddle (in red):
+We can see that a) this system has the right symmetries to be reversible ($f\left(x,y\right)$ is odd in $y$ and $g\left(x,y\right)$ is even in $y$). We can see that there are two fixed points in this system, at (0,0) and (0,1). We can show that these correspond in the linearisation to a saddle, and a center. Saddles are robust to nonlinearities, and so it will still be a saddle. The centre will also be robust, because this system is reversible. We can get a good picture of what is going on simply by plotting the flows at the null-clines, and plotting the direction of flow as well as the eigenvector directions for the saddle (in red):
 
 ![Figure 12](/images/part15/output_012.png)
 
@@ -364,4 +364,4 @@ $$
 
 ![Figure 16](/images/part15/output_016.png)
 
-13. **Extension:**Now imagine that you add a damping term to this system. Is it still conservative? Is it still reversible? How will the phase space look now? Try and draw the phase space just by thinking about the behaviour of a damped pendulum and without going through all of the calculation. What would the equivalent of the strange u-shaped diagram above look like for the damped trajectories?
+13. **Extension:** Now imagine that you add a damping term to this system. Is it still conservative? Is it still reversible? How will the phase space look now? Try and draw the phase space just by thinking about the behaviour of a damped pendulum and without going through all of the calculation. What would the equivalent of the strange u-shaped diagram above look like for the damped trajectories?

@@ -59,7 +59,7 @@ $$
 
 Not a long time into the future. The thing to note here is that an increase in precision from ${10}^{-6}$ to ${10}^{-32}$ (26 orders of magnitude) only increases the time horizon by a factor of 10.
 
-This **exponential behaviour** is the first defining property of a chaotic system. The second is that **as**$t\to \infty{}$**trajectories cannot go to fixed points, and either periodic or quasiperiodic orbits**. This shows that the “transient chaos ” that we looked at in the last lesson isn ’t truly chaotic as the long time behaviour actually settled down to one of the fixed points. True chaos can only occur after the Hopf bifurcation where there are no longer any stable fixed points.
+This **exponential behaviour** is the first defining property of a chaotic system. The second is that as $t\to \infty{}$ **trajectories cannot go to fixed points, and either periodic or quasiperiodic orbits**. This shows that the “transient chaos ” that we looked at in the last lesson isn ’t truly chaotic as the long time behaviour actually settled down to one of the fixed points. True chaos can only occur after the Hopf bifurcation where there are no longer any stable fixed points.
 
 The third factor is that **our system needs to be deterministic**. The seeming unpredictability in the system comes from the non-linear features and not because of any underlying noise in the system. There is a form of chaos called quantum chaos which is not within a deterministic system, but that is something that we will not go into in this course!
 

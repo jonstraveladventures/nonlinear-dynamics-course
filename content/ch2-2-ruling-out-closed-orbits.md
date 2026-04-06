@@ -168,16 +168,16 @@ This is the first time in this course, or the previous one we have mentioned the
 In the previous example we were able to show the absence of closed cycles by finding an energy function which always decreased along non-fixed-point trajectories. In fact we can generalise this that any system for which we can find a positive function, $V\left(x\right)$, of the phase space coordinates away from a fixed point at $x^{*}$:
 
 $$
-V\left(x\right)={\begin{matrix} >0, \text{ for } x\neq x^{*} \\ 0, \text{ for } x=x^{*} \end{matrix}
+V\left(x\right) \begin{cases} >0, & \text{ for } x\neq x^{*} \\ =0, & \text{ for } x=x^{*} \end{cases}
 $$
 
-and where the rate of change of $V\left(x\right) \text{ is negative } \text{ along trajectories }:$
+and where the rate of change of $V\left(x\right)$ is negative along trajectories:
 
 $$
-\dot{V}={\begin{matrix} <0, \text{ for } x\neq x^{*} \\ 0, \text{ for } x=x^{*} \end{matrix}
+\dot{V} \begin{cases} <0, & \text{ for } x\neq x^{*} \\ =0, & \text{ for } x=x^{*} \end{cases}
 $$
 
-then we can say that there are no closed orbits **and**$x^{*} \text{ will be } $globally asymptotically stable. This means that wherever you start in this system, you will always end up at $x^{*}$. That is:
+then we can say that there are no closed orbits and $x^{*}$ will be globally asymptotically stable. This means that wherever you start in this system, you will always end up at $x^{*}$. That is:
 
 $$
 x\left(t\right)\to x^{*} \text{ as } t\to \infty{}

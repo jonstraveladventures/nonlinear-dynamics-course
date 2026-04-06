@@ -135,19 +135,19 @@ Exercise
 
 Do this by taking points at, for instance π/4 intervals around the circle, and write down which way the vector is pointing as you go around counterclockwise. Then write each of those direction vectors in a row and see how much it has rotated ‘net’, that is, if it goes π one way, then π the other, then net it has not rotated at all.
 
-**Properties of**$I_{C}$
+**Properties of** $I_{C}$
 
-1. So the index of a curve seems to be telling us something about the fixed points inside the curve. This means that **if we move the curve from**$C$**to a new curve**$C'$**in such a way that the fixed points within it remain the same, then the index shouldn’t change, ie.**$I_{C}=I_{C '}$**.** Remember that the index is an integer, but if we are moving the curve in such a way that we don’t pass over a fixed point, everything is changing smoothly...but we can’t change from one integer to another smoothly, so the index can’t change.
+1. So the index of a curve seems to be telling us something about the fixed points inside the curve. This means that if we move the curve from $C$ to a new curve $C’$ in such a way that the fixed points within it remain the same, then the index shouldn’t change, ie. $I_{C}=I_{C’}$. Remember that the index is an integer, but if we are moving the curve in such a way that we don’t pass over a fixed point, everything is changing smoothly...but we can’t change from one integer to another smoothly, so the index can’t change.
 
 2. So let’s say that we start with some curve which doesn ’t go around a fixed point. We can deform the curve down to a very small circle (which also doesn’t contain a fixed point). If we zoom into any region in a vector field, then so long as we aren ’t looking at a fixed point, the vectors should be pretty much constant in that region. So the index of a very small region without any fixed points must be zero. **This means that the index of any curve without any fixed points in it is zero.**
 
-3. Performing the transformation $t\to -t$ corresponds to switching the direction of the arrows in a vector field. If we do this, what happens to the index? You might imagine that $I_{C}\to -I_{C} \text{ but we } \text{ have to } \text{ be } a \text{ bit more } \text{ careful }.$ switching the direction of the vector field will be the same as changing the direction of every arrow by an angle π, ie. $\phi{}\to \phi{}+\pi{}$. But if we are shifting **everything**by π, then the total change in φ won’t be altered and so **the index remains the same under the transformation.**
+3. Performing the transformation $t\to -t$ corresponds to switching the direction of the arrows in a vector field. If we do this, what happens to the index? You might imagine that $I_{C}\to -I_{C}$ but we have to be a bit more careful. switching the direction of the vector field will be the same as changing the direction of every arrow by an angle π, ie. $\phi{}\to \phi{}+\pi{}$. But if we are shifting **everything** by π, then the total change in φ won’t be altered and so **the index remains the same under the transformation.**
 
 4. What if we are on a curve which *is* some closed orbit, ie. a trajectory of the system? In that case the vector field follows along the curve precisely (it’s always a tangent to the curve) and so as we go around once, the vector must rotate once, so **the index of a closed orbit will always be 1.**
 
 ![Figure 17](/images/part16/output_017.png)
 
-5. In fact, because the index of the curve tells us about the properties of the fixed points encircled by it, we can **label the index****of****a fixed point**, $x^{*}$, simply as the index of any curve which goes around that fixed point and that fixed point only. The index is**just labeled**$I$****because the particular curve doesn’t matter.
+5. In fact, because the index of the curve tells us about the properties of the fixed points encircled by it, we can **label the index of a fixed point**, $x^{*}$, simply as the index of any curve which goes around that fixed point and that fixed point only. The index is **just labeled** $I$ because the particular curve doesn’t matter.
 
 Exercise
 
