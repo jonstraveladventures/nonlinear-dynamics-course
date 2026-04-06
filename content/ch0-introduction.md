@@ -11,84 +11,61 @@ This is the second year course which follows the first year course, MAM1043H. No
 
 The textbook that I will be following is: Nonlinear Dynamics and Chaos, by Steven Strogatz.
 
-You do not need to get it. I will aim for this all to be self-contained. However, it is a beautifully written book, and almost certainly
+You do not need to get it. I will aim for this all to be self-contained. However, it is a beautifully written book, and almost certainly the best introduction to the subject.
 
-the best introduction to the subject.
+Steven Strogatz actually has some of the material that we will be covering on Youtube: [here](https://www.youtube.com/playlist?list=PLbN57C5Zdl6j_qJA-pARJnKsmROzPnO9V).
 
-$$
-
-Steven Strogatz actually has some of the material that we will be covering on Youtube:$ \text{ here }.$
-
-He has in the past tweeted to this link which has some Python code for some of the examples in the book.
+He has in the past tweeted to [this link](https://github.com/markwmuller/controlern) which has some Python code for some of the examples in the book.
 
 Here are some more links to online courses which you may want to browse.
 
-- Complexity Explorer course on intro to dynamical systems and chaos
-- $Complexity Explorer \text{ course on } \text{ introduction }-\text{ to }-\text{ differential }-\text{ equations }$
+- [Complexity Explorer course on intro to dynamical systems and chaos](https://www.complexityexplorer.org/courses/145-introduction-to-dynamical-systems-and-chaos)
+- [Complexity Explorer course on introduction to differential equations](https://www.complexityexplorer.org/courses/146-introduction-to-differential-equations)
 
 Please note, that I will often put in links to Wikipedia articles. One has to be careful about how accurate Wikipedia pages are, and in general if you are writing a scientific research paper, Wikipedia articles are not good to reference. However, for an educational set of notes like this, where I think that it will add useful content, I will be doing so. Wikipedia articles should be read with a critical hat on, and if you want to dig further, look at the references in the articles themselves.
 
 **What is this course about?**
 
-1. Understanding what a dynamical system is
- through examples and definitions
-2. Knowing how to write down the mathematics of a dynamical system
- through examples and problems
-2. Knowing how to understand the interactions of dynamical systems through quantitative and qualitative means
- through many different techniques
+1. Understanding what a dynamical system is through examples and definitions
+2. Knowing how to write down the mathematics of a dynamical system through examples and problems
+3. Knowing how to understand the interactions of dynamical systems through quantitative and qualitative means through many different techniques
 
 I am writing these notes using the Wolfram Mathematica programming language. It means that I can very easily include nice plots and animations which should add to the content. You do not need to know how to use this.
 
-The Course Content:
+**The Course Content:**
 
-Section 1: Two dimensional nonlinear systems (Strogatz chapter 6)
+**Section 1: Two dimensional nonlinear systems** (Strogatz chapter 6)
 
-1.1 Phase portraits in two dimensions
- 1.2 Existence and uniqueness in two dimensional systems
- 1.3 Linearisation, fixed points and classification
- 1.4 Conservative systems
- 1.5 Reversible systems
- 1.6 Index theory
- 1.7 Exercises for part 1
+- [1.1 Phase portraits in two dimensions](/nonlinear-dynamics-course/ch1-1-phase-portraits/)
+- [1.2 Existence and uniqueness](/nonlinear-dynamics-course/ch1-2-existence-uniqueness/)
+- [1.3 Fixed points and linearisation](/nonlinear-dynamics-course/ch1-3-fixed-points/)
+- [1.4 Conservative systems](/nonlinear-dynamics-course/ch1-4-conservative-systems/)
+- [1.5 Reversible systems](/nonlinear-dynamics-course/ch1-5-reversible-systems/)
+- [1.6 Index theory](/nonlinear-dynamics-course/ch1-6-index-theory/)
 
-Section 2: Limit cycles (Strogatz chapter 7)
+**Section 2: Limit cycles** (Strogatz chapter 7)
 
-2.1 Introduction to limit cycles
- 2.2 Ruling out closed orbits
- 2.3 The Poincaré-Bendixson theorem
- 2.4 Liénard systems
- 2.5 Relaxation oscillations
+- [2.1 Limit cycles](/nonlinear-dynamics-course/ch2-1-limit-cycles/)
+- [2.2 Ruling out closed orbits](/nonlinear-dynamics-course/ch2-2-ruling-out-closed-orbits/)
+- [2.3 The Poincare-Bendixson theorem](/nonlinear-dynamics-course/ch2-3-poincare-bendixson/)
+- [2.4 Lienard systems](/nonlinear-dynamics-course/ch2-4-lienard-systems/)
+- [2.5 Relaxation oscillations](/nonlinear-dynamics-course/ch2-5-relaxation-oscillations/)
+- [2.6 Weakly nonlinear oscillators](/nonlinear-dynamics-course/ch2-6-weakly-nonlinear-oscillators/)
 
-2.6 Weakly nonlinear oscillators
+**Section 3: Bifurcations** (Strogatz chapter 8)
 
-2.6 Exercises for part 2
+- [3.1 Saddle-nodes, transcritical and pitchfork bifurcations](/nonlinear-dynamics-course/ch3-1-saddle-node-bifurcation/)
+- [3.2 Hopf bifurcations](/nonlinear-dynamics-course/ch3-2-hopf-bifurcation/)
+- [3.3 Oscillating chemical reactions](/nonlinear-dynamics-course/ch3-3-oscillating-reactions/)
+- [3.4 Global bifurcations of cycles](/nonlinear-dynamics-course/ch3-4-global-bifurcations/)
+- [3.5 Coupled oscillators and quasiperiodicity](/nonlinear-dynamics-course/ch3-5-coupled-oscillators/)
+- [3.6 Poincare maps](/nonlinear-dynamics-course/ch3-6-poincare-maps/)
 
-Section 3: Bifurcations (Strogatz chapter 8)
+**Section 4: Chaos** (Strogatz chapter 9)
 
-3.1 Saddle-nodes, transcritical and pitchfork bifurcations in two dimension
- 3.2 Hopf bifurcations 
- 3.3 Oscillating chemical reactions
- 3.4 Global bifurcations of cycles
- 3.5 Coupled oscillators and quasiperiodicity
- 3.6 Poincaré maps
- 3.7 Exercises for part 3
-
-Section 4: Chaos (Strogatz chapter 9)
-
-4.1 The Lorenz equations and chaos on a Strange Attractor
- 4.2 The Lorenz map
- 4.3 Exercises for part 4
-
-Section 5: One dimensional maps (Strogatz chapter 10)
-
-5.1 The logistic map
- 5.2 Lyapunov exponents
- 5.3 Hénon maps (Chapter 12)
- 5.4 Exercises for part 5
-
-Section 6: Fractals (Strogatz chapter 11)
-
-6.1 TBD
+- [4.1 The Lorenz equations](/nonlinear-dynamics-course/ch4-1-lorenz-equations/)
+- [4.1b Lorenz equations (continued)](/nonlinear-dynamics-course/ch4-1b-lorenz-continued/)
+- [4.2 Detecting chaos](/nonlinear-dynamics-course/ch4-2-detecting-chaos/)
 
 ## Chapter 0: Reminder
 
@@ -137,7 +114,7 @@ $$
 x=\left(\begin{matrix} x \\ y \end{matrix}\right) ,  A=\left(\begin{matrix} a & b \\ c & d \end{matrix}\right)
 $$
 
-We are actually going to be able to use lots of the machinery that we developed in the first year, so remind yourselves of this here. There is also a very nice set of lecture notes here\ which gives a detailed overview of such systems. I’d definitely recommend using this as a resource.
+We are actually going to be able to use lots of the machinery that we developed in the first year, so remind yourselves of this here. There is also a very nice set of lecture notes which gives a detailed overview of such systems. I’d definitely recommend using this as a resource.
 
 The main thing to remember about this is that to find the different types of behaviour, you need to calculate the determinant (Δ) and trace (τ) of the matrix $A$. We could then plot the different types of behaviour in a two dimensional space like this:
 
