@@ -151,7 +151,7 @@ $$
 
 and it’s only zero for a fixed point.
 
-What this means is that for **any**trajectory which isn't a fixed point, the energy of our system is decreasing. In fact this is the dynamical system for a damped harmonic oscillator $\left(\ddot{x}+{\dot{x}}^{3}+x=0\right)$, so it makes sense that the energy of the system always decreases.
+What this means is that for **any** trajectory which isn't a fixed point, the energy of our system is decreasing. In fact this is the dynamical system for a damped harmonic oscillator $\left(\ddot{x}+{\dot{x}}^{3}+x=0\right)$, so it makes sense that the energy of the system always decreases.
 
 Considering a closed cycle (we will use closed cycle/orbit interchangeably) in this system $\Delta{}E$ around the cycle must be zero, for the same reason as with ΔV above. We can write the change as:
 
@@ -339,4 +339,4 @@ First we need to talk about the divergence operator. What is $\nabla{}.$ telling
 
 If we can find a quantity$ g\left(x\right)\dot{x}$ whose divergence is always positive (or always negative) then it has to be that as you go around a closed loop, the total amount of pulling and pushing cannot cancel out for this particular quantity and therefore it is not possible to have this careful balance which can lead to a closed loop.
 
-OK, so next we are going to move on to showing that there **are**closed orbits....
+OK, so next we are going to move on to showing that there **are** closed orbits....

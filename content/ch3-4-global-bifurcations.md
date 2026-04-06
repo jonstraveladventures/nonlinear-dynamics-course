@@ -73,7 +73,7 @@ which doesn’t look terribly interesting...however, for $\mu{} \text{ just abov
 
 ![Figure 8](/images/part34/output_008.png)
 
-In fact we can plot the trajectory on the unit circle as a function of time for different values of μ. Plotting $\text{ cos }\left(\theta{}\right)$ (the projection onto the x-axis) we get (red is 1.05, green is 1.2, blue is 1.5):
+In fact we can plot the trajectory on the unit circle as a function of time for different values of μ. Plotting $\cos\left(\theta\right)$ (the projection onto the x-axis) we get (red is 1.05, green is 1.2, blue is 1.5):
 
 ![Figure 9](/images/part34/output_009.png)
 

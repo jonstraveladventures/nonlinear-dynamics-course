@@ -417,10 +417,10 @@ $$
 
 6) Now draw in what you might guess to be the flows outside of the fixed point regions. Note that you are quite constrained by the fact that you know that flows cannot cross one another.
 
-7. For a saddle-point, the incoming flows correspond to a **stable manifold.**Label this in the figure.
+7. For a saddle-point, the incoming flows correspond to a **stable manifold.** Label this in the figure.
 
 8) Interpret what this phase diagram is telling you about the ecological system.
 
 9. Assuming that you don’t start off exactly at any of the fixed points, what are the possible long-term situations in this environment. Why do you think that this might be called **The Principle of Competitive Exclusion**?
 
-10. Shade in the region in the plot from which you will end up with only dassies as $t\to \infty{}.$ This region is known as a **Basin of Attraction**for the point $\left(0,N_{D}$) where $N_{D}$ is whatever the non-zero stable fixed point for dassies is. Note that the stable manifold separates the two basins of attraction in this model. The trajectories of the stable manifold are called the **Separatrices**.
+10. Shade in the region in the plot from which you will end up with only dassies as $t\to \infty{}.$ This region is known as a **Basin of Attraction** for the point $\left(0,N_{D}\right)$ where $N_{D}$ is whatever the non-zero stable fixed point for dassies is. Note that the stable manifold separates the two basins of attraction in this model. The trajectories of the stable manifold are called the **Separatrices**.

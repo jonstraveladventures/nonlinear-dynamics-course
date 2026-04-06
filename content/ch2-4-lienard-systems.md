@@ -83,9 +83,9 @@ $$
 
 This is like a spring, where the system is always being accelerated back to the origin.
 
-Now, $\text{ for } f \text{ non }$-zero, we have the situation where there is a force related to the velocity, which is like a damping force, but it’s a position dependent non-linear damping force.
+Now, for $f$ non-zero, we have the situation where there is a force related to the velocity, which is like a damping force, but it’s a position dependent non-linear damping force.
 
-What’s all this stuff about the integral formula $\text{ of } F?$
+What’s all this stuff about the integral formula of $F$?
 
 Well, the statement is that $F\left(x\right)<0 \text{ for } 0<x<a$, and $F\left(x\right)=0 \text{ for } x=a$. We know that $F\left(0\right) \text{ must equal } \text{ zero }$ by the definition of the integral. So this says that $f\left(x\right) \text{ must be } \text{ negative }$ for $x \text{ close to } \text{ zero }$ and must cross to positive at some point before $x=a$ so that the area below and above the x-axis are the same by the time we get to a. In fact it can cross multiple times before $x=a$, but again, the area above can never be greater than the area below the axis, and they have to exactly cancel out at $x=a.$ And for $x>0$, $f\left(x\right) \text{ must be } \text{ positive }$ for $F \text{ to be } \text{ increasing in } \text{ this region }$.
 

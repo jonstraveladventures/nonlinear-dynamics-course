@@ -467,7 +467,7 @@ $$
 \\2 r'\text{ sin }\left(\theta{}\right)+2r \phi{}'\text{ cos }\left(\theta{}\right)-\underset{k=0}{\overset{\infty{}}{\sum{}}}a_{k}\text{ cos }\left(k \theta{}\right)-\underset{k=1}{\overset{\infty{}}{\sum{}}}b_{k}\text{ sin }\left(k \theta{}\right)
 $$
 
-The only contribution proportional to $\text{ sin }\left(\theta{}\right), \text{ cos }\left(\theta{}\right)$ (see below regarding why we don’t care about the higher order $\text{ sin }\left(k \theta{}\right) \text{ and cos }\left(k \theta{}\right)$) is:
+The only contribution proportional to $\sin\left(\theta\right), \cos\left(\theta\right)$ (see below regarding why we don’t care about the higher order $\text{ sin }\left(k \theta{}\right) \text{ and cos }\left(k \theta{}\right)$) is:
 
 $$
 \\2 r'\text{ sin }\left(\theta{}\right)+2r \phi{}'\text{ cos }\left(\theta{}\right)-a_{1}\text{ cos }\left(\theta{}\right)-b_{1}\text{ sin }\left(\theta{}\right)=\text{ sin }\left(\theta{}\right)\left(2r'-b_{1}\right)+\text{ cos }\left(\theta{}\right)\left(2r \phi{}'-a_{1}\right)
@@ -615,7 +615,7 @@ $$
 x\left(t\right)=\frac{2 }{\sqrt{1+3e^{-t \epsilon{}}}}\text{ cos }\left(t\right)+O\left(\epsilon{}\right)
 $$
 
-One thing that you might be a bit confused about is why we don ’t care about having contributions of $\text{ sin and } \text{ cos }\left(k \theta{}\right) \text{ for } k>1$ on the right hand side.
+One thing that you might be a bit confused about is why we don ’t care about having contributions of $\sin$ and $\cos\left(k\theta\right)$ for $k>1$ on the right hand side.
 
 The point is that if we have a system of the form
 
@@ -629,7 +629,7 @@ $$
 \ddot{x} +x=0
 $$
 
-is the same as the period of the system $\text{ cos }\left(t\right). $So the two will synch up and you will get exponential growth on timescales of O(1). Imagine having a swing which swings every second, and then push on that in synch with it. You will always be adding to the oscillations and the swing will quickly diverge from any small oscillation you may have started with.
+is the same as the period of the system $\cos\left(t\right)$. So the two will synch up and you will get exponential growth on timescales of O(1). Imagine having a swing which swings every second, and then push on that in synch with it. You will always be adding to the oscillations and the swing will quickly diverge from any small oscillation you may have started with.
 
 On the other hand if you force it with twice the frequency, then half the time you will be pushing in the direction that it’s going, and half the time you will be pushing it against its motion. Looking at plots of
 

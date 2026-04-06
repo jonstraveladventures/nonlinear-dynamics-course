@@ -59,7 +59,7 @@ $$
 
 where we have used the chain rule, noting that really $V=V\left(x\left(t\right)\right)$.
 
-We say that the left hand side is an **exact**time-derivative. Exact here meaning that the terms on the left can be written as the time derivative of the simple expression in brackets.
+We say that the left hand side is an **exact** time-derivative. Exact here meaning that the terms on the left can be written as the time derivative of the simple expression in brackets.
 
 In fact the thing in brackets is the kinetic energy plus the potential energy, which generically is the total energy, which we can call $E:$
 
@@ -253,7 +253,7 @@ $$
 
 ![Figure 15](/images/part14-2/output_015.png)
 
-This is a plot of the **energy function**of this system. Keep in mind as always that y is really the velocity. So we take the system at any position and any velocity and it will tell us the energy of the system for all time to come after that as it traces one of the contours on the energy surface.
+This is a plot of the **energy function** of this system. Keep in mind as always that y is really the velocity. So we take the system at any position and any velocity and it will tell us the energy of the system for all time to come after that as it traces one of the contours on the energy surface.
 
 One important thing to note here is that the dynamics of this system shouldn ’t be confused with the dynamics of the particle rolling about in the double well. Dynamics here all happens along horizontal cross-sections corresponding to energy contours.
 

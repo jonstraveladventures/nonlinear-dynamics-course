@@ -413,7 +413,7 @@ In Strogatz an analogue of the following picture is presented
 
 ![Figure 11](/images/part41/output_011.png)
 
-Where there is a plane with an unstable limit cycle (in red) and then a perpendicular stable direction. This is a partial picture, but it doesn ’t quite give an intuition about what happens off the plane. The limit cycle only exists in the plane itself (and in the Lorenz case the plane isn’t even flat), and so we have this sort of tube above and below of regions which will be attracted to the fixed point...but what happens to flows which start outside of the limit cycle and above the plane? Well, these may be attracted to the other fixed point $\left(C^{-} $if this one is $C^{+}$).
+Where there is a plane with an unstable limit cycle (in red) and then a perpendicular stable direction. This is a partial picture, but it doesn ’t quite give an intuition about what happens off the plane. The limit cycle only exists in the plane itself (and in the Lorenz case the plane isn’t even flat), and so we have this sort of tube above and below of regions which will be attracted to the fixed point...but what happens to flows which start outside of the limit cycle and above the plane? Well, these may be attracted to the other fixed point $C^{-}$ if this one is $C^{+}$).
 
 Here we plot the $x, y \text{ and } z $values as a function of time for different starting points in the plane. We see that solutions are attracted to the two fixed points at $C^{\pm{}}.$
 

@@ -33,7 +33,7 @@ we can plot the vector field in the Cartesian plane along with some trajectories
 
 We see that this system has a center, at $r=1. If \text{ we start }$ outside the center, then we spiral towards it. If we start inside the center then we also spiral towards it. The center seems to be attracting trajectories both outside it and inside it.
 
-This circular trajectory is called a **limit cycle**. The limiting behaviour of those trajectories spiraling in are the limit cycle. This is a **stable limit cycle**, but you can have **unstable limit cycles (**imagine just changing $t\to -t$ in the above), where the trajectories are repelled from it, and **semi-stable limit cycles** where only the inside or the outside flow towards the cycle, and the other flows away.
+This circular trajectory is called a **limit cycle**. The limiting behaviour of those trajectories spiraling in are the limit cycle. This is a **stable limit cycle**, but you can have **unstable limit cycles** (imagine just changing $t\to -t$ in the above), where the trajectories are repelled from it, and **semi-stable limit cycles** where only the inside or the outside flow towards the cycle, and the other flows away.
 
 An example of a semi-stable limit cycle is given by the vector field
 
