@@ -389,7 +389,7 @@ So we have our pitchfork bifurcation at $r=1,$ and then our Hopf bifurcation at 
 
 It’s actually not easy to plot the limit cycles, but what we can do is to get an idea of where the homoclinic bifurcation is. We do this by looking at trajectories that start near the origin, and increasing r. You will see that they spiral into the two new fixed points, but at some point the spirals seem to somehow hit the origin. This is a pair of homoclinic orbits and corresponds to the homoclinic bifurcation where the limit cycles first appear. It happens at around $r=14$. In the animation you’ll see that we slow things down around $r=14$ and we’re going to stop just before $r=r_{H} $because we don’t want to spoil the surprise.
 
-![Figure 8](/images/part41/anim_002.png)
+![Figure 8](/images/part41/anim_002.gif)
 
 Note that at the point of the homoclinic bifurcation, we seem to swap which fixed point each of the trajectories is being attracted to.
 
