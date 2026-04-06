@@ -8,8 +8,8 @@ math: true
 We are going to just touch the surface of one of the most important topics in modern physics - that of **conservation laws**. I’m sure that you’ve all heard of the conservation of energy, but this is just one particular example of a **conservative quantity**. Conservation laws are related to **symmetry** properties of a system, and understanding symmetries leads to a deep understanding of many different types of system. In particular, within much of theoretical high energy physics, symmetry is at the heart of, well, almost everything.
 
 Emmy Noether was the mathematician who really elucidated the connection between conservation laws and symmetries and Noether’s theorem is still used every day by thousands of physicists around the world.
-$$
-Unknown author. Publisher: Mathematical Association of America, Brooklyn Museum, Agnes Scott College - Emmy Noether (1882-1935), Archived
+
+*Unknown author. Publisher: Mathematical Association of America, Brooklyn Museum, Agnes Scott College - Emmy Noether (1882-1935), Archived*
 
 In terms of the conservation of energy, this is actually linked to a symmetry called **time translational invariance**. Essentially this means that the system is invariant with respect to the time that you look at it at.
 
